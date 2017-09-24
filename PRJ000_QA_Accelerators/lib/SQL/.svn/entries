@@ -1,0 +1,41 @@
+8
+
+dir
+1192
+https://g884dtrv.ustr.com/svn/QA_Accelerators/PRJ000_QA_Accelerators/lib/SQL
+https://g884dtrv.ustr.com/svn/QA_Accelerators
+
+
+
+2017-05-22T07:00:48.986595Z
+977
+user
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+eea55f72-711a-1644-8b99-572643de0690
+
+sqljdbc42.jar
+file
+
+
+
+
+2017-05-22T07:00:48.986000Z
+e8b48d6e4d67f6c6f6c514ef38d2da06
+2017-05-22T07:00:48.986595Z
+977
+user
+has-props
+

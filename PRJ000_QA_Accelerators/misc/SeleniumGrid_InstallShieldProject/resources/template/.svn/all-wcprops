@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/QA_Accelerators/!svn/ver/1053/PRJ000_QA_Accelerators/misc/SeleniumGrid_InstallShieldProject/resources/template
+END
+Template_IExpressAutomation.SED
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/QA_Accelerators/!svn/ver/1053/PRJ000_QA_Accelerators/misc/SeleniumGrid_InstallShieldProject/resources/template/Template_IExpressAutomation.SED
+END
+Template_QuickLaunch.vbs
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/QA_Accelerators/!svn/ver/1053/PRJ000_QA_Accelerators/misc/SeleniumGrid_InstallShieldProject/resources/template/Template_QuickLaunch.vbs
+END
+Template_RestartHubAndNodes.bat
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/QA_Accelerators/!svn/ver/1025/PRJ000_QA_Accelerators/misc/SeleniumGrid_InstallShieldProject/resources/template/Template_RestartHubAndNodes.bat
+END

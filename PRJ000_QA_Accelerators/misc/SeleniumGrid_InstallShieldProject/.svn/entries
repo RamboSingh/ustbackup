@@ -1,0 +1,43 @@
+8
+
+dir
+1192
+https://g884dtrv.ustr.com/svn/QA_Accelerators/PRJ000_QA_Accelerators/misc/SeleniumGrid_InstallShieldProject
+https://g884dtrv.ustr.com/svn/QA_Accelerators
+
+
+
+2017-06-14T06:54:47.090813Z
+1053
+user
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+eea55f72-711a-1644-8b99-572643de0690
+
+MakeDeployer.hta
+file
+
+
+
+
+2017-06-14T06:54:47.090000Z
+d2d59513ce76dfd7f409e52d2c30af3d
+2017-06-14T06:54:47.090813Z
+1053
+user
+
+resources
+dir
+

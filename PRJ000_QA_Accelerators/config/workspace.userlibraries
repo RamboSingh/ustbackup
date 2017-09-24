@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="Appium" systemlibrary="true">
+        <archive path="/PRJ000_QA_Accelerators/lib/Appium/java-client-4.1.2.jar"/>
+    </library>
+    <library name="iText" systemlibrary="true">
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itext-pdfa-5.5.9-javadoc.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itext-pdfa-5.5.9-sources.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itext-pdfa-5.5.9.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itext-xtra-5.5.9-javadoc.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itext-xtra-5.5.9-sources.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itext-xtra-5.5.9.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itextpdf-5.5.9-javadoc.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itextpdf-5.5.9-sources.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/itextpdf-5.5.9.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/xmlworker-5.5.9-javadoc.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/xmlworker-5.5.9-sources.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/xmlworker-5.5.9.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/jfreechart.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/itext-5.5.9/jcommon-1.0.8.jar"/>
+    </library>
+    <library name="JGoodies" systemlibrary="true">
+        <archive path="/PRJ000_QA_Accelerators/lib/JGoodies/jgoodies-common-1.8.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/JGoodies/jgoodies-forms-1.8.0.jar"/>
+    </library>
+    <library name="JSon" systemlibrary="false">
+        <archive path="/PRJ000_QA_Accelerators/lib/JSon/json-1.5-20090211.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/JSon/json-simple-1.1.1.jar"/>
+    </library>
+    <library name="POI" systemlibrary="false">
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/lib/commons-codec-1.10.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/lib/commons-collections4-4.1.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/lib/commons-logging-1.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/lib/junit-4.12.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/lib/log4j-1.2.17.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/ooxml-lib/curvesapi-1.04.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/ooxml-lib/xmlbeans-2.6.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/poi-3.16.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/poi-examples-3.16.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/poi-excelant-3.16.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/poi-ooxml-3.16.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/poi-ooxml-schemas-3.16.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/poi-3.16/poi-scratchpad-3.16.jar"/>
+    </library>
+    <library name="SeeTest" systemlibrary="true">
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/boon-0.33.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/commons-codec-1.9.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/commons-io-2.4.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/commons-logging-1.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/hamcrest-core-1.3.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/httpclient-4.5.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/httpcore-4.4.4.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/httpmime-4.5.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/imageClient.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/junit-4.12.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/manager-client.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/mobile-webdriver.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/ws-commons-util-1.0.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/xmlrpc-client-3.1.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/SeeTest/xmlrpc-common-3.1.2.jar"/>
+    </library>
+    <library name="Selenium" systemlibrary="true">
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/client-combined-3.4.0-nodeps.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/cglib-nodep-3.2.4.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/commons-codec-1.10.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/commons-exec-1.3.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/commons-io-2.5.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/commons-lang3-3.5.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/commons-logging-1.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/cssparser-0.9.22.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/gson-2.8.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/guava-21.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/hamcrest-core-1.3.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/hamcrest-library-1.3.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/htmlunit-2.26.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/htmlunit-core-js-2.26.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/htmlunit-driver-2.26.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/httpclient-4.5.3.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/httpcore-4.4.6.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/httpmime-4.5.3.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/javax.servlet-api-3.1.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/jetty-io-9.4.1.v20170120.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/jetty-util-9.4.1.v20170120.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/jna-4.1.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/jna-platform-4.1.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/junit-4.12.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/neko-htmlunit-2.25.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/phantomjsdriver-1.4.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/sac-1.3.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/serializer-2.7.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/testng-6.9.9.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/websocket-api-9.4.3.v20170317.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/websocket-client-9.4.3.v20170317.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/websocket-common-9.4.3.v20170317.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/xalan-2.7.2.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/xercesImpl-2.11.0.jar"/>
+        <archive path="/PRJ000_QA_Accelerators/lib/selenium-java-3.4.0/lib/xml-apis-1.4.01.jar"/>
+    </library>
+    <library name="SQL" systemlibrary="false">
+        <archive path="/PRJ000_QA_Accelerators/lib/SQL/sqljdbc42.jar"/>
+    </library>
+</eclipse-userlibraries>

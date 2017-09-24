@@ -1,0 +1,31 @@
+External dependencies
+-----------------------
+1. All WebDriver (EXE) files in "PRJ000_QA_Accelerators\resources" folder
+
+2. CleanUp.bat file in "PRJ000_QA_Accelerators\misc" folder
+
+Internal resources
+--------------------
+1. license.txt
+   Displays a text during the installation
+   
+2. selenium-server-standalone
+   A folder where you copy latest standalone server jar
+   You can keep your old files here. The build considers the file with recent modified date
+   
+3. template/Template_IExpressAutomation.SED
+   This has the base template for automating "iexpress" build process
+   
+4. template/Template_RestartHubAndNodes.bat
+   This has the base template for preparing the start grid BAT in the target machine
+   
+Main build program
+-------------------
+Double click "MakeDeployer.HTA"
+All latest files are automatically picked and "SetUp.exe" file is generated
+Copy the "SetUp.exe" to all your remote VMs and install.
+This sets up "C:\Selenium Grid" on your remote VM
+
+Start using Grid
+------------------
+Run "01_RestartHubAndNodes.bat" under "C:\Selenium Grid" on your remote VM 

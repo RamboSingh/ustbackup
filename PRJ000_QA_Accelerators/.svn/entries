@@ -1,0 +1,82 @@
+8
+
+dir
+1192
+https://g884dtrv.ustr.com/svn/QA_Accelerators/PRJ000_QA_Accelerators
+https://g884dtrv.ustr.com/svn/QA_Accelerators
+
+
+
+2017-07-17T08:56:16.117421Z
+1192
+user
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+eea55f72-711a-1644-8b99-572643de0690
+
+.classpath
+file
+
+
+
+
+2017-07-11T05:57:39.481000Z
+20cfe49b03de408eb3fb8b9abd2ef017
+2017-07-11T05:57:39.481882Z
+1151
+user
+
+.gitignore
+file
+
+
+
+
+2017-07-17T08:49:17.609000Z
+44fd6872a9738427b8e4a073903ae883
+2017-07-17T08:56:16.117421Z
+1192
+user
+
+.project
+file
+
+
+
+
+2016-07-21T07:01:15.391000Z
+bc3a73da69b470cb8f1a9582f6252513
+2016-07-21T07:01:15.391200Z
+2
+user
+
+.settings
+dir
+
+config
+dir
+
+lib
+dir
+
+misc
+dir
+
+resources
+dir
+
+src
+dir
+

@@ -1,0 +1,54 @@
+8
+
+dir
+1192
+https://g884dtrv.ustr.com/svn/QA_Accelerators/PRJ000_QA_Accelerators/lib/poi-3.16/ooxml-lib
+https://g884dtrv.ustr.com/svn/QA_Accelerators
+
+
+
+2017-06-30T12:49:45.784307Z
+1073
+user
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+eea55f72-711a-1644-8b99-572643de0690
+
+curvesapi-1.04.jar
+file
+
+
+
+
+2017-06-30T12:49:45.784000Z
+0dcbd9b7e498d1118c920d1d55046743
+2017-06-30T12:49:45.784307Z
+1073
+user
+has-props
+
+xmlbeans-2.6.0.jar
+file
+
+
+
+
+2017-06-30T12:49:45.784000Z
+6591c08682d613194dacb01e95c78c2c
+2017-06-30T12:49:45.784307Z
+1073
+user
+has-props
+

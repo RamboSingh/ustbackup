@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/QA_Accelerators/!svn/ver/1117/PRJ000_QA_Accelerators/lib/SeeTest
+END
+commons-logging-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/QA_Accelerators/!svn/ver/684/PRJ000_QA_Accelerators/lib/SeeTest/commons-logging-1.2.jar
+END
+imageClient.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/QA_Accelerators/!svn/ver/1117/PRJ000_QA_Accelerators/lib/SeeTest/imageClient.jar
+END
+hamcrest-core-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/QA_Accelerators/!svn/ver/1117/PRJ000_QA_Accelerators/lib/SeeTest/hamcrest-core-1.3.jar
+END
+httpclient-4.5.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/QA_Accelerators/!svn/ver/684/PRJ000_QA_Accelerators/lib/SeeTest/httpclient-4.5.2.jar
+END
+ws-commons-util-1.0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/QA_Accelerators/!svn/ver/2/PRJ000_QA_Accelerators/lib/SeeTest/ws-commons-util-1.0.2.jar
+END
+manager-client.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/QA_Accelerators/!svn/ver/1117/PRJ000_QA_Accelerators/lib/SeeTest/manager-client.jar
+END
+xmlrpc-common-3.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/QA_Accelerators/!svn/ver/2/PRJ000_QA_Accelerators/lib/SeeTest/xmlrpc-common-3.1.2.jar
+END
+mobile-webdriver.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/QA_Accelerators/!svn/ver/1117/PRJ000_QA_Accelerators/lib/SeeTest/mobile-webdriver.jar
+END
+commons-codec-1.9.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/QA_Accelerators/!svn/ver/684/PRJ000_QA_Accelerators/lib/SeeTest/commons-codec-1.9.jar
+END
+commons-io-2.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/QA_Accelerators/!svn/ver/684/PRJ000_QA_Accelerators/lib/SeeTest/commons-io-2.4.jar
+END
+httpmime-4.5.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/QA_Accelerators/!svn/ver/684/PRJ000_QA_Accelerators/lib/SeeTest/httpmime-4.5.2.jar
+END
+httpcore-4.4.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/QA_Accelerators/!svn/ver/684/PRJ000_QA_Accelerators/lib/SeeTest/httpcore-4.4.4.jar
+END
+boon-0.33.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/QA_Accelerators/!svn/ver/684/PRJ000_QA_Accelerators/lib/SeeTest/boon-0.33.jar
+END
+junit-4.12.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/QA_Accelerators/!svn/ver/1117/PRJ000_QA_Accelerators/lib/SeeTest/junit-4.12.jar
+END
+xmlrpc-client-3.1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/QA_Accelerators/!svn/ver/2/PRJ000_QA_Accelerators/lib/SeeTest/xmlrpc-client-3.1.2.jar
+END

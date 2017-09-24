@@ -1,0 +1,23 @@
+12/30/2016- Abhijith
+	*Updated BatchRunner with the below changes
+		Added JsonObject Class
+		Passing ConfigData Through BatchRunner
+		
+11/25/2016 - Abhijith
+	*Updated BatchRunner tool With below Changes
+		* Added SAVE button functionality.	
+11/16/2016 - Anil
+	*Added a new method ElementClearText to GenericClient -> To clear existing contents of an edit box
+	*Introduced Settings.REPLACE_EXISTING_DATA_FOR_ELEMENT_SEND_TEXT flag to generic client -> Set this flag to overwrite
+	existing contents of edit box with elementSendText() method
+	*Added fnGetRandomNumber() method in import com.ustglobal.common.Utility -> Generates a random number of given length
+	*Added fnGetRandomString() method in import com.ustglobal.common.Utility -> Generates a random character string of given length
+--------------------------------------------------------------------------------------------------------------------------------
+11/15/2016 - Abhijith
+	*Updated BatchRunner tool with below changes
+		*Latest Report- column updated.
+		*Added RESULT Column.
+--------------------------------------------------------------------------------------------------------------------------------
+11/14/2016 - Anil
+	*Added a new method  TypeText to Generic Client -> Enter a string character by character. This will help data entry on
+	masked edit boxes like DOB, phone number etc. This also help trigger ajax calls on edit fields

@@ -1,0 +1,54 @@
+8
+
+dir
+1192
+https://g884dtrv.ustr.com/svn/QA_Accelerators/PRJ000_QA_Accelerators/misc/SeleniumGrid_InstallShieldProject/resources/selenium-server-standalone
+https://g884dtrv.ustr.com/svn/QA_Accelerators
+
+
+
+2017-06-09T12:30:48.533440Z
+1025
+user
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+eea55f72-711a-1644-8b99-572643de0690
+
+selenium-server-standalone-2.53.0.jar
+file
+
+
+
+
+2017-06-09T12:30:48.533000Z
+774efe2d84987fb679f2dea038c2fa32
+2017-06-09T12:30:48.533440Z
+1025
+user
+has-props
+
+selenium-server-standalone-3.4.0.jar
+file
+
+
+
+
+2017-06-09T12:30:48.533000Z
+a7ace476df475dfff49567774605bdf2
+2017-06-09T12:30:48.533440Z
+1025
+user
+has-props
+
