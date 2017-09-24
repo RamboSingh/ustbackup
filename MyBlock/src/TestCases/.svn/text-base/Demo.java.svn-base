@@ -1,0 +1,43 @@
+/*
+ *  Create Account from Direct Login
+	Click on "Prepare Taxes Myself"
+	From the Product Selector screen (SI12a) Select any product by clicking "Start Now"
+	Main Menu Opens
+	SignOut
+ */
+
+package TestCases;
+
+
+import business.ClientHRBO;
+import com.ustglobal.common.Debugger;
+import com.ustglobal.common.Utility;
+
+
+
+public class Demo {   
+
+
+	public static void main(String[] args) throws Exception {		
+		
+			Config objConfig=new Config();
+			ClientHRBO client=new ClientHRBO(objConfig.GetConfig());
+			
+					
+				client.NavigateToURL();
+				//client.objDebugger.Launch();
+				//client.Finalize(false);
+				client.pgLogin.fnValidateLoginPage();
+				client.pgLogin.fnLoginValid("Demohrbojuly12", "Welcome@1");
+				client.pgFederaltab.fnFirstNameRequirementPage("Fname");
+				client.pgDashboard.fnSelectFilingMethod();
+				client.pgSignOut.fnSignOut();
+				client.Finalize(true);
+			
+			
+		}
+}
+
+
+
+

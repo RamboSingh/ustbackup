@@ -1,0 +1,9 @@
+package TestCases;
+
+public class Config {
+
+	public String[] GetConfig(){
+		String[] sConf={"Chrome"};
+		return sConf;
+	}
+}

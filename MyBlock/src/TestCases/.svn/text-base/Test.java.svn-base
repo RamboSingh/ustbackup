@@ -1,0 +1,44 @@
+package TestCases;
+
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern; 
+
+
+
+
+public class Test {
+
+	public static void main(String[] args) {
+
+
+		//String string = "This is a sentence ? hello ";
+		//String[] parts = string.split("?");
+		//String part1 = parts[0]; // 004
+		//String part2 = parts[1]; // 034556
+		//System.out.println(part1);
+		//System.out.println(part2 );
+		
+		//String test =  "This is a sentence ?";
+		//String lastWord = test.substring(test.lastIndexOf(" ") +1);
+		//String lastWord1 = test.substring(test.lastIndexOf(1)+1);
+		//String str = lastWord.substring(lastWord.lastIndexOf(" "+1);
+		//System.out.println(lastWord1);
+		
+		String sample ="where were you born?";
+		Pattern p = Pattern.compile("(\\w+)\\?");
+		Matcher m = p.matcher(sample);
+		
+		if (m.find()) {
+			String str=m.group(m.groupCount());
+			System.out.println(str);
+		} 
+		
+	}
+
+}
+
+
+
+
+
