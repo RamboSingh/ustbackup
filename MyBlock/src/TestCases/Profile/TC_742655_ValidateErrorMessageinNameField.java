@@ -18,27 +18,15 @@ public class TC_742655_ValidateErrorMessageinNameField {
 			mblock.actLogin.login();
 		
 			mblock.actProfile.profile_Launch();
-			mblock.actProfile.profile_Click();
+			mblock.actGnrlNvgtn.clkProfileFrmGlobalNav();
 		
 			mblock.actProfile.profile_Edit();
 			mblock.actProfile.NegFirstName();
 			
 			mblock.actProfile.NegLastName();
-			mblock.actProfile.Home_Street();
-			mblock.actProfile.Home_Apt();
-			mblock.actProfile.Home_City();
-			mblock.actProfile.Home_State();
-			mblock.actProfile.Home_Zip();
-			mblock.actProfile.chkBox_SameAs();
 			
-			mblock.actProfile.phone_Home();
-			mblock.actProfile.phone_Mobile();
-			mblock.actProfile.phone_Business();
-			mblock.actProfile.email_Preferred();
-			mblock.actProfile.Btn_submit();
-			mblock.actProfile.Message_Success();
 			
-			mblock.Finalize(true);
+			mblock.Finalize();
 			
 			
 		} catch (Exception e) {

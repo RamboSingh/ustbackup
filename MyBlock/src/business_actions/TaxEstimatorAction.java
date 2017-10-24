@@ -5,11 +5,12 @@ import java.awt.event.KeyEvent;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
+
 
 import pageObject.ObjDashboard;
 import pageObject.ObjTaxestimator;
@@ -44,11 +45,13 @@ public class TaxEstimatorAction {
 				mblock.ValidateTest(true, true, "Tax Estimator link is present");
 			} else {
 				mblock.ValidateTest(false, true, "Tax Estimator link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(true, true, "Calculato and tax icon is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -65,6 +68,7 @@ public class TaxEstimatorAction {
 			mblock.ValidateTest(true, true, "Tax Estimator page is loaded");
 		} else {
 			mblock.ValidateTest(false, true, "Tax Estimator page is not loaded");
+			Assert.assertFalse(true);
 		}
 	}
 
@@ -82,6 +86,7 @@ public class TaxEstimatorAction {
 				mblock.ValidateTest(true, true, "About you tab heading text is displayed for year 2016");
 			} else {
 				mblock.ValidateTest(false, true, "About you tab heading text is not displayed for year 2016");
+				Assert.assertFalse(true);
 			}
 		}
 	}
@@ -129,6 +134,7 @@ public class TaxEstimatorAction {
 				mblock.ValidateTest(true, true, "All the Tax year content is with TY 2016.");
 			} else {
 				mblock.ValidateTest(false, true, "some Tax year content is not with TY 2016.");
+				Assert.assertFalse(true);
 			}
 
 		}
@@ -137,9 +143,9 @@ public class TaxEstimatorAction {
 
 	// Enter About you detail and click next
 	public void entrAboutDetailandClkNext() throws Exception {
-		boolean txt_header1 = mblock.ElementExists(ObjTaxestimator.txt_incomeheader);
-		boolean txt_header2 = mblock.ElementExists(ObjTaxestimator.txt_expenseheader);
-		boolean txt_header3 = mblock.ElementExists(ObjTaxestimator.btn_online);
+		boolean txt_header1 = mblock.ElementExists(ObjTaxestimator.txt_incomeheader,5000);
+		boolean txt_header2 = mblock.ElementExists(ObjTaxestimator.txt_expenseheader,5000);
+		boolean txt_header3 = mblock.ElementExists(ObjTaxestimator.btn_online,5000);
 		String lnk_aboutyou = mblock.Element(ObjTaxestimator.lnk_aboutyou).getAttribute("aria-selected");
 		if (lnk_aboutyou.equalsIgnoreCase("false")
 				&& (txt_header1 == true || txt_header2 == true || txt_header3 == true)) {
@@ -179,6 +185,7 @@ public class TaxEstimatorAction {
 				mblock.ValidateTest(true, true, "Income tab heading text is displayed for year 2016");
 			} else {
 				mblock.ValidateTest(false, true, "Income tab heading text is not displayed for year 2016");
+				Assert.assertFalse(true);
 			}
 		}
 	}
@@ -201,6 +208,8 @@ public class TaxEstimatorAction {
 				mblock.ValidateTest(true, true, "All the Tax year content is with TY 2016.");
 			} else {
 				mblock.ValidateTest(false, true, "some Tax year content is not with TY 2016.");
+				Assert.assertFalse(true);
+				
 			}
 
 		}
@@ -216,6 +225,7 @@ public class TaxEstimatorAction {
 		}
 		boolean status = mblock.ElementExists(ObjTaxestimator.lnk_interest);
 		if (status = true) {
+			mblock.ElementExists(ObjDashboard.answr_col1,5000);
 			mblock.Element(ObjTaxestimator.lnk_interest).ufxClick();
 			mblock.Element(ObjTaxestimator.lnk_continue).ufxClick();
 			/*
@@ -244,6 +254,7 @@ public class TaxEstimatorAction {
 				mblock.ValidateTest(true, true, "Expenses tab heading text is displayed for year 2016");
 			} else {
 				mblock.ValidateTest(false, true, "Expenses tab heading text is not displayed for year 2016");
+				Assert.assertFalse(true);
 			}
 		}
 	}
@@ -287,6 +298,7 @@ public class TaxEstimatorAction {
 				mblock.ValidateTest(true, true, "All the Tax year content is with TY 2016.");
 			} else {
 				mblock.ValidateTest(false, true, "some Tax year content is not with TY 2016.");
+				Assert.assertFalse(true);
 			}
 
 		}

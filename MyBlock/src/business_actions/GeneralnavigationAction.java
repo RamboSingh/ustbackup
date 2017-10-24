@@ -1,5 +1,7 @@
 package business_actions;
 
+import org.junit.Assert;
+
 import pageObject.ObjDashboard;
 import pageObject.ObjLogin;
 import pageObject.ObjTaxHistory;
@@ -31,11 +33,13 @@ public class GeneralnavigationAction {
 				mblock.ValidateTest(true, true, "Logo image is displayed");
 			} else {
 				mblock.ValidateTest(false, true, "Logo image is not displayed");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Logo image is not displayed");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -52,11 +56,13 @@ public class GeneralnavigationAction {
 				mblock.ValidateTest(true, true, "H&R Block Logo image is displayed in footer");
 			} else {
 				mblock.ValidateTest(false, true, "H&R Block Logo image is not displayed in footer");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Logo image is not displayed");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -71,11 +77,13 @@ public class GeneralnavigationAction {
 				mblock.ValidateTest(true, true, "Copy right date to be displayed for 2016-2017");
 			} else {
 				mblock.ValidateTest(false, true, "Copy right date not to be displayed for 2016-2017");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Copy right date is not displayed in footer");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -90,6 +98,7 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the Golbal navigation");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -104,6 +113,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
+				
 
 			}
 
@@ -117,11 +127,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "My document link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -136,6 +148,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
+				
 
 			}
 
@@ -148,11 +161,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "My document link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -167,6 +182,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
+	
 
 			}
 
@@ -180,11 +196,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Tax History link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -194,7 +212,7 @@ public class GeneralnavigationAction {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footertaxhsty);
 		if (txt_lnk = true) {
-			 mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxScrollElementToView();
+			mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxScrollElementToView();
 			mblock.ValidateTest(true, true, "Tax History link is present in footer");
 		}
 
@@ -202,6 +220,7 @@ public class GeneralnavigationAction {
 
 		{
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the footer");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -216,6 +235,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
+			
 
 			}
 
@@ -227,34 +247,36 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Tax History link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
-	
-	
+
 	// Click the Tax history in Footer
-		public void clkTaxHstryFrmFooter() throws Exception {
+	public void clkTaxHstryFrmFooter() throws Exception {
 
-			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footertaxhsty);
-			if (txt_lnk = true) {
-				 mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxScrollElementToView();
-				 mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxClick();
-				 mblock.ElementExists(ObjTaxHistory.txt_taxhstry);
-				mblock.ValidateTest(true, true, "User lands to Tax history page");
-			}
-
-			else
-
-			{
-				mblock.ValidateTest(false, true, "My Taxes link is not present in the footer");
-			}
-
+		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footertaxhsty);
+		if (txt_lnk = true) {
+			mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxScrollElementToView();
+			mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxClick();
+			mblock.ElementExists(ObjTaxHistory.txt_taxhstry);
+			mblock.ValidateTest(true, true, "User lands to Tax history page");
 		}
+
+		else
+
+		{
+			mblock.ValidateTest(false, true, "My Taxes link is not present in the footer");
+			Assert.assertFalse(true);
+		}
+
+	}
 
 	// Verify the My taxpro shield link under My Taxes
 	public void vrfyTaxproFrmGlobalNav() throws Exception {
@@ -266,6 +288,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
+			
 
 			}
 
@@ -273,17 +296,18 @@ public class GeneralnavigationAction {
 			if (txt_lnk = true) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_mytaxpro).ufxFocus();
-
 				}
 				mblock.ValidateTest(true, true, "My tax pro link is present");
 
 			} else {
 				mblock.ValidateTest(false, true, "My tax pro link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -298,6 +322,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
+			
 
 			}
 
@@ -309,11 +334,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "My tax pro link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -328,6 +355,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
+				
 
 			}
 
@@ -341,11 +369,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "My online tax link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -360,6 +390,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
+			
 
 			}
 
@@ -372,11 +403,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "My online tax link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My Taxes link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -394,7 +427,12 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Page is not back to Dashboard");
+				Assert.assertFalse(true);
 			}
+		}
+		else{
+			mblock.ValidateTest(false, true, "Button is not displayed");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -409,6 +447,7 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "Calculator&tools link is not present in the Golbal navigation");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -423,23 +462,26 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_calctr).ufxFocus();
+			
 
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxestmr);
 			if (txt_lnk = true) {
 				mblock.Element(ObjDashboard.lnk_taxestmr).ufxClick();
-				mblock.ElementExists(ObjTaxestimator.txt_aboutyouheader);
-				mblock.ElementExists(ObjTaxestimator.txt_expenseheader);
+				mblock.ElementExists(ObjTaxestimator.txt_aboutyouheader, 5000);
+				mblock.ElementExists(ObjTaxestimator.txt_expenseheader, 5000);
 				mblock.ValidateTest(true, true, "User lands to Tax estimator page");
 
 			} else {
 				mblock.ValidateTest(false, true, "Tax Estimator link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Calculator&tools link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -454,6 +496,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_calctr).ufxFocus();
+				
 
 			}
 
@@ -465,6 +508,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "W4Calculator link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
@@ -495,11 +539,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Tax Organaizer link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Calculator&tools link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -514,6 +560,7 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "Product&Service link is not present in the Golbal navigation");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -528,6 +575,7 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).ufxFocus();
+				
 
 			}
 
@@ -541,11 +589,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Make appoinment link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Product and service link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -571,11 +621,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Make appointment link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Product&Service link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -603,11 +655,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Filling Online link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Product and service link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -633,11 +687,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Filling Online link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Product&Service link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -665,11 +721,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Tax id shield link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Product and service link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -694,11 +752,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Tax id shield link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Product&Service link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -726,11 +786,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "EmerlandCard link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Product and service link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -755,11 +817,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "EmerlandCard link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "Product&Service link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -774,6 +838,7 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "My Account link is not present in the Golbal navigation");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -800,11 +865,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Manage account link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My account link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -819,6 +886,7 @@ public class GeneralnavigationAction {
 
 		} else {
 			mblock.ValidateTest(false, true, "Manage account link is not present in footer");
+			Assert.assertFalse(true);
 		}
 	}
 
@@ -842,11 +910,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Manage account link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My account link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -874,11 +944,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "profile link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My account link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -893,6 +965,7 @@ public class GeneralnavigationAction {
 
 		} else {
 			mblock.ValidateTest(false, true, "profile link is not present in footer");
+			Assert.assertFalse(true);
 		}
 	}
 
@@ -917,11 +990,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "profile link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My account link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -931,7 +1006,7 @@ public class GeneralnavigationAction {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_getassistant);
 
-		if (icon_lnk = true) {
+		if (icon_lnk == true) {
 
 			mblock.Element(ObjDashboard.lnk_getassistant).ufxClick();
 
@@ -942,6 +1017,7 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "Get assistant linl is not present in the POD");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -969,11 +1045,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Help link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My account link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -988,6 +1066,7 @@ public class GeneralnavigationAction {
 
 		} else {
 			mblock.ValidateTest(false, true, "Help link is not present footer");
+			Assert.assertFalse(true);
 		}
 	}
 
@@ -1012,11 +1091,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Help link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My account link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -1034,6 +1115,7 @@ public class GeneralnavigationAction {
 
 		} else {
 			mblock.ValidateTest(false, true, "Singout link is not present");
+			Assert.assertFalse(true);
 		}
 	}
 
@@ -1058,11 +1140,13 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.ValidateTest(false, true, "Singout link is not present");
+				Assert.assertFalse(true);
 			}
 		}
 
 		else {
 			mblock.ValidateTest(false, true, "My account link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -1078,6 +1162,7 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "Gloabal navigation backgroud colour is not white");
+			Assert.assertFalse(true);
 		}
 
 	}
@@ -1100,6 +1185,7 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "TIS POD is not displayed to the User");
+			Assert.assertFalse(true);
 		}
 	}
 
@@ -1119,6 +1205,7 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "TIS POD is displayed to the User");
+			Assert.assertFalse(true);
 		}
 	}
 

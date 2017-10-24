@@ -1,7 +1,12 @@
 package business_actions;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import net.sourceforge.htmlunit.corejs.javascript.regexp.SubString;
 import pageObject.ObjDashboard;
@@ -60,6 +65,7 @@ public class DashboardActions {
 
 			} else {
 				mblock.ValidateTest(false, true, "User Name is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -73,7 +79,6 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
 			if (element1) {
-				mblock.Log("Products and Services is present in Global Navigation Bar");
 				mblock.ValidateTest(true, true, "Product and Services field is displayed");
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).ufxFocus();
 
@@ -81,6 +86,7 @@ public class DashboardActions {
 
 			else {
 				mblock.ValidateTest(false, true, "Products and Services is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -95,7 +101,6 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_pomlink);
 			if (element1) {
-				mblock.Log("POM is present in Global Navigation Bar");
 				mblock.ValidateTest(true, true, "POM is displayed");
 				mblock.Element(ObjDashboard.lnk_pomlink).click();
 
@@ -103,6 +108,7 @@ public class DashboardActions {
 
 			else {
 				mblock.ValidateTest(false, true, "POM is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -117,7 +123,6 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.footer_POM);
 			if (element1) {
-				mblock.Log("POM is present in Footer");
 				mblock.ValidateTest(true, true, "POM is displayed");
 				mblock.Element(ObjDashboard.footer_POM).click();
 
@@ -125,6 +130,7 @@ public class DashboardActions {
 
 			else {
 				mblock.ValidateTest(false, true, "POM is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -139,12 +145,10 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(objPOM.POM_PageHeader);
 			if (element1) {
-				mblock.Log("POM page header is present");
 				mblock.ValidateTest(true, true, "POM is displayed");
 				String text = mblock.Element(objPOM.POM_PageHeader).getText();
 				System.out.println(text);
 				if (text.equalsIgnoreCase("Peace of Mind Extended Service Plan")) {
-					mblock.Log("Page header is displayed");
 					mblock.ValidateTest(true, true, "Page Header is displayed");
 				}
 
@@ -152,6 +156,7 @@ public class DashboardActions {
 
 			else {
 				mblock.ValidateTest(false, true, "Page header is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -166,17 +171,14 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(objPOM.FreqAskedQuestions);
 			if (element1) {
-				mblock.Log("FAQ is present in POM Page");
 				mblock.ValidateTest(true, true, "FAQ is displayed");
 				mblock.Element(objPOM.FreqAskedQuestions).click();
 
 				String FAQ_URL = mblock.GetCurrentURL();
 				String Actual_URL = "https://hrbcomqa.hrblock.net/tax-offices/peace-of-mind-claims.html";
 				if (Actual_URL.equalsIgnoreCase(FAQ_URL)) {
-					mblock.Log("User is landed in FAQ Page");
 					mblock.ValidateTest(true, true, "User lands in FAQ Page");
 				} else {
-					mblock.Log("User is not landed in FAQ Page");
 					mblock.ValidateTest(true, true, "User is not landed in FAQ Page");
 				}
 
@@ -184,6 +186,7 @@ public class DashboardActions {
 
 			else {
 				mblock.ValidateTest(false, true, "FAQ is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -198,7 +201,6 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(objPOM.POM_Content);
 			if (element1) {
-				mblock.Log("FAQ is present in POM Page");
 				mblock.ValidateTest(true, true, "FAQ is displayed");
 				String Act_Content = mblock.Element(objPOM.POM_Content).getText();
 				String Exp_ContentTP = "CONGRATULATIONS!,\n"
@@ -220,10 +222,8 @@ public class DashboardActions {
 						+ "WHAT HAPPENS NEXT? HOW LONG WILL MY CLAIM TAKE?\n"
 						+ "See our Frequently Asked Questions for answers.";
 				if (Exp_ContentTP.equalsIgnoreCase(Act_Content)) {
-					mblock.Log("POM Content is displayed");
 					mblock.ValidateTest(true, true, "POM Content is displayed");
 				} else if (Exp_ContentAM.equalsIgnoreCase(Act_Content)) {
-					mblock.Log("POM Content is displayed");
 					mblock.ValidateTest(true, true, "POM Content is displayed");
 				}
 
@@ -231,6 +231,7 @@ public class DashboardActions {
 
 			else {
 				mblock.ValidateTest(false, true, "Content is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -245,17 +246,14 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(objPOM.lnk_95);
 			if (element1) {
-				mblock.Log("95 is present in POM Page");
 				mblock.ValidateTest(true, true, "95 is displayed");
 				mblock.Element(objPOM.lnk_95).click();
 
 				String FAQ_URL = mblock.GetCurrentURL();
 				String Actual_URL = "https://hrbcomqa.hrblock.net/?odisc=95#/en/";
 				if (Actual_URL.equalsIgnoreCase(FAQ_URL)) {
-					mblock.Log("User is landed in 95 Page");
 					mblock.ValidateTest(true, true, "User lands in 95 Page");
 				} else {
-					mblock.Log("User is not landed in FAQ Page");
 					mblock.ValidateTest(true, true, "User is not landed in 95 Page");
 				}
 
@@ -263,6 +261,7 @@ public class DashboardActions {
 
 			else {
 				mblock.ValidateTest(false, true, "95 is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -277,12 +276,12 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(objPOM.LetterFromAuthority);
 			if (element1) {
-				mblock.Log("Link is present in POM Page");
 				mblock.ValidateTest(true, true, "Link is displayed");
 				mblock.Element(objPOM.LetterFromAuthority).isDisplayed();
 
 			} else {
 				mblock.ValidateTest(false, true, "Link is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -297,18 +296,17 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(objPOM.BtnPOM);
 			if (element1) {
-				mblock.Log("Link is present in POM Page");
 				mblock.ValidateTest(true, true, "Link is displayed");
 				mblock.Element(objPOM.BtnPOM).isDisplayed();
 				mblock.Element(objPOM.BtnPOM).click();
 
 				String URL = "https://myaccountqa.hrblock.net/mytax/tax-offices/local-offices/index.html#!/en/office-locator/";
 				if (URL.equalsIgnoreCase(mblock.GetCurrentURL())) {
-					mblock.Log("User landed in AM Page");
 					mblock.ValidateTest(true, true, "User lands in AM page");
 				}
 			} else {
 				mblock.ValidateTest(false, true, "Link is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -323,12 +321,12 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(objPOM.AppointmentLink);
 			if (element1) {
-				mblock.Log("Link is present in POM Page");
 				mblock.ValidateTest(true, true, "Link is displayed");
 				mblock.Element(objPOM.AppointmentLink).isDisplayed();
 
 			} else {
 				mblock.ValidateTest(false, true, "Link is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -343,12 +341,12 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
 			if (element1) {
-				mblock.Log("Add Document is present");
 				mblock.ValidateTest(true, true, "Add Document is present");
 				mblock.Element(ObjUploaddoc.btn_adddoc).click();
 
 			} else {
 				mblock.ValidateTest(false, true, "Add Document is not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -363,13 +361,13 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjUploaddoc.btn_cnfrmidnty);
 			if (element1) {
-				mblock.Log("Confirm Identity is present");
 				mblock.ValidateTest(true, true, "Confirm Identity is present");
 				mblock.Element(ObjUploaddoc.btn_cnfrmidnty).click();
 				mblock.ValidateTest(true, true, "IDP Frame is displayed");
 
 			} else {
 				mblock.ValidateTest(false, true, "Confirm ID is not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -384,13 +382,13 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_mytax);
 			if (element1) {
-				mblock.Log("My Taxes is present");
 				mblock.ValidateTest(true, true, "My Taxes is present");
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
 				mblock.Element(ObjDashboard.lnk_taxhstry).click();
 
 			} else {
 				mblock.ValidateTest(false, true, "Add Document is not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -405,12 +403,12 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.goToMyTaxes);
 			if (element1) {
-				mblock.Log("Go to My Taxes Button is present");
 				mblock.ValidateTest(true, true, " Go to My Taxes is present");
 				mblock.Element(ObjDashboard.goToMyTaxes).click();
 
 			} else {
 				mblock.ValidateTest(false, true, "Go to My Taxes Btn is not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -425,12 +423,12 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.continueMyTaxes);
 			if (element1) {
-				mblock.Log("Continue My Taxes Button is present");
 				mblock.ValidateTest(true, true, " Continue My Taxes is present");
 				mblock.Element(ObjDashboard.continueMyTaxes).click();
 
 			} else {
 				mblock.ValidateTest(false, true, "Go to My Taxes Btn is not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -445,12 +443,12 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.footer_FilingOnline);
 			if (element1) {
-				mblock.Log("Go to My Taxes Button is present");
 				mblock.ValidateTest(true, true, " Go to My Taxes is present");
 				mblock.Element(ObjDashboard.footer_FilingOnline).click();
 
 			} else {
 				mblock.ValidateTest(false, true, "Go to My Taxes Btn is not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -465,14 +463,13 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
 			if (element1) {
-				mblock.Log("Product and Services is present");
-
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).ufxFocus();
 				mblock.Element(ObjDashboard.lnk_filngonline).click();
 				mblock.ValidateTest(true, true, "Filing Online is Clicked");
 
 			} else {
 				mblock.ValidateTest(false, true, "Go to My Taxes Btn is not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -487,17 +484,16 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjIntegratedServices.tcxCurrentYear);
 			if (element1) {
-				mblock.Log("TCX Current Year is present");
 				mblock.ValidateTest(true, true, " TCX Current Year is present");
 				String CurrentYear = "My 2016 Taxes";
 				if (CurrentYear.equalsIgnoreCase(mblock.Element(ObjIntegratedServices.tcxCurrentYear).getText())) {
-					mblock.Log("Current Year is displayed as" + mblock.Element(ObjIntegratedServices.tcxCurrentYear));
 					mblock.ValidateTest(true, true,
 							"Current Year is displayed as" + mblock.Element(ObjIntegratedServices.tcxCurrentYear));
 				}
 
 			} else {
 				mblock.ValidateTest(false, true, "TCX Current Year is not valid");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -507,19 +503,962 @@ public class DashboardActions {
 
 	}
 
+	// Verify the My document button is displayed
+	public void vrfyMydocBtnDsply() throws Exception {
+		try {
+
+			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_updoc, 8000);
+			boolean element2 = mblock.ElementExists(ObjDashboard.lnk_updoc1, 8000);
+
+			String val = mblock.Element(ObjDashboard.lnk_updoc).getText();
+			String val1 = mblock.Element(ObjDashboard.lnk_updoc1).getText();
+			if (val.contains("Document") || val1.contains("Document")) {
+				mblock.Element(ObjDashboard.lnk_updoc).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "Upload My Documents is displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "Upload My Documents is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the My document button is not displayed
+	public void vrfyMydocBtnNotDsply() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_updoc, 8000);
+			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_updoc1, 8000);
+			if (element && element1) {
+				String val = mblock.Element(ObjDashboard.lnk_updoc).getAttribute("title");
+				String val1 = mblock.Element(ObjDashboard.lnk_updoc1).getAttribute("title");
+				if (val.contains("Document") || val1.contains("Document")) {
+					mblock.ValidateTest(false, true, "Upload My Documents is displayed");
+					Assert.assertFalse(true);
+				} else {
+					mblock.ValidateTest(true, true, "Upload My Documents is not displayed");
+				}
+			}
+
+			else if (element) {
+				String val = mblock.Element(ObjDashboard.lnk_updoc).getAttribute("title");
+				if (val.contains("Document")) {
+					mblock.ValidateTest(false, true, "Upload My Documents is displayed");
+					Assert.assertFalse(true);
+				} else {
+					mblock.ValidateTest(true, true, "Upload My Documents is not displayed");
+				}
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "Upload My Documents is displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// POD verification
+
+	// Emerland card pod for retail user
+	public void vrfyECpodForRtlUsr() throws Exception {
+		try {
+
+			boolean element1 = mblock.ElementExists(ObjDashboard.img_emrcard, 5000);
+			boolean element01 = mblock.ElementExists(ObjDashboard.img_emrcard01, 5000);
+			if (element1) {
+				mblock.Element(ObjDashboard.img_emrcard).ufxScrollElementToView();
+				String clsnme = mblock.Element(ObjDashboard.img_emrcard).getAttribute("class");
+				if (clsnme.contains("Emerald")) {
+					mblock.ValidateTest(true, true, "Emerland card is displayed and position at 3rd");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Emerland card is not display/position at 3rd");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element01) {
+				mblock.Element(ObjDashboard.img_emrcard01).ufxScrollElementToView();
+				String clsnme = mblock.Element(ObjDashboard.img_emrcard01).getAttribute("class");
+				if (clsnme.contains("Emerald")) {
+					mblock.ValidateTest(true, true, "Emerland card is displayed and position at 3rd");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Emerland card is not display/position at 3rd");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Emerland card is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify Emerland card is not displayed
+	public void vrfyECpodNotdsply() throws Exception {
+		try {
+
+			boolean element1 = mblock.ElementExists(ObjDashboard.img_emrcard, 5000);
+			boolean element01 = mblock.ElementExists(ObjDashboard.img_emrcard01, 5000);
+
+			if (element1) {
+				mblock.Element(ObjDashboard.img_emrcard).ufxScrollElementToView();
+				String clsnme = mblock.Element(ObjDashboard.img_emrcard).getAttribute("class");
+				if (clsnme.contains("Emerald")) {
+					mblock.ValidateTest(false, true, "Emerland card is displayed for this user");
+					Assert.assertFalse(true);
+				}
+
+				else {
+					mblock.ValidateTest(true, true, "Emerland card is not display for this user");
+				}
+
+			}
+
+			else if (element01) {
+				mblock.Element(ObjDashboard.img_emrcard01).ufxScrollElementToView();
+				String clsnme = mblock.Element(ObjDashboard.img_emrcard01).getAttribute("class");
+				if (clsnme.contains("Emerald")) {
+					mblock.ValidateTest(false, true, "Emerland card is displayed for this user");
+					Assert.assertFalse(true);
+				}
+
+				else {
+					mblock.ValidateTest(true, true, "Emerland card is not display for this user");
+
+				}
+
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "POD is not displayed");
+				Assert.assertFalse(true);
+			}
+		}
+
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+	// Verify the point in Emerland card
+
+	public void vrfyTxtInEcPod() throws Exception {
+		try {
+
+			boolean element1 = mblock.ElementExists(ObjDashboard.txt_opt1, 5000);
+			boolean element01 = mblock.ElementExists(ObjDashboard.txt_opt01, 5000);
+			if (element1) {
+				String opt1 = mblock.Element(ObjDashboard.txt_opt1).getText();
+				String opt2 = mblock.Element(ObjDashboard.txt_opt2).getText();
+				String opt3 = mblock.Element(ObjDashboard.txt_opt3).getText();
+				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")
+						&& opt3.equalsIgnoreCase("View Emerald Cash Reward offers")) {
+					String algn1 = mblock.Element(ObjDashboard.txt_opt1).getCssValue("text-align");
+					String algn2 = mblock.Element(ObjDashboard.txt_opt2).getCssValue("text-align");
+					String algn3 = mblock.Element(ObjDashboard.txt_opt3).getCssValue("text-align");
+					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
+							&& algn3.equalsIgnoreCase("center")) {
+						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
+					}
+
+					else {
+						mblock.ValidateTest(false, true, "Points are not align into center");
+						Assert.assertFalse(true);
+					}
+
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Some point is missing/misspelled in Emerland card ");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element01) {
+
+				String opt1 = mblock.Element(ObjDashboard.txt_opt01).getText();
+				String opt2 = mblock.Element(ObjDashboard.txt_opt02).getText();
+				String opt3 = mblock.Element(ObjDashboard.txt_opt03).getText();
+				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")
+						&& opt3.equalsIgnoreCase("View Emerald Cash Reward offers")) {
+					String algn1 = mblock.Element(ObjDashboard.txt_opt01).getCssValue("text-align");
+					String algn2 = mblock.Element(ObjDashboard.txt_opt02).getCssValue("text-align");
+					String algn3 = mblock.Element(ObjDashboard.txt_opt03).getCssValue("text-align");
+					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
+							&& algn3.equalsIgnoreCase("center")) {
+						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
+					}
+
+					else {
+						mblock.ValidateTest(false, true, "Points are not align into center");
+						Assert.assertFalse(true);
+					}
+
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Some point is missing/misspelled in Emerland card ");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "Emerland card points are not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Emerland card pod buttons
+	public void vrfyECpodBtns() throws Exception {
+		try {
+
+			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_qstn);
+			boolean element2 = mblock.ElementExists(ObjDashboard.lnk_emracssmycard);
+			if (element1 && element2) {
+
+				mblock.ValidateTest(true, true, "Qstn and Access my card Buttons are displayed");
+			} else {
+				mblock.ValidateTest(false, true, "Qstn and Access my card Button are/is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Emerland card proofed pod buttons
+	public void vrfyClrECPrfdpodBtns() throws Exception {
+		try {
+
+			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_qstn);
+			String clr = mblock.Element(ObjDashboard.lnk_qstn).getCssValue("color");
+			String clr1 = mblock.Element(ObjDashboard.lnk_crdntlst).getCssValue("color");
+			if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))
+					&& (clr1.contains("rgba(78, 133, 34, 1)") || clr1.contains("rgba(91, 155, 28, 1)"))) {
+				mblock.ValidateTest(true, true, "Emerland card button clr is green");
+			} else {
+				mblock.ValidateTest(false, true, "Emerland card button clr is not green");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Click Question Button and verify the text
+	public void clkQstnBtnEcPod() throws Exception {
+		try {
+
+			mblock.Element(ObjDashboard.lnk_qstn).ufxClick();
+			boolean element = mblock.ElementExists(ObjDashboard.txt_popup1);
+			mblock.ElementExists(ObjDashboard.txt_popup2, 2000);
+			mblock.ElementExists(ObjDashboard.txt_popup3, 2000);
+			mblock.ElementExists(ObjDashboard.answr_col1, 3000); // this is line
+																	// used for
+																	// just
+																	// waiting
+			if (element) {
+				String popup1 = mblock.Element(ObjDashboard.txt_popup1).getText();
+				String popup2 = mblock.Element(ObjDashboard.txt_popup2).getText();
+				String popup3 = mblock.Element(ObjDashboard.txt_popup3).getText();
+				String popup4 = mblock.Element(ObjDashboard.txt_popup4).getText();
+				if (popup1.equalsIgnoreCase(Constant_Class.txt_popup1)
+						&& popup2.equalsIgnoreCase(Constant_Class.txt_popup2)
+						&& popup3.equalsIgnoreCase(Constant_Class.txt_popup3)
+						&& popup4.equalsIgnoreCase(Constant_Class.txt_popup4)) {
+					mblock.ValidateTest(true, true, "Pop up message is displayed correctly");
+				} else {
+					mblock.ValidateTest(false, true, "Pop up message is not displayed correctly");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "pop up is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// click Access my card and verify pop up is displayed
+	public void clkAccsmyCardEcPod() throws Exception {
+		try {
+
+			mblock.Element(ObjDashboard.lnk_emracssmycard).ufxClick();
+			boolean element = mblock.ElementExists(ObjDashboard.iframe_card);
+			if (element) {
+				mblock.ValidateTest(true, true, "Card proof model is displayed");
+			} else {
+				mblock.ValidateTest(false, true, "Card proof model is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Schdule appointment POD
+	public void vrfyShdlApmntPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_shdlapnmt);
+
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_shdlapnmt).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "Schdule appointment POD is displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "Schdule appointment POD is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Schdule appointment button color is green in POD
+	public void vrfyClrOfShdlApmntBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_shdlapnmt, 5000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_shdlapnmt).getCssValue("color");
+				if (clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)")) {
+					mblock.ValidateTest(true, true, "Schdule appointment button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Schdule appointment button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Schdule appointment button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Go to My tax POD
+	public void vrfyGoMyTaxPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_gomytax);
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_gomytax).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "Go TO My Taxes POD is Displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "Go TO My Taxes POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Go TO MY Taxes button color is green in POD
+	public void vrfyClrOfGoMyTaxBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_gomytax, 5000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_gomytax).getCssValue("color");
+				if (clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)")) {
+					mblock.ValidateTest(true, true, "Go My Taxes button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Go My Taxes button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Go My Taxes button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the TIS POD
+	public void vrfyTISPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_tis);
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_tis).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "TIS POD is Displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "TIS POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the TIS button color is green in POD
+	public void vrfyClrOfTIsBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_tis, 5000);
+			if (element) {
+
+				String clr = mblock.Element(ObjDashboard.lnk_tis).getCssValue("color");
+				if (clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)")) {
+					mblock.ValidateTest(true, true, "TIS button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "TIS button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "TIS button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the W4 Planner POD
+	public void vrfyw4PlnrPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_w4plnr);
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_w4plnr).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "W4 planner POD is Displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "W4 planner POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the W4 palnner button color is green in POD
+	public void vrfyClrOfW4plnrBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_w4plnr, 5000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_w4plnr).getCssValue("color");
+				if (clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)")) {
+					mblock.ValidateTest(true, true, "W4 planner button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "W4 planner button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "W4 planner button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Tax history POD
+	public void vrfyTaxHstryPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_viewtaxrtn);
+
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_viewtaxrtn).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "Taxhistory POD is Displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "Taxhistory POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Taxhistory button color is green in POD
+	public void vrfyClrOfTaxHstryBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_viewtaxrtn, 5000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_viewtaxrtn).getCssValue("color");
+				String clr1 = mblock.Element(ObjDashboard.lnk_viewhstry).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))
+						&& (clr1.contains("rgba(78, 133, 34, 1)") || clr1.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.ValidateTest(true, true, "Tax history button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Tax history button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Tax history button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Tax Organizer POD
+	public void vrfyTaxOrgPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_taxorg);
+
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_taxorg).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "TaxOrganizer POD is Displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "TaxOrganizer POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Taxhistory button color is green in POD
+	public void vrfyClrOfTaxOrgnBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_taxorg, 5000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_taxorg).getCssValue("color");
+
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.ValidateTest(true, true, "Tax history button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Tax Organizer button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Tax Organizer button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Mydocument POD
+	public void vrfyMydocPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_mydocmnt);
+
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_mydocmnt).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "Mydocument POD is Displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "Mydocument POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Mydocument button color is green in POD
+	public void vrfyClrOfMydocBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_mydocmnt, 5000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_mydocmnt).getCssValue("color");
+
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.ValidateTest(true, true, "Mydocument button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Mydocument button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Mydocument button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Tax Estimator POD
+	public void vrfyTaxEstmrPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_taxestmor);
+		
+
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_taxestmor).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "Tax Estimator POD is Displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "Tax Estimator POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Tax Estimator button color is green in POD
+	public void vrfyClrOfTaxEstmrBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_taxestmor, 5000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_taxestmor).getCssValue("color");
+
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.ValidateTest(true, true, "Tax Estimator button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Tax Estimator button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Tax Estimator button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Get assistant POD
+	public void vrfyGetAsstntPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_assistant);
+
+			if (element) {
+				mblock.Element(ObjDashboard.lnk_assistant).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "Get assistant POD is Displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, "Get assistant POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the Get assistant button color is green in POD
+	public void vrfyClrOfGetAsstntBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_assistant, 5000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_assistant).getCssValue("color");
+
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.ValidateTest(true, true, "Get assistant button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Get assistant button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Get assistant button is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Verify the all POD buttons color is green
+
+	public void vrfyClrOfAllPodBtn() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_qstn, 2000);
+			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_shdlapnmt, 2000);
+			boolean element2 = mblock.ElementExists(ObjDashboard.lnk_gomytax, 2000);
+			boolean element3 = mblock.ElementExists(ObjDashboard.lnk_tis, 2000);
+			boolean element4 = mblock.ElementExists(ObjDashboard.lnk_w4plnr, 2000);
+			boolean element5 = mblock.ElementExists(ObjDashboard.lnk_viewhstry, 2000);
+			boolean element6 = mblock.ElementExists(ObjDashboard.lnk_taxorg, 2000);
+			boolean element7 = mblock.ElementExists(ObjDashboard.lnk_mydocmnt, 2000);
+			boolean element8 = mblock.ElementExists(ObjDashboard.lnk_taxestmor, 2000);
+			boolean element9 = mblock.ElementExists(ObjDashboard.lnk_assistant, 2000);
+			if (element) {
+				String clr = mblock.Element(ObjDashboard.lnk_assistant).getCssValue("color");
+				String clr1 = mblock.Element(ObjDashboard.lnk_emracssmycard).getCssValue("color");
+
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))
+						&& (clr1.contains("rgba(78, 133, 34, 1)") || clr1.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.ValidateTest(true, true, "Emerland card button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Emerland card button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element1) {
+				String clr = mblock.Element(ObjDashboard.lnk_shdlapnmt).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.Element(ObjDashboard.lnk_shdlapnmt).ufxScrollElementToView();
+					mblock.ValidateTest(true, true, "Schedule appointment button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Schedule appointment button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element2) {
+				String clr = mblock.Element(ObjDashboard.lnk_gomytax).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.Element(ObjDashboard.lnk_gomytax).ufxScrollElementToView();
+					mblock.ValidateTest(true, true, "Go to my tax button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Go to my tax button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element3) {
+				String clr = mblock.Element(ObjDashboard.lnk_tis).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.Element(ObjDashboard.lnk_tis).ufxScrollElementToView();
+					mblock.ValidateTest(true, true, "TIS button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "TIS button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element4) {
+				String clr = mblock.Element(ObjDashboard.lnk_w4plnr).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.Element(ObjDashboard.lnk_w4plnr).ufxScrollElementToView();
+					mblock.ValidateTest(true, true, "W4 planner button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "W4 planner button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element5) {
+				String clr = mblock.Element(ObjDashboard.lnk_viewhstry).getCssValue("color");
+				String clr1 = mblock.Element(ObjDashboard.lnk_viewtaxrtn).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))
+						&& (clr1.contains("rgba(78, 133, 34, 1)") || clr1.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.ValidateTest(true, true, "Tax history button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Tax history button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element6) {
+				String clr = mblock.Element(ObjDashboard.lnk_taxorg).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.Element(ObjDashboard.lnk_taxorg).ufxScrollElementToView();
+					mblock.ValidateTest(true, true, "Tax organizer button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Tax organizer button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element7) {
+				String clr = mblock.Element(ObjDashboard.lnk_mydocmnt).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.Element(ObjDashboard.lnk_mydocmnt).ufxScrollElementToView();
+					mblock.ValidateTest(true, true, "My Document button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "My Document button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element8) {
+				String clr = mblock.Element(ObjDashboard.lnk_taxestmor).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.Element(ObjDashboard.lnk_taxestmor).ufxScrollElementToView();
+					mblock.ValidateTest(true, true, "Tax Estimator button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Tax Estimator button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element9) {
+				String clr = mblock.Element(ObjDashboard.lnk_assistant).getCssValue("color");
+				if ((clr.contains("rgba(78, 133, 34, 1)") || clr.contains("rgba(91, 155, 28, 1)"))) {
+					mblock.Element(ObjDashboard.lnk_assistant).ufxScrollElementToView();
+					mblock.ValidateTest(true, true, "Get assistant button clr is green");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Get assistant button clr is not green");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
 }
-// Click My Review Tax link button
-/*
- * public void ClickReviewTaxbtn() throws Exception { try {
- * 
- * boolean rvw_btn = mblock.ElementExists(ObjDashboard.lnk_RvwTax); if (rvw_btn)
- * { mblock.Element(ObjDashboard.lnk_RvwTax).click();
- * mblock.ElementExists(ObjDashboard.lnk_myblock);
- * mblock.Element(ObjDashboard.lnk_myblock).click(); mblock.ValidateTest(true,
- * true, "Review button is displayed");
- * 
- * } else { mblock.ValidateTest(false, true, "Review button is not displayed");
- * }
- * 
- * } catch (Exception e) { // TODO: handle exception e.printStackTrace(); } }
- */

@@ -21,14 +21,16 @@ public class ExcelAction {
 
 	private static XSSFRow Row;
 	public static String crtnls[];
+	public static String brwsr;
+	public static String env;
 
 	public static void setExcelfile() throws Exception {
 		try {
 
 			FileInputStream Excelfile = new FileInputStream(Constant_Class.Path_TestData);
 			ExcelWBook = new XSSFWorkbook(Excelfile);
-			ExcelWSheet = ExcelWBook.getSheet("Sheet1");
-			System.out.println("Excel file is opened");
+			ExcelWSheet = ExcelWBook.getSheet("Testdata");
+			System.out.println("Test data sheet is opened");
 
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -37,22 +39,48 @@ public class ExcelAction {
 		}
 	}
 
-	public static String getCellData(int Row, int column) throws Exception {
+	//Browser detail
+	public static void setExcelfile1() throws Exception {
 		try {
-			Cell = ExcelWSheet.getRow(Row).getCell(column);
-			String CellData = Cell.getStringCellValue();
-			return CellData;
+
+			FileInputStream Excelfile = new FileInputStream(Constant_Class.Path_TestData);
+			ExcelWBook = new XSSFWorkbook(Excelfile);
+			ExcelWSheet = ExcelWBook.getSheet("Config");
+			System.out.println("Browser detail sheet is opened");
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			return "";
+			System.out.println(e);
+			System.out.println("Excel file is not opened");
 		}
+	}
+	
+	public static String getbrowserData()  {
+		
+			Cell = ExcelWSheet.getRow(13).getCell(7);
+			brwsr = Cell.getStringCellValue();
+			return brwsr;
+
+		
 
 	}
+	
+	
+	public static String getEnvData()  {
+		
+		Cell = ExcelWSheet.getRow(15).getCell(7);
+		env = Cell.getStringCellValue();
+		return env;
+
+	
+
+}
+
 
 	public static String[] getCredentials() {
 
 		crtnls = new String[100];
+		
 		StackTraceElement[] stElements = Thread.currentThread().getStackTrace();
 		int val1 = stElements.length;
 		int rowcount = ExcelWSheet.getLastRowNum();
@@ -101,4 +129,6 @@ public class ExcelAction {
 		return crtnls;
 	}
 
+	
+	
 }

@@ -2,6 +2,7 @@ package business_actions;
 
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import pageObject.ObjDashboard;
@@ -50,6 +51,7 @@ public class UploadDocAction {
 
 			else {
 				System.out.println("element not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {

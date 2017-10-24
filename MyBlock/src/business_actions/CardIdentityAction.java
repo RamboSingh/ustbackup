@@ -1,5 +1,7 @@
 package business_actions;
 
+import org.junit.Assert;
+
 import pageObject.ObjDashboard;
 import pageObject.objPOM;
 import utility.Config;
@@ -22,6 +24,7 @@ public class CardIdentityAction {
 			}
 			else {
 				mblock.ValidateTest(false, true, "Confirm my identity button is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -35,8 +38,12 @@ public class CardIdentityAction {
 			boolean cnfm_btn = mblock.ElementExists(ObjDashboard.btn_cnfmid);
 			if (cnfm_btn) {
 				mblock.Element(ObjDashboard.btn_cnfmid).click();
-
 			}
+			else {
+				mblock.ValidateTest(false, true, "Confirm my identity button is not displayed");
+				Assert.assertFalse(true);
+			}
+			
 
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -56,11 +63,13 @@ public class CardIdentityAction {
 					
 				} else {
 					mblock.ValidateTest(false, true, "Confirm identity pop up is not displayed");
+					Assert.assertFalse(true);
 				}
 
 			}
 			else{
 				mblock.ValidateTest(false, true, "Confirm identity pop up is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -89,6 +98,10 @@ public class CardIdentityAction {
 				mblock.Element(ObjDashboard.txt_dob).sendKeys(ExcelAction.crtnls[7]);
 				mblock.Element(ObjDashboard.btn_next).click();
 
+			}
+			else{
+				mblock.ValidateTest(false, true, "Pop up is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -204,8 +217,8 @@ public class CardIdentityAction {
 					mblock.ValidateTest(true, true, "Sucess header in IDP screen is present");
 				}
 			} else {
-				mblock.Log("Sucess Header is not present");
 				mblock.ValidateTest(false, true, "Sucess header in IDP screen is not present");
+				Assert.assertFalse(true);
 
 			}
 
@@ -229,8 +242,8 @@ public class CardIdentityAction {
 					mblock.ValidateTest(true, true, "Sucess header in IDP screen is present");
 				}
 			} else {
-				mblock.Log("Sucess Header is not present");
 				mblock.ValidateTest(false, true, "Sucess header in IDP screen is not present");
+				Assert.assertFalse(true);
 
 			}
 
@@ -259,6 +272,10 @@ public class CardIdentityAction {
 				mblock.Element(ObjDashboard.txt_dob).sendKeys(ExcelAction.crtnls[7]);
 				mblock.Element(ObjDashboard.btn_next).click();
 
+			}
+			else{
+				mblock.ValidateTest(false, true,"Pop up is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -327,6 +344,10 @@ public class CardIdentityAction {
 				mblock.Element(ObjDashboard.txt_dob).sendKeys(ExcelAction.crtnls[7]);
 				mblock.Element(ObjDashboard.btn_next).click();
 
+			}
+			else{
+				mblock.ValidateTest(false, true, "Pop up is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {

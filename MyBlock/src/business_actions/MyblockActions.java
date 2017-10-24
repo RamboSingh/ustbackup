@@ -33,8 +33,6 @@ public class MyblockActions extends SInteractive {
 	public TaxHistoryAction actTaxhstry;
 	public MydocumentAction actMydoc;
 	public static String browser = null;
-	
-	
 
 	public MyblockActions(String[] args) throws Exception {
 		super(args);
@@ -59,23 +57,24 @@ public class MyblockActions extends SInteractive {
 	public void NavigateToURL() throws Exception{
 		try {
 			 
-			  Navigate(Constant_Class.URL);
-			  MaximizeBrowser();
-			//boolean element = ElementExists(Objcommon.Zsclr_clicklink);
+			  Navigate(ExcelAction.env);
+			  
+			/*  boolean element = ElementExists(Objcommon.Zsclr_clicklink);
 			  boolean element1 = ElementExists(Objcommon.Zsclr_accptButtn);
-			  if(element1==true){
-				  	//Element(Objcommon.Zsclr_clicklink).click();
+			  if(element==true){
+				  	Element(Objcommon.Zsclr_clicklink).click();
 				  	ElementExists(Objcommon.Zsclr_accptButtn);
 					Element(Objcommon.Zsclr_accptButtn).click();
 			  }
-			  //else if (element==false&&element1==true){
-				//	Element(Objcommon.Zsclr_accptButtn).click();
-			  //}
+			  else if (element==false&&element1==true){
+					Element(Objcommon.Zsclr_accptButtn).click();
+			  }
 			  else{
 				  System.out.println("page is loaded directly");
-			  }
+			  }*/
 			} catch (Exception e) {
 				// TODO: handle exception
+				
 			}
 		}
 	
@@ -85,7 +84,7 @@ public class MyblockActions extends SInteractive {
 		try {
 			 
 			  Navigate(Constant_Class.Digital_URL);
-			  MaximizeBrowser();
+			 
 			  ElementExists(ObjLogin.lnk_freeEdtn);
 			  Element(ObjLogin.lnk_freeEdtn).click();
 			/*  boolean element = ElementExists(Objcommon.Zsclr_clicklink);

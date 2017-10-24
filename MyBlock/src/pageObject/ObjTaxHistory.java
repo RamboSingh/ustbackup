@@ -39,4 +39,5 @@ public class ObjTaxHistory {
 	public static By txt_smry = By.xpath("//*[@id='yeartoyeartaxsummary']/div/div[1]/ul/li[1]/h2");
 	public static By txt_smry2015 = By.id("liYearts1");
 	public static By txt_smry2016 = By.id("liYearts1");
+	public static By lnk_prchsrtn = By.linkText("Purchase My Return");
 }

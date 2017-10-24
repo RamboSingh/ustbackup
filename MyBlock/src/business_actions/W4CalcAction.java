@@ -3,6 +3,7 @@ package business_actions;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -36,6 +37,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false, true, "W4 Calculator link is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -56,6 +58,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false, true, "W4 Calculator link is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -79,6 +82,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false,true, "Pay Frequency field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -103,6 +107,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false,true, "Last Check Date field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -124,6 +129,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false,true, "Gross Pay Per Check field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -146,6 +152,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false,true, "Fed Income Tax Withheld Per Paycheck field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -166,6 +173,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false,true, "Fed WithHolding To Date field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -185,6 +193,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false,true, "Other Payroll Deductions field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -206,6 +215,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false,true, "Allowances field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -226,6 +236,7 @@ public class W4CalcAction {
 			}else {
 
 				mblock.ValidateTest(false,true, "Filing Status field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -246,6 +257,7 @@ public class W4CalcAction {
 			}else {
 				
 				mblock.ValidateTest(false,true, "Estimated Fed Liability field is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -266,6 +278,7 @@ public class W4CalcAction {
 			}else {
 				
 				mblock.ValidateTest(false,true, "Next Button is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -287,6 +300,7 @@ public class W4CalcAction {
 			}else {
 				
 				mblock.ValidateTest(false,true, "W4 Pod Button is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {

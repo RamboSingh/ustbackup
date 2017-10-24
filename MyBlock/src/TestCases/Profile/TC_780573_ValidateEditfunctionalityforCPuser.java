@@ -18,7 +18,7 @@ public class TC_780573_ValidateEditfunctionalityforCPuser {
 			mblock.actLogin.login();
 		
 			mblock.actProfile.profile_Launch();
-			mblock.actProfile.profile_Click();
+			mblock.actGnrlNvgtn.clkProfileFrmGlobalNav();
 		
 			mblock.actProfile.profile_Edit();
 			mblock.actProfile.PreFirstName();

@@ -18,7 +18,7 @@ public class TC_742675_ValidateProfileAvailabilityForDigitalCP_IDP_Users {
 			mblock.actLogin.login();
 		
 			mblock.actProfile.profile_Launch();
-			mblock.actProfile.profile_Click();
+			mblock.actGnrlNvgtn.clkProfileFrmGlobalNav();
 		
 			mblock.actProfile.profile_Edit();
 			mblock.actProfile.PreFirstName();

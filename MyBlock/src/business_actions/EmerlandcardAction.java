@@ -1,5 +1,7 @@
 package business_actions;
 
+import org.junit.Assert;
+
 import pageObject.ObjDashboard;
 
 public class EmerlandcardAction {
@@ -43,6 +45,7 @@ public class EmerlandcardAction {
 				mblock.ValidateTest(true,true,"Emerald Card link is present");
 			} else {
 				mblock.ValidateTest(false,true,"Emerald Card link is not present");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -69,6 +72,7 @@ public class EmerlandcardAction {
 
 			} else {
 				mblock.ValidateTest(false,true,"Card information is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {

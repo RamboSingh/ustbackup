@@ -1,5 +1,7 @@
 package business_actions;
 
+import org.junit.Assert;
+
 import pageObject.ObjDashboard;
 import pageObject.ObjLogin;
 
@@ -27,6 +29,7 @@ MyblockActions mblock;
 			
 			else{
 				mblock.ValidateTest(false, true,"Logout is not success");
+				Assert.assertFalse(true);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

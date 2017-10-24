@@ -3,6 +3,8 @@ package business_actions;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.junit.Assert;
+
 import pageObject.ObjDashboard;
 import pageObject.ObjLogin;
 import utility.Constant_Class;
@@ -25,7 +27,8 @@ public class LoginAction {
 			mblock.Element(ObjLogin.txt_username).sendKeys(Susername);
 			mblock.Element(ObjLogin.txt_password).sendKeys(Spassword);
 			mblock.Element(ObjLogin.btn_singin).click();
-			mblock.ElementExists(ObjLogin.SecurityAnswerLink);
+			boolean val = mblock.ElementExists(ObjLogin.SecurityAnswerLink,3000);
+			if(val){
 			mblock.Element(ObjLogin.SecurityAnswerLink).click();
 
 			mblock.ElementExists(ObjLogin.SecurityAnswer_Label, 5000);
@@ -37,15 +40,20 @@ public class LoginAction {
 				String str = m.group(m.groupCount());
 				System.out.println(str);
 				mblock.Element(ObjLogin.SecurityAnswer_TextField).sendKeys(str);
-				mblock.Element(ObjLogin.SecurityPage_Next).click();
 			
+			}		
+			mblock.Element(ObjLogin.SecurityAnswer_TextField).getText();
+			mblock.ElementExists(ObjLogin.SecurityPage_Next);
+			mblock.Element(ObjLogin.SecurityPage_Next).click();
 			}
+		
 			boolean dhs_brd = mblock.ElementExists(ObjDashboard.lnk_profile);
-			if(dhs_brd=true){
+			if(dhs_brd){
 				mblock.ValidateTest(true, true, "successfully login");
 			}
 			else {
 				mblock.ValidateTest(false, true, "Login issue");
+				Assert.assertFalse(true);
 			}
 			
 		}
@@ -53,6 +61,8 @@ public class LoginAction {
 		catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			Assert.assertFalse(true);
+			
 		}
 
 	}
@@ -118,6 +128,7 @@ public class LoginAction {
 				
 			} else {
 				mblock.ValidateTest(false, true, "Review button is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {

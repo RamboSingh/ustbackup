@@ -18,7 +18,7 @@ public class TC_742671_ValidateErrorMessageinPhoneSection {
 			mblock.actLogin.login();
 		
 			mblock.actProfile.profile_Launch();
-			mblock.actProfile.profile_Click();
+			mblock.actGnrlNvgtn.clkProfileFrmGlobalNav();
 		
 			mblock.actProfile.profile_Edit();
 			mblock.actProfile.PreFirstName();
@@ -30,10 +30,6 @@ public class TC_742671_ValidateErrorMessageinPhoneSection {
 			mblock.actProfile.Home_Zip();
 			mblock.actProfile.chkBox_SameAs();
 			mblock.actProfile.NegPhone();
-			
-			mblock.actProfile.email_Preferred();
-			mblock.actProfile.Btn_submit();
-			mblock.actProfile.Message_Success();
 			
 			mblock.Finalize(true);
 			

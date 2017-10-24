@@ -18,7 +18,7 @@ public class TC_742672_ValidateErrorMessageinEmailSection {
 			mblock.actLogin.login();
 		
 			mblock.actProfile.profile_Launch();
-			mblock.actProfile.profile_Click();
+			mblock.actGnrlNvgtn.clkProfileFrmGlobalNav();
 		
 			mblock.actProfile.profile_Edit();
 			mblock.actProfile.PreFirstName();
@@ -34,9 +34,7 @@ public class TC_742672_ValidateErrorMessageinEmailSection {
 			mblock.actProfile.phone_Business();
 			
 			mblock.actProfile.negEmail();
-			mblock.actProfile.Btn_submit();
-			mblock.actProfile.Message_Success();
-			
+						
 			mblock.Finalize(true);
 			
 			

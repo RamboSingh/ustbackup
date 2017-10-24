@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 
@@ -33,6 +34,7 @@ public class CreateNewAccount {
 			} else {
 
 				mblock.ValidateTest(false,true, "Create account link is not displayed");
+				Assert.assertFalse(true);
 			}
 
 		} catch (Exception e) {
@@ -48,7 +50,7 @@ public class CreateNewAccount {
 			mblock.Element(ObjCreateAccount.txt_email).sendKeys(Semail);
 			mblock.Element(ObjCreateAccount.txt_usrnme).sendKeys(Susrnme + Keys.TAB);
 			// mblock.Element(ObjCreateAccount.txt_usrnme).sendKeys(Keys.TAB);
-			boolean txt_ermsg = mblock.Element(ObjCreateAccount.txt_errormsg).isDisplayed();
+			boolean txt_ermsg = mblock.ElementExists(ObjCreateAccount.txt_errormsg);
 			if (txt_ermsg) {
 				String ousrnme = Susrnme.substring(0, 4);
 				Date date=new Date(); // your date
@@ -71,6 +73,8 @@ public class CreateNewAccount {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			Assert.assertFalse(true);
+			
 		}
 	}
 
@@ -163,8 +167,7 @@ public class CreateNewAccount {
 			if (val1 == false) {
 				mblock.Element(ObjCreateAccount.box_iagree).click();
 			}
-			mblock.ElementExists(ObjCreateAccount.btn_crtacnt);
-			mblock.Element(ObjCreateAccount.btn_crtacnt).ufxScrollElementToView();
+
 			mblock.Element(ObjCreateAccount.btn_crtacnt).click();
 			mblock.WaitForPageLoad();
 			
@@ -179,10 +182,10 @@ public class CreateNewAccount {
 		try {
 			boolean home_page =mblock.ElementExists(ObjDashboard.txt_msg_h1, 5000);
 			if(home_page){
-				mblock.ValidateTest(true, "New user Account has been Created");
+				mblock.ValidateTest(true, true,"New user Account has been Created");
 			}
 			else{
-				mblock.ValidateTest(false, "New user Account is not Created");
+				mblock.ValidateTest(false, true,"New user Account is not Created");
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

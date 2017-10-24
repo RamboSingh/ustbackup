@@ -10,6 +10,9 @@ public class ObjDashboard {
 	public static By lnk_RvwTax = By.xpath("//div[@id='skiptoMainContent']/div[1]/div/div/div[2]/a[1]");
 	public static By lnk_myblock = By.linkText("MyBlock");
 	
+	//upload doc button
+	public static By lnk_updoc = By.xpath("//*[@id='skiptoMainContent']/div[1]/div/div/div[2]/a[1]");
+	public static By lnk_updoc1 = By.xpath("//*[@id='skiptoMainContent']/div[1]/div/div/div[2]/a[2]");
 	//All Global navigation
 	public static By glb_nav = By.xpath("//*[@id='myb_contentNav']/div/div/div");
 	
@@ -87,10 +90,27 @@ public class ObjDashboard {
 	public static By idp_Success_Content = By.className("emerview");
 	public static By btn_ok = By.id("rdIDPStatusBtn1");
 	
-	//Emerland card 
+	//Emerland card pod
+	
+	public static By img_emrcard = By.xpath("//div[@id='skiptoMainContent']/div[9]/div/div[3]/div[1]/div[1]");
+	public static By img_emrcard01 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div/div[3]/div[1]/div[1]");
+											
+	
+	public static By txt_opt1 = By.xpath("//div[@id='skiptoMainContent']/div[9]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[1]");
+	public static By txt_opt01 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[1]");
+	public static By txt_opt2 = By.xpath("//div[@id='skiptoMainContent']/div[9]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]");
+	public static By txt_opt02 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]");
+	public static By txt_opt3 = By.xpath("//div[@id='skiptoMainContent']/div[9]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[3]");
+	public static By txt_opt03 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[3]");
+	public static By txt_popup1 = By.xpath("//div[@id='emeraldquestions']/div[2]/p[1]");
+	public static By txt_popup2 = By.xpath("//div[@id='emeraldquestions']/div[2]/p[2]");
+	public static By txt_popup3 = By.xpath("//div[@id='emeraldquestions']/div[2]/p[3]");
+	public static By txt_popup4 = By.xpath("//div[@id='emeraldquestions']/div[2]/p[4]");
 	
 	
 	public static By lnk_emracssmycard = By.id("hCDP");
+	public static By lnk_qstn = By.id("ecard_questions");
+	public static By lnk_crdntlst  = By.linkText("Card not listed");
 	public static By txt_cardnumbr = By.id("block4");
 	public static By txt_cvv = By.id("cvv");
 	public static By txt_pin = By.id("pin");
@@ -99,9 +119,42 @@ public class ObjDashboard {
 	public static By btn_okey = By.id("rdCardStatusBtn1");
 	public static By iframe_card = By.id("basic-modal-iframe-cardproof");
 	
+	//POD position
+	public static By img_pod1 = By.xpath("//*[@class='mb_container']/div[1]/div[1]/div[1]");
+	public static By img_pod2 = By.xpath("//*[@class='mb_container']/div[2]/div[1]/div[1]");
+	public static By img_pod3 = By.xpath("//*[@class='mb_container']/div[3]/div[1]/div[1]");
+	
+	//Schedule appointment POD
+	public static By img_shdlapnmt = By.xpath("//*[@id='skiptoMainContent']/div[8]/div/div[3]/div/div[1]");
+	public static By lnk_shdlapnmt = By.xpath("//*[@id='Schedule Appointment']");
+	
+
+	//Go to mytax POD
+	public static By lnk_gomytax = By.xpath("//*[@id='Go to My Taxes']");
+	
+	//TIS POD
+	public static By lnk_tis = By.xpath("//*[@id='tisViewDetails']");
+	
+	//W4 palnner POD
+	public static By lnk_w4plnr = By.xpath("//*[@id='View my Planner']");
+	
+	//Tax history POD
+	public static By lnk_viewtaxrtn  = By.linkText("View 2016 Tax Return");
+	public static By lnk_viewhstry  = By.xpath("//*[@id='View History']");
+	
+	//Tax organizer POD
+	public static By lnk_taxorg = By.xpath("//*[@id='viewOrganizer']");
+	
+	//My Document POD
+	public static By lnk_mydocmnt = By.xpath("//*[@id='Upload Receipts']");
+	
+	//Tax Estimator POD
+	public static By lnk_taxestmor = By.name("Estimate My Taxes");
+	
+	//Get assistant POD
+	public static By lnk_assistant  = By.linkText("Get Assistance");
+	
 	//SSOD page object
-	
-	
 	public static By txt_ssod = By.id("ssndob");
 	public static By drpdwn_reset = By.id("ClearXml");
 	public static By btn_reset = By.className("gua_buttonrt2");

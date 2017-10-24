@@ -18,11 +18,8 @@ public class TC_704252_ValidateAvailabilityOfProfileforCP_IDPUsers {
 			mblock.actLogin.login();
 		
 			mblock.actProfile.profile_Launch();
-			mblock.actProfile.profile_Click();
-		
-			
-			
-			mblock.Finalize(true);
+			mblock.actGnrlNvgtn.clkProfileFrmGlobalNav();
+			mblock.Finalize();
 			
 			
 		} catch (Exception e) {
