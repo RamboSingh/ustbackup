@@ -32,10 +32,13 @@ public class MyblockActions extends SInteractive {
 	public DashboardActions actDashboard;
 	public TaxHistoryAction actTaxhstry;
 	public MydocumentAction actMydoc;
+	public static String browser = null;
+	
 	
 
 	public MyblockActions(String[] args) throws Exception {
 		super(args);
+		browser = args[0];
 		// TODO Auto-generated constructor stub
 		actExcel = new ExcelAction();
 		actLogin = new LoginAction(this);

@@ -70,7 +70,7 @@ import com.ustglobal.common.Utility.FinalizableInterface;
 
 public class SInteractive implements FinalizableInterface {
 	public WebDriver objWebDriver = null;
-	public String strBrowserType="";
+	public static String strBrowserType="";
 	public String strMobileEmulationType="";
 	public boolean boolBringElementToFocus = true;
 	public int nThreadRampUpInMillis = 2000;
@@ -127,7 +127,14 @@ public class SInteractive implements FinalizableInterface {
 	public SInteractive(String sAppiumServerUrl, String[] sCapabilities) throws Exception{
 		this.InitiateDriver(sAppiumServerUrl, sCapabilities);
 	}
+	
+	
 	*/
+	
+	public static String checkBrowser(){
+		return strBrowserType;
+	}
+	
 	public SInteractive(ITestContext context) throws Exception{ //For TestNG users
 		this.InitiateDriver(context);
 	}
@@ -155,6 +162,7 @@ public class SInteractive implements FinalizableInterface {
 		  }
 		  strBrowserType = Utility.RegExpExtract(sBrowserType, "[A-z]*").toUpperCase().trim();
 		  strMobileEmulationType = Utility.RegExpExtract(sBrowserType, ".*\\.(.*)").trim();
+		  
 		  
 		  if(strBrowserType.equals("IE")) {
 			  objCapability = DesiredCapabilities.internetExplorer(); 

@@ -48,17 +48,25 @@ import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.RegexFileFilter;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 
 import com.itextpdf.awt.DefaultFontMapper;
+import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfTemplate;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.FormSpecs;
 import com.jgoodies.forms.layout.RowSpec;
+import com.ustglobal.selenium.SInteractive;
+
 
 public class BatchRunner  {	
 	private JFrame frame;
@@ -92,11 +100,9 @@ public class BatchRunner  {
 	private JCheckBox chckbxEnableDebugger;
 	private JCheckBox chckbxEnableReporter;
 	private JCheckBox chckbxEnableSystemTrayMonitor;
-	private static int nSkipCount=0;
-	private static int nPassCount=0;
-	private static int nFailCount=0;
-	
+		
 	public static void Launch(){ //This is a static method. A java program can call this as a utility method.	
+		
 		final ArrayList<String> listExclusions = new ArrayList<String>();
 		StackTraceElement[] arrEx = new Exception().getStackTrace();
 		for (int i=0; i <arrEx.length; i++){
@@ -112,37 +118,111 @@ public class BatchRunner  {
 	}
 	
 	
-	public static void CreatePdfSuammary() throws Exception{
+	private void CreatePdfSuammary() throws Exception{
+		int nSkipCount = 0;
+		int nPassCount = 0;
+		int nFailCount = 0;
+		int nTableCellPadding = 2;
+		String pdfFilePath = "C:\\Users\\u19627\\Documents\\SeleniumTraining\\Execution_Summary" + ".pdf";
+		// OutputStream fos = new FileOutputStream(new File(pdfFilePath));
+		Document document = new Document();
+		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(new File(pdfFilePath)));
+		// DocWriter writer = PdfWriter.getInstance(document, fos);
+		document.open();
+
+		PdfPTable table = new PdfPTable(1);
+		table.setWidthPercentage(100);
+
+		PdfPCell cell1 = new PdfPCell(new Paragraph("Test Summary Report"));
+		cell1.setBorderColor(BaseColor.BLACK);
+		cell1.setBackgroundColor(new BaseColor(140, 221, 8));
+		cell1.setPaddingLeft(10);
+		cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
+		cell1.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+		PdfPCell cell2 = new PdfPCell(new Paragraph("Date : " + new Date()));
+		cell2.setBorderColor(BaseColor.BLACK);
+		cell2.setBackgroundColor(new BaseColor(211, 211, 211));
+		cell2.setPaddingLeft(10);
+		cell2.setHorizontalAlignment(Element.ALIGN_LEFT);
+		cell2.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+		PdfPCell cell3 = new PdfPCell(new Paragraph("Browser : " + SInteractive.strBrowserType));
+		cell3.setBorderColor(BaseColor.BLACK);
+		cell3.setBackgroundColor(new BaseColor(211, 211, 211));
+		cell3.setPaddingLeft(10);
+		cell3.setHorizontalAlignment(Element.ALIGN_LEFT);
+		cell3.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+		PdfPCell cell4 = new PdfPCell(new Paragraph("Application : MyBlock Web"));
+		cell4.setBorderColor(BaseColor.BLACK);
+		cell4.setBackgroundColor(new BaseColor(211, 211, 211));
+		cell4.setPaddingLeft(10);
+		cell4.setHorizontalAlignment(Element.ALIGN_LEFT);
+		cell4.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+		cell1.setUseBorderPadding(true);
+		cell2.setUseBorderPadding(true);
+		cell3.setUseBorderPadding(true);
+		cell4.setUseBorderPadding(true);
+
+		table.addCell(cell1);
+		table.addCell(cell2);
+		table.addCell(cell3);
+		table.addCell(cell4);
+		document.add(table);
+
+		for(int s=0;s<(model.getRowCount()-1);s++){
+			String sStatus=model.getValueAt(s, nColExecutionStatus).toString();
+			//System.out.println("counting from table " + sStatus);
+			if (sStatus.equalsIgnoreCase("PASS")){
+				nPassCount++;
+			System.out.println("Pass count summary" + nPassCount);
+			}
+			else if (sStatus.equalsIgnoreCase("FAIL")){
+				nFailCount++;
+				System.out.println("Fail count summary" + nFailCount);
+			}
+			else if (sStatus.equalsIgnoreCase("")){
+				nSkipCount++;
+				System.out.println("Skipp count summary" + nSkipCount);
+			}
+	   	
+	   	}
 	    
-	   	DefaultPieDataset defaultCategoryDataset = new DefaultPieDataset();
+		DefaultPieDataset defaultCategoryDataset = new DefaultPieDataset();
+
 		defaultCategoryDataset.setValue("Fail", nFailCount);
 		defaultCategoryDataset.setValue("Skipped", nSkipCount);
 		defaultCategoryDataset.setValue("Pass", nPassCount);
 
 		JFreeChart jFreeChart = ChartFactory.createPieChart("MyBlock Execution Summary", // chart
-			defaultCategoryDataset, false, false, false);
-			String sTimeStamp = new SimpleDateFormat("MM-dd-yyyy_hh.mm.ss").format(new Date());
-			String pdfFilePath = "C:\\Users\\u19627\\Documents\\Selenium Training\\Report_" + new Random() + ".pdf";
-		OutputStream fos = new FileOutputStream(new File(pdfFilePath));
-		Document document = new Document();
-		com.itextpdf.text.pdf.PdfWriter writer = com.itextpdf.text.pdf.PdfWriter.getInstance(document, fos);
-		document.open();
+				defaultCategoryDataset, false, false, false);
+		PiePlot plot = (PiePlot) jFreeChart.getPlot();
+		// if (defaultCategoryDataset.getKey(0).equals("Fail"))
+		plot.setSectionPaint(0, Color.RED);
+		// if (defaultCategoryDataset.getKey(1).equals("Pass"))
+		plot.setSectionPaint(1, Color.WHITE);
+		// if (defaultCategoryDataset.getKey(-1).equals("Skipped"))
+		plot.setSectionPaint(2, Color.GREEN);
+
 		PdfContentByte pdfContentByte = writer.getDirectContent();
-		//change the size of rectangle
-		int width = 500;
-		int height = 220; 
+		// change the size of rectangle
+		int width = 525;
+		int height = 200;
 		PdfTemplate pdfTemplate = pdfContentByte.createTemplate(width, height);
 		Graphics2D graphics2d = pdfTemplate.createGraphics(width, height, new DefaultFontMapper());
 		java.awt.geom.Rectangle2D rectangle2d = new java.awt.geom.Rectangle2D.Double(0, 0, width, height);
 		jFreeChart.draw(graphics2d, rectangle2d);
 		graphics2d.dispose();
-		//change the location value to adjust side-height from bottom.
-		pdfContentByte.addTemplate(pdfTemplate, 40, 520); 
-		document.add(new Paragraph("Test Execution Summary"));
-		document.add(new Paragraph("Time: " + new Date()));
-		document.close();
-		System.out.println("PDF created in >> " + pdfFilePath);
+		// change the location value to adjust side-height from bottom.
+		pdfContentByte.addTemplate(pdfTemplate, 35, 510);
 
+		document.close();
+		writer.close();
+
+		System.out.println("PDF created in >> " + pdfFilePath);
+		Runtime.getRuntime().exec("wscript C:/Users/u19627/Documents/SeleniumTraining/sendmail.vbs");
 	    }
 	public BatchRunner(ArrayList<String> listExclusions)  {	
 		this.listExclusions = listExclusions;
@@ -371,20 +451,22 @@ public class BatchRunner  {
 			    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 			    	ImageIcon icon = null;
 			    	DefaultTableCellRenderer renderer = (DefaultTableCellRenderer) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-			        switch(value.toString()){
+			          	
+			    	
+			    	switch(value.toString()){
 			        case "PASS":			        	
 			        	icon = new ImageIcon(Utility.GetResourcePath("/images/imgPDF_Icon_16x16.png"));
 			        	renderer.setIcon(icon);
 			        	renderer.setFont(new Font("", Font.BOLD, 12));
 			            renderer.setForeground(Color.GREEN.darker());
-			            nPassCount++;
+			            //nPassCount++;
 			        	break;
 			        case "FAIL":
 			        	icon = new ImageIcon(Utility.GetResourcePath("/images/imgPDF_Icon_16x16.png"));
 			        	renderer.setIcon(icon);
 			        	renderer.setFont(new Font("", Font.BOLD, 12));
 			        	renderer.setForeground(Color.RED);
-			        	nFailCount++;
+			        	//nFailCount++;
 			        	break;
 			        case "Running..":
 			        	icon = new ImageIcon(Utility.GetResourcePath("/images/imgBatch_Running_16x16.png"));
@@ -569,7 +651,7 @@ public class BatchRunner  {
 			else {
 				model.setValueAt("", nRowCurrent, nColExecutionStatus);
 				System.out.println("Skipping: " + strPackageAndClassName);
-				nSkipCount++;
+				//nSkipCount++;
 				
 			}
 		}//end of for loop through all rows	

@@ -1,5 +1,7 @@
 package utility;
 
+import business_actions.MyblockActions;
+
 public class Constant_Class {
 
 	 public static final String URL = "https://myaccountqa.hrblock.net/mytax/";
@@ -13,8 +15,7 @@ public class Constant_Class {
      
      public static final String txt_filing = "FILING DONE, TAXES WON.";
      public static String Testcase_name = "";
-     
-     
+     public static String browserName = null;   
      public static final String txt_msg = "Get a head start on next year -- upload your 2017 tax docs as you get them!";
      
      public static final String Path_TestData = System.getProperty("user.dir")+"/resources/TestData.xlsx";
