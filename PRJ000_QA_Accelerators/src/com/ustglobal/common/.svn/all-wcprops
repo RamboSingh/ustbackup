@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/QA_Accelerators/!svn/ver/1187/PRJ000_QA_Accelerators/src/com/ustglobal/common
+END
+BatchRunner.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/QA_Accelerators/!svn/ver/1183/PRJ000_QA_Accelerators/src/com/ustglobal/common/BatchRunner.java
+END
+Debugger.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/QA_Accelerators/!svn/ver/1187/PRJ000_QA_Accelerators/src/com/ustglobal/common/Debugger.java
+END
+Utility.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/QA_Accelerators/!svn/ver/1154/PRJ000_QA_Accelerators/src/com/ustglobal/common/Utility.java
+END
+SystemTrayMonitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/QA_Accelerators/!svn/ver/1151/PRJ000_QA_Accelerators/src/com/ustglobal/common/SystemTrayMonitor.java
+END
+Packaging.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/QA_Accelerators/!svn/ver/1146/PRJ000_QA_Accelerators/src/com/ustglobal/common/Packaging.java
+END

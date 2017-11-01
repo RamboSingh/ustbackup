@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/QA_Accelerators/!svn/ver/1149/PRJ000_QA_Accelerators/resources/drivers
+END
+operadriver.exe
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/QA_Accelerators/!svn/ver/1149/PRJ000_QA_Accelerators/resources/drivers/operadriver.exe
+END
+IEDriverServer.exe
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/QA_Accelerators/!svn/ver/1149/PRJ000_QA_Accelerators/resources/drivers/IEDriverServer.exe
+END
+geckodriver.exe
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/QA_Accelerators/!svn/ver/1149/PRJ000_QA_Accelerators/resources/drivers/geckodriver.exe
+END
+MicrosoftWebDriver.exe
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/QA_Accelerators/!svn/ver/1149/PRJ000_QA_Accelerators/resources/drivers/MicrosoftWebDriver.exe
+END
+chromedriver.exe
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/QA_Accelerators/!svn/ver/1149/PRJ000_QA_Accelerators/resources/drivers/chromedriver.exe
+END
