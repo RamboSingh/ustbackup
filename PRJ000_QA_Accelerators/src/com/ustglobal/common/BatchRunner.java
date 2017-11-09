@@ -724,7 +724,7 @@ public class BatchRunner {
 		writer.close();
 
 		System.out.println("PDF created in >> " + pdfFilePath);
-		Runtime.getRuntime().exec("wscript C:/Users/u49391/workspace/MyBlock/resources/sendmail.vbs");
+		Runtime.getRuntime().exec("wscript D:/Dailyupdate/myblockTeam/MyBlock/resources/sendmail.vbs");
 	}
 
 }// End of BatchRunner class definition

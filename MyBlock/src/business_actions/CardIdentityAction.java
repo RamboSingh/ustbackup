@@ -3,7 +3,6 @@ package business_actions;
 import org.junit.Assert;
 
 import pageObject.ObjDashboard;
-import pageObject.objPOM;
 import utility.Config;
 
 public class CardIdentityAction {
@@ -19,10 +18,10 @@ public class CardIdentityAction {
 	public void vrfyCnfrmIdbtn() throws Exception {
 		try {
 			boolean cnfm_btn = mblock.ElementExists(ObjDashboard.btn_cnfmid);
+
 			if (cnfm_btn) {
 				mblock.ValidateTest(true, true, "Confirm my identity button is displayed");
-			}
-			else {
+			} else {
 				mblock.ValidateTest(false, true, "Confirm my identity button is not displayed");
 				Assert.assertFalse(true);
 			}
@@ -38,12 +37,10 @@ public class CardIdentityAction {
 			boolean cnfm_btn = mblock.ElementExists(ObjDashboard.btn_cnfmid);
 			if (cnfm_btn) {
 				mblock.Element(ObjDashboard.btn_cnfmid).click();
-			}
-			else {
+			} else {
 				mblock.ValidateTest(false, true, "Confirm my identity button is not displayed");
 				Assert.assertFalse(true);
 			}
-			
 
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -51,7 +48,7 @@ public class CardIdentityAction {
 		}
 	}
 
-	//Verify the confirm identity pop up in Tax histry
+	// Verify the confirm identity pop up in Tax histry
 	public void vrfyCnfrmIdPopupinTaxhstry() throws Exception {
 		try {
 			boolean txt_fld = mblock.ElementExists(ObjDashboard.THiframe_idp1);
@@ -60,14 +57,13 @@ public class CardIdentityAction {
 				boolean val = mblock.ElementExists(ObjDashboard.txt_frstname);
 				if (val) {
 					mblock.ValidateTest(true, true, "Confirm identity pop up is displayed");
-					
+
 				} else {
 					mblock.ValidateTest(false, true, "Confirm identity pop up is not displayed");
 					Assert.assertFalse(true);
 				}
 
-			}
-			else{
+			} else {
 				mblock.ValidateTest(false, true, "Confirm identity pop up is not displayed");
 				Assert.assertFalse(true);
 			}
@@ -77,7 +73,7 @@ public class CardIdentityAction {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void entrBasicInfo() throws Exception {
 		try {
 
@@ -98,8 +94,7 @@ public class CardIdentityAction {
 				mblock.Element(ObjDashboard.txt_dob).sendKeys(ExcelAction.crtnls[7]);
 				mblock.Element(ObjDashboard.btn_next).click();
 
-			}
-			else{
+			} else {
 				mblock.ValidateTest(false, true, "Pop up is not displayed");
 				Assert.assertFalse(true);
 			}
@@ -272,9 +267,8 @@ public class CardIdentityAction {
 				mblock.Element(ObjDashboard.txt_dob).sendKeys(ExcelAction.crtnls[7]);
 				mblock.Element(ObjDashboard.btn_next).click();
 
-			}
-			else{
-				mblock.ValidateTest(false, true,"Pop up is not displayed");
+			} else {
+				mblock.ValidateTest(false, true, "Pop up is not displayed");
 				Assert.assertFalse(true);
 			}
 
@@ -344,8 +338,7 @@ public class CardIdentityAction {
 				mblock.Element(ObjDashboard.txt_dob).sendKeys(ExcelAction.crtnls[7]);
 				mblock.Element(ObjDashboard.btn_next).click();
 
-			}
-			else{
+			} else {
 				mblock.ValidateTest(false, true, "Pop up is not displayed");
 				Assert.assertFalse(true);
 			}

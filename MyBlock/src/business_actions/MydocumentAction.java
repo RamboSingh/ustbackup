@@ -199,7 +199,118 @@ public class MydocumentAction {
 		}
 
 	}
+	
+	// Upload the document 10MB size
+		public void clkMydocYrUpld0MB() throws Exception {
 
+			try {
+
+				boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+				List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+				int val01 = val1.size();
+				mblock.Element(ObjUploaddoc.btn_adddoc).click();
+				Thread.sleep(2000); // this line is only for waiting purpose
+				Runtime.getRuntime().exec("wscript" + " "+ System.getProperty("user.dir") + "\\resources\\File10MB.vbs");
+				mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+				List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+				int val02 = val2.size();
+				while(val02 <= val01){
+					List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+					int val02_1 = val2_1.size();
+					val02 = val02_1;
+				}
+				List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+				int val02_1 = val2_1.size();
+				if (val02_1 > val01) {
+					mblock.ValidateTest(true, true, "Document is uploaded");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Document is not uploaded ");
+					Assert.assertFalse(true);
+				}
+			}
+
+			catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+
+		}
+
+	// Upload the document below 10MB size
+	public void clkMydocYrUpldBlw10MB() throws Exception {
+
+		try {
+
+			boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+			List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+			int val01 = val1.size();
+			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			Thread.sleep(2000); // this line is only for waiting purpose
+			Runtime.getRuntime().exec("wscript" + " "+ System.getProperty("user.dir") + "\\resources\\Below10MB.vbs");
+			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+			List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+			int val02 = val2.size();
+			while(val02 <= val01){
+				List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+				int val02_1 = val2_1.size();
+				val02 = val02_1;
+			}
+			List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+			int val02_1 = val2_1.size();
+			if (val02_1 > val01) {
+				mblock.ValidateTest(true, true, "Document is uploaded");
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "Document is not uploaded ");
+				Assert.assertFalse(true);
+			}
+		}
+
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	
+	// Upload the document above 10MB size
+		public void clkMydocYrUpldAbv10MB() throws Exception {
+
+			try {
+
+				boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+				List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+				int val01 = val1.size();
+				mblock.Element(ObjUploaddoc.btn_adddoc).click();
+				Thread.sleep(2000); // this line is only for waiting purpose
+				Runtime.getRuntime().exec("wscript" + " "+ System.getProperty("user.dir") + "\\resources\\Above10MB.vbs");
+				mblock.ElementExists(ObjDashboard.answr_col1, 5000);
+				boolean err_msg = mblock.ElementExists(ObjMyDocmnt.err_msg, 5000);
+				if (err_msg) {
+					String msg = mblock.Element(ObjMyDocmnt.err_msg).getText();
+					if(msg.equalsIgnoreCase("Uploaded files must be smaller than 10MB.")){
+						mblock.ValidateTest(true, true, "Above 10 mb document is not uploaded");
+					}
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Error message is not displayed");
+					Assert.assertFalse(true);
+				}
+			}
+
+			catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+
+		}
+		
+		
 	// Verify Add document button is present and '+' icon is not displayed
 	public void vrfyAddDocmntBtn() throws Exception {
 
@@ -220,15 +331,15 @@ public class MydocumentAction {
 			String hdr = mblock.Element(ObjMyDocmnt.txt_hdr).getText();
 			String lne1 = mblock.Element(ObjMyDocmnt.txt_lne1).getText();
 			String lne2 = mblock.Element(ObjMyDocmnt.txt_lne2).getText();
-			
+
 			if (hdr.equalsIgnoreCase(Constant_Class.txt_hdr) && lne1.equalsIgnoreCase(Constant_Class.txt_lne1)
 					&& lne2.contains(Constant_Class.txt_lne2)) {
 
 				mblock.ValidateTest(true, true, "My document veribage content is displayed correctly");
-				
+
 			}
-			
-			else{
+
+			else {
 				mblock.ValidateTest(false, true, "My document veribage content is not displayed correctly");
 			}
 
@@ -380,7 +491,7 @@ public class MydocumentAction {
 			mblock.ElementExists(ObjDashboard.answr_col1, 3000); // Waiting
 																	// purpose
 			mblock.objWebDriver.findElement(By.id("filenm")).click();
-			mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.SHIFT, Keys.TAB, Keys.RETURN, Keys.RETURN);
+			mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.TAB, Keys.RETURN, Keys.RETURN);
 
 			switch (Year) {
 			case "2016":
@@ -419,7 +530,7 @@ public class MydocumentAction {
 
 			mblock.Element(ObjMyDocmnt.btn_save).ufxClick();
 
-			mblock.ElementExists(ObjDashboard.answr_col1, 5000); // this line is
+			mblock.ElementExists(ObjDashboard.answr_col1, 7000); // this line is
 																	// only for
 																	// waiting
 																	// purpose

@@ -44,4 +44,7 @@ public class ObjMyDocmnt {
 	public static By txt_lne1 = By.xpath("//*[@id='skiptoMainContent']/div/div/div[5]/div/div[1]/p[1]");
 	public static By txt_lne2 = By.xpath("//*[@id='skiptoMainContent']/div/div/div[5]/div/div[1]/p[2]");
 	
+	
+	//Error messge while upload above 10mb file
+	public static By err_msg = By.xpath("//*[@id='filelistingcontainer']/div/span[2]");	
 }
