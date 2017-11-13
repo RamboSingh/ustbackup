@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 import pageObject.ObjDashboard;
 import pageObject.ObjLogin;
@@ -45,6 +46,18 @@ public class LoginAction {
 			mblock.Element(ObjLogin.SecurityAnswer_TextField).getText();
 			mblock.ElementExists(ObjLogin.SecurityPage_Next);
 			mblock.Element(ObjLogin.SecurityPage_Next).click();
+			boolean license_value = mblock.ElementExists(ObjLogin.lcnse_agrmnt);
+			if(license_value){
+				
+				mblock.Element(ObjLogin.lcnse_agrmnt).click();
+				boolean bnk_agrmnt = mblock.ElementExists(ObjLogin.bnkng_agrmnt);
+				if(bnk_agrmnt){
+					mblock.Element(ObjLogin.bnkng_agrmnt).click();
+				}
+				mblock.Element(ObjLogin.btn_next).click();
+				
+			}
+			
 			}
 		
 			boolean dhs_brd = mblock.ElementExists(ObjDashboard.lnk_profile);
