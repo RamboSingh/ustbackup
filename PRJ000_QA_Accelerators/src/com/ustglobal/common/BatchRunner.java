@@ -605,7 +605,7 @@ public class BatchRunner {
 					objMonitor.shutdown();
 
 					objSupervisor.shutdown();
-					
+					Thread.sleep(5000);
 					try {
 						CreatePdfSuammary();
 					} catch (Exception e) {
@@ -676,7 +676,7 @@ public class BatchRunner {
 		table.addCell(cell4);
 		document.add(table);
 
-		for (int s = 0; s < (model.getRowCount() - 1); s++) {
+		for (int s = 0; s < model.getRowCount(); s++) {
 			String sStatus = model.getValueAt(s, nColExecutionStatus).toString();
 			// System.out.println("counting from table " + sStatus);
 			if (sStatus.equalsIgnoreCase("PASS")) {

@@ -46,11 +46,11 @@ public class LoginAction {
 			mblock.Element(ObjLogin.SecurityAnswer_TextField).getText();
 			mblock.ElementExists(ObjLogin.SecurityPage_Next);
 			mblock.Element(ObjLogin.SecurityPage_Next).click();
-			boolean license_value = mblock.ElementExists(ObjLogin.lcnse_agrmnt);
+			boolean license_value = mblock.ElementExists(ObjLogin.lcnse_agrmnt,5000);
 			if(license_value){
 				
 				mblock.Element(ObjLogin.lcnse_agrmnt).click();
-				boolean bnk_agrmnt = mblock.ElementExists(ObjLogin.bnkng_agrmnt);
+				boolean bnk_agrmnt = mblock.ElementExists(ObjLogin.bnkng_agrmnt,3000);
 				if(bnk_agrmnt){
 					mblock.Element(ObjLogin.bnkng_agrmnt).click();
 				}
