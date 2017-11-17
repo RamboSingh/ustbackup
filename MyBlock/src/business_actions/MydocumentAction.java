@@ -48,16 +48,16 @@ public class MydocumentAction {
 
 	}
 
-	// Verify the My document image(book and pen) text
+	// Verify the My document image(files ) text
 	public void vrfyMydocBckImg() throws Exception {
 
 		boolean txt = mblock.ElementExists(ObjMyDocmnt.img_mydoc);
 		if (txt) {
 			String val = mblock.Element(ObjMyDocmnt.img_mydoc).getCssValue("background-image");
 			if (val.contains(Constant_Class.img_mydoc)) {
-				mblock.ValidateTest(true, true, "My document Backround image(book and pen) is displayed");
+				mblock.ValidateTest(true, true, "My document Backround image(files) is displayed");
 			} else {
-				mblock.ValidateTest(false, true, "My document Backround image(book and pen) is not displayed");
+				mblock.ValidateTest(false, true, "My document Backround image(files) is not displayed");
 				Assert.assertFalse(true);
 			}
 		}
