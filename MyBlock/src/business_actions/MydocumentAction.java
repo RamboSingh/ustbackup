@@ -79,9 +79,9 @@ public class MydocumentAction {
 			String val = mblock.Element(ObjMyDocmnt.doc_year).getAttribute("innerText");
 
 			if (val.contains(Constant_Class.tax_year)) {
-				mblock.ValidateTest(true, true, "My document with 2016 as default year");
+				mblock.ValidateTest(true, true, "My document with 2017 as default year");
 			} else {
-				mblock.ValidateTest(false, true, "My document not with 2016 as default year");
+				mblock.ValidateTest(false, true, "My document not with 2017 as default year");
 				Assert.assertFalse(true);
 			}
 		}
@@ -199,6 +199,55 @@ public class MydocumentAction {
 		}
 
 	}
+	
+	
+	// verify the uploaded document position
+		public void vrfyUpldDocPstn(String year) throws Exception {
+
+			try {
+				boolean txt = mblock.ElementExists(ObjMyDocmnt.drp_taxyear);
+				if (txt) {
+					mblock.Element(ObjMyDocmnt.drp_taxyear).ufxSelectFromDropdown("MY " + year + " DOCS");
+					mblock.ElementExists(ObjDashboard.answr_col1, 5000);
+
+					String val = mblock.Element(ObjMyDocmnt.doc_year).getAttribute("innerText");
+
+					if (val.contains(year)) {
+						boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+						List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc)
+								.findElements(ObjUploaddoc.count_doc1);
+						int val01 = val1.size();
+						mblock.Element(ObjUploaddoc.btn_adddoc).click();
+						Thread.sleep(2000); // this line is only for waiting purpose
+						Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
+						mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+						List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc)
+								.findElements(ObjUploaddoc.count_doc1);
+						int val02 = val2.size();
+						if (val02 > val01) {
+							String txt1 = mblock.Element(ObjMyDocmnt.txt_filename).getAttribute("title");
+							if(txt1.contains("test")){
+								mblock.ValidateTest(true, true, "Document is displayed on the top of the list");	
+							}
+							
+						}
+
+					}
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Document is not displayed on the top of the list");
+					Assert.assertFalse(true);
+				}
+			}
+
+			catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+
+		}
+	
 	
 	// Upload the document 10MB size
 		public void clkMydocYrUpld0MB() throws Exception {
