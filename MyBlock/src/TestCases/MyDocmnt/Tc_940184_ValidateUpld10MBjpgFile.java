@@ -3,11 +3,12 @@ package TestCases.MyDocmnt;
 import business_actions.MyblockActions;
 import utility.Config;
 
-public class Tc_940177_UploadDocOf10MBValidateTY2015 {
+public class Tc_940184_ValidateUpld10MBjpgFile {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		
 		try {
 
 			// Configuration settings
@@ -26,9 +27,6 @@ public class Tc_940177_UploadDocOf10MBValidateTY2015 {
 			//Verify default year as 2017
 			mblock.actMydoc.vrfyDfltMydocYr2016();
 			
-			//choose the tax year from dropdown
-			mblock.actMydoc.clkMydocYrFrmDrpdwn("2015");
-			
 			//verifying 10mb file is uploaded
 			mblock.actMydoc.clkMydocYrUpld0MB();
 
@@ -38,7 +36,6 @@ public class Tc_940177_UploadDocOf10MBValidateTY2015 {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			System.out.println(e);
 		}
 	}
 
