@@ -4,6 +4,7 @@ import org.junit.Assert;
 
 import pageObject.ObjDashboard;
 import pageObject.ObjLogin;
+import pageObject.ObjMyDocmnt;
 import pageObject.ObjTaxHistory;
 import pageObject.ObjTaxOrganizer;
 import pageObject.ObjTaxestimator;
@@ -137,6 +138,24 @@ public class GeneralnavigationAction {
 		}
 
 	}
+	
+	// Verify the Mydoc in Footer
+		public void vrfyMydocFrmFooter() throws Exception {
+
+			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
+			if (txt_lnk = true) {
+				mblock.Element(ObjDashboard.lnk_footermydoc).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "My document link is present in footer");
+			}
+
+			else
+
+			{
+				mblock.ValidateTest(false, true, "My Document link is not present in the footer");
+				Assert.assertFalse(true);
+			}
+
+		}
 
 	// click the MY document link under My taxes
 	public void clkMydocFrmGlobalNav() throws Exception {
@@ -171,7 +190,30 @@ public class GeneralnavigationAction {
 		}
 
 	}
+	
+	
+	// Click the Tax history in Footer
+		public void clkMydocFrmFooter() throws Exception {
 
+			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
+			if (txt_lnk = true) {
+				mblock.Element(ObjDashboard.lnk_footermydoc).ufxScrollElementToView();
+				mblock.Element(ObjDashboard.lnk_footermydoc).ufxClick();
+				mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+				mblock.ValidateTest(true, true, "User lands to My document page");
+			}
+
+			else
+
+			{
+				mblock.ValidateTest(false, true, "My document link is not present in the footer");
+				Assert.assertFalse(true);
+			}
+
+		}
+
+	
+	
 	// Verify the Tax History shield link under My Taxes (global navigation)
 	public void vrfyTaxHstryFrmGlobalNav() throws Exception {
 
