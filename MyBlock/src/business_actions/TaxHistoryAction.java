@@ -96,7 +96,7 @@ public class TaxHistoryAction {
 			// mblock.Element(ObjTaxHistory.drp_taxyear).ufxGetSelectedItemInDropdown();
 			String val = mblock.Element(ObjTaxHistory.txt_year).getAttribute("value");
 
-			if (val.contains(Constant_Class.tax_year)) {
+			if (val.contains(Constant_Class.tax_year1)) {
 				mblock.ValidateTest(true, true, "Tax History with 2016 as default year");
 			} else {
 				mblock.ValidateTest(false, true, "Tax History not with 2016 as default year");

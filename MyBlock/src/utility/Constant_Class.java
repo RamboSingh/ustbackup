@@ -31,6 +31,7 @@ public class Constant_Class {
      public static final String tax_incomeheader = "Please select all sources of income you had in 2016.";
      public static final String tax_expenseheader = "Please select all expenses you had in 2016.";
      public static final String tax_year = "2017";
+     public static final String tax_year1 = "2016";
      
      public static final String txt_copyright = "© 2016-2017 HRB Digital LLC. All Rights Reserved.";
      public static final String src_logo= "/mytax/images/fy17/mb_logo_myb_b.png";

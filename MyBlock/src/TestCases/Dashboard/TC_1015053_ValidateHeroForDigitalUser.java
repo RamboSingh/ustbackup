@@ -1,4 +1,4 @@
-package TestCases;
+package TestCases.Dashboard;
 
 import business_actions.MyblockActions;
 import utility.Config;

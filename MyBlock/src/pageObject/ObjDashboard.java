@@ -201,4 +201,12 @@ public class ObjDashboard {
 	
 	public static By pod_tis = By.xpath("//*[@id='skiptoMainContent']/div[8]/div/div[2]/div[1]/div[1]");
 	public static By pod_tis1 = By.xpath("//*[@id='skiptoMainContent']/div[9]/div/div[2]/div[1]/div[1]");
+	
+	//Status Bar
+		public static By StatusBar = By.className("myb_infobanner");
+		public static By SB_THBtn = By.cssSelector(".mybPbutton");
+		public static By SB_FedRefund = By.id("addressDiv");
+		public static By SB_FilingStatus = By.id("filingDiv");
+		public static By SB_FiledOn = By.id("prBusTransDtDiv");
+		public static By SB_FiledWith = By.id("tPNameDiv");
 }
