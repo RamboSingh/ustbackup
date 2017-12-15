@@ -31,11 +31,113 @@ public class ObjDashboard {
 	
 	public static By btn_additem = By.id("organizer_additem");
 	public static By wedit_itemtitle = By.id("addtextItemTitle");
+	
+	//Category
 	public static By lnk_category = By.id("hierarchybreadcrumb");
-	public static By lnk_income = By.xpath("//div[@class='positionHelper']/div[1]/ul[2]/li[1]/a");//("//div[@class='four columns mbV']/div[2]/ul[2]/li[1]/a");
-	public static By lnk_income1 = By.linkText("Interest income (Form 1099-INT)");//("//ul[@class='myb_fgContent fg-menu-scroll fg-menu-current']/li");
+	
+	//income category
+	public static By lnk_income = By.linkText("Income");
+	
+	//income sub category
+	public static By lnk_incmesub1 = By.linkText("Employer wages (Form W-2)");
+	public static By lnk_incmesub2 = By.linkText("Self-employment or business income or loss (Schedule C)");
+	public static By lnk_incmesub3 = By.linkText("Interest income (Form 1099-INT)");
+	public static By lnk_incmesub4 = By.linkText("Dividend income (Form 1099-DIV)");
+	public static By lnk_incmesub5 = By.linkText("Retirement income (Form 1099-R)");
+	public static By lnk_incmesub6 = By.linkText("More");
+	
+	//More sub category in income
+	//Default header and sub
+	public static By dflt_sub1 = By.linkText("Other - Income");
+	
+	//employement income
+	
+	public static By empincm_sub1 = By.linkText("Employer wages (Form W-2)");
+	public static By empincm_sub2 = By.linkText("State or local refund (Form 1099-G)");
+	public static By empincm_sub3 = By.linkText("Unemployment income (Form 1099-G)");
+	public static By empincm_sub4 = By.linkText("Foreign earned income");
+	public static By empincm_sub5 = By.linkText("Canada Wages (Form T-4)");
+	public static By empincm_sub6 = By.linkText("India Wages (Form 16)");
+	
+	//interest and invesment income
+	public static By instmt_sub1 = By.linkText("Interest income (Form 1099-INT)");
+	public static By instmt_sub2 = By.linkText("Dividend income (Form 1099-DIV)");
+	public static By instmt_sub3 = By.linkText("Sale of stock and other assets (Form 1099-B)");
+	public static By instmt_sub4 = By.linkText("Child's investment income");
+	public static By instmt_sub5 = By.linkText("Trust or estate income or loss (Schedule K-1)");
+	public static By instmt_sub6 = By.linkText("Undistributed capital gains");
+	
+	//Retirement And Social Security Income
+	public static By rtmnt_sub1 = By.linkText("Retirement income (Form 1099-R)");
+	public static By rtmnt_sub2 = By.linkText("Rail road retirement benefits (Form RRB-1099)");
+	public static By rtmnt_sub3 = By.linkText("Social Security Income (Form SSA-1099)");
+	
+	//Business, Rental, Partnership, Farm and Royalties
+	public static By bnsns_sub1 = By.linkText("Self-employment or business income or loss (Schedule C)");
+	public static By bnsns_sub2 = By.linkText("Rental and royalty income or loss (Schedule E)");
+	public static By bnsns_sub3 = By.linkText("Partnership income or loss (Schedule K-1)");
+	public static By bnsns_sub4 = By.linkText("S corporation income or loss (Schedule K-1)");
+	public static By bnsns_sub5 = By.linkText("Farming income or loss (Schedule F)");
+	public static By bnsns_sub6 = By.linkText("Farm rental income or loss");
+	public static By bnsns_sub7 = By.linkText("REMIC income or loss");
+	
+	
+	//Miscellaneous Income
+	
+	public static By mscls_sub1 = By.linkText("Foreign account");
+	public static By mscls_sub2 = By.linkText("Depreciable asset");
+	public static By mscls_sub3 = By.linkText("Jury duty pay");
+	public static By mscls_sub4 = By.linkText("Gambling income (Form W-2)");
+	public static By mscls_sub5 = By.linkText("Alimony received");
+	public static By mscls_sub6 = By.linkText("Qualified Education Programs (Form 1099Q)");
+	public static By mscls_sub7 = By.linkText("Miscellaneous Income (Form 1099MISC)");
+	public static By mscls_sub8 = By.linkText("Check");
+	public static By mscls_sub9 = By.linkText("Cancellation of Debt (Form 1099C)");
+	public static By mscls_sub10 = By.linkText("Foreclosure of Property (Form 1099A)");
+	public static By mscls_sub11 = By.linkText("Payment Card and Third Party Transactions (Form 1099K)");
+	public static By mscls_sub12 = By.linkText("Changes in Corporate Control and Capital Structure (Form 1099CAP)");
+	
+	
+	//Deduction and expenses category
 	public static By lnk_dede = By.linkText("Deductions and Expenses");
-	public static By lnk_dede1 = By.linkText("Cash contributions");
+	
+	//Deduction and expenses sub category
+	public static By lnk_dedsub1 = By.linkText("Mortgage interest (Form 1098)");
+	public static By lnk_dedsub2 = By.linkText("Tuition and expenses (Form 1098-T)");
+	public static By lnk_dedsub3 = By.linkText("Cash contributions");
+	public static By lnk_dedsub4 = By.linkText("Child and dependent care expenses");
+	public static By lnk_dedsub5 = By.linkText("Real estate tax");
+	public static By lnk_dedsub6 = By.linkText("Sales tax paid");
+	public static By lnk_dedsub7 = By.linkText("More");
+	
+	//More sub category in Deduction and expenses category
+	//Default header and sub
+	
+	public static By dfult_sub1 = By.linkText("Other - Adj. and Ded.");
+	
+	//Property
+	public static By prpty_sub1 = By.linkText("Mortgage interest (Form 1098)");
+	public static By prpty_sub2 = By.linkText("Real estate tax");
+	public static By prpty_sub3 = By.linkText("Personal property tax");
+	
+	//Education
+	public static By edutn_sub1 = By.linkText("Student loan interest (Form 1098-E)");
+	
+	
+	//Charitable Donations
+	
+	public static By chrt_sub1 = By.linkText("Cash contributions");
+	
+	//Health and Medical
+	public static By hlth_sub1 = By.linkText("Medical expenses");
+	public static By hlth_sub2 = By.linkText("Distributions from HSA or MSA (Form 1099-SA)");
+	public static By hlth_sub3 = By.linkText("Archer MSA long-term care contract (Form 1099-LTC)");
+	public static By hlth_sub4 = By.linkText("Health insurance premiums (Form 1095A)");
+	public static By hlth_sub5 = By.linkText("Health insurance premiums (Form 1095C)");
+	public static By hlth_sub6 = By.linkText("Health insurance premiums (Form 1095B)");
+	
+	//State and Local Taxes
+	public static By stelcl_sub1 = By.linkText("Sales tax paid");
 	
 	
 	//Product and service menu and sub menu

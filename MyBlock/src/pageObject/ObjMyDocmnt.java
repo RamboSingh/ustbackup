@@ -19,6 +19,7 @@ public class ObjMyDocmnt {
 	public static By lnk_edit = By.xpath("//*[@id='myb_udListDoc']/li/span/a[2]");
 	public static By lnk_delete = By.xpath("//*[@id='myb_udListDoc']/li/span/a[3]");
 	public static By txt_filename = By.xpath("//*[@id='myb_udListDoc']/li/p[1]/a");
+	public static By lnk_category = By.id("hierarchybreadcrumb0");
 	
 	//Edit pop up field
 	public static By lnk_trnsfyear = By.xpath("//a[@id='yearbreadcrumb']");

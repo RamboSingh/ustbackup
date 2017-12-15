@@ -65,12 +65,12 @@ public class Category {
 			val.click();
 			val.sendKeys(Keys.TAB,Keys.RETURN,Keys.ARROW_DOWN,Keys.RETURN);
 			//mblock.Element(ObjDashboard.lnk_income1).ufxSelectFromDropdown("Dividend income (Form 1099-DIV)");
-			mblock.Element(ObjDashboard.lnk_income1).click();
+			
 			mblock.Element(ObjDashboard.btn_additem).click();
 			mblock.Element(ObjDashboard.btn_additem).click();
 			mblock.Element(ObjDashboard.lnk_category).click();
 			mblock.Element(ObjDashboard.lnk_dede).click();
-			mblock.Element(ObjDashboard.lnk_dede1).click();
+			
 			
 			//mblock.Element(ObjDashboard.lnk_category).click();
 			

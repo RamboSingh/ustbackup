@@ -709,5 +709,85 @@ public class MydocumentAction {
 		}
 
 	}
+	
+
+	// Click category option in my document
+	public void clkCategoryinMydoc() throws Exception {
+
+		boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+		List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+		int val01 = val1.size();
+		if (val01 < 1) {
+			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			Thread.sleep(2000); // this line is only for waiting purpose
+			Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
+			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+		}
+
+		mblock.Element(ObjMyDocmnt.lnk_category).ufxClick();
+		boolean incme = mblock.ElementExists(ObjDashboard.lnk_income);
+		boolean dedctn = mblock.ElementExists(ObjDashboard.lnk_dede);
+		if (incme && dedctn) {
+			mblock.ValidateTest(true, true, "Category list is opened with Income and Deductions and Expenses");
+		} else {
+			mblock.ValidateTest(false, true, "Category list is not opened with Income and Deductions and Expenses");
+			Assert.assertFalse(true);
+		}
+
+	}
+
+	// Click Income and validate sub categories
+	public void clkIncmeCatgry() throws Exception {
+
+		mblock.Element(ObjDashboard.lnk_income).click();
+		boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_incmesub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.lnk_incmesub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.lnk_incmesub3);
+		boolean sub4 = mblock.ElementExists(ObjDashboard.lnk_incmesub4);
+		boolean sub5 = mblock.ElementExists(ObjDashboard.lnk_incmesub5);
+		if (sub1 && sub2 && sub3 && sub4 && sub5) {
+			mblock.ValidateTest(true, true, "All the sub-categories under Income are displayed");
+		}
+		else{
+			mblock.ValidateTest(false, true, "Some sub-categories under Income are not displayed");
+		}
+	}
+	
+	
+	// Click Deduction&Expenses and validate sub categories
+		public void clkDeductionCatgry() throws Exception {
+
+			mblock.Element(ObjDashboard.lnk_dede).click();
+			boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_dedsub1);
+			boolean sub2 = mblock.ElementExists(ObjDashboard.lnk_dedsub2);
+			boolean sub3 = mblock.ElementExists(ObjDashboard.lnk_dedsub3);
+			boolean sub4 = mblock.ElementExists(ObjDashboard.lnk_dedsub4);
+			boolean sub5 = mblock.ElementExists(ObjDashboard.lnk_dedsub5);
+			boolean sub6 = mblock.ElementExists(ObjDashboard.lnk_dedsub6);
+			if (sub1 && sub2 && sub3 && sub4 && sub5&&sub6) {
+				mblock.ValidateTest(true, true, "All the sub-categories under deductions and expenses are displayed");
+			}
+			else{
+				mblock.ValidateTest(false, true, "Some sub-categories under deductions and expenses are not displayed");
+			}
+		}
+		
+		// Click More option in Income sub categories
+				public void clkMoreIncome() throws Exception {
+
+					mblock.Element(ObjDashboard.lnk_dede).click();
+					boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_dedsub1);
+					boolean sub2 = mblock.ElementExists(ObjDashboard.lnk_dedsub2);
+					boolean sub3 = mblock.ElementExists(ObjDashboard.lnk_dedsub3);
+					boolean sub4 = mblock.ElementExists(ObjDashboard.lnk_dedsub4);
+					boolean sub5 = mblock.ElementExists(ObjDashboard.lnk_dedsub5);
+					boolean sub6 = mblock.ElementExists(ObjDashboard.lnk_dedsub6);
+					if (sub1 && sub2 && sub3 && sub4 && sub5&&sub6) {
+						mblock.ValidateTest(true, true, "All the sub-categories under deductions and expenses are displayed");
+					}
+					else{
+						mblock.ValidateTest(false, true, "Some sub-categories under deductions and expenses are not displayed");
+					}
+				}
 
 }
