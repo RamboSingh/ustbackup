@@ -775,19 +775,51 @@ public class MydocumentAction {
 		// Click More option in Income sub categories
 				public void clkMoreIncome() throws Exception {
 
-					mblock.Element(ObjDashboard.lnk_dede).click();
-					boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_dedsub1);
-					boolean sub2 = mblock.ElementExists(ObjDashboard.lnk_dedsub2);
-					boolean sub3 = mblock.ElementExists(ObjDashboard.lnk_dedsub3);
-					boolean sub4 = mblock.ElementExists(ObjDashboard.lnk_dedsub4);
-					boolean sub5 = mblock.ElementExists(ObjDashboard.lnk_dedsub5);
-					boolean sub6 = mblock.ElementExists(ObjDashboard.lnk_dedsub6);
-					if (sub1 && sub2 && sub3 && sub4 && sub5&&sub6) {
-						mblock.ValidateTest(true, true, "All the sub-categories under deductions and expenses are displayed");
+					boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_incmesub6);
+					if (sub1) {
+						mblock.Element(ObjDashboard.lnk_incmesub6).click();
+						boolean title1 = mblock.ElementExists(ObjDashboard.empincm_sub1);
+						boolean title2 = mblock.ElementExists(ObjDashboard.instmt_sub1);
+						boolean title3 = mblock.ElementExists(ObjDashboard.rtmnt_sub1);
+						boolean title4 = mblock.ElementExists(ObjDashboard.bnsns_sub1);
+						boolean title5 = mblock.ElementExists(ObjDashboard.mscls_sub1);
+						if(title1&&title2&&title3&&title4&&title5){
+							mblock.ValidateTest(true, true, "User can view all sub category");
+						}
+						
+						else{
+							mblock.ValidateTest(false, true, "User can not view some sub category");
+						}
 					}
 					else{
-						mblock.ValidateTest(false, true, "Some sub-categories under deductions and expenses are not displayed");
+						mblock.ValidateTest(false, true, "More option is not displayed under Income");
 					}
 				}
 
+				
+				// Click More option in Deduction sub categories
+				public void clkMoreDeduction() throws Exception {
+
+					boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_dedsub7);
+					if (sub1) {
+						mblock.Element(ObjDashboard.lnk_dedsub7).click();
+						boolean title1 = mblock.ElementExists(ObjDashboard.dfult_sub1);
+						boolean title2 = mblock.ElementExists(ObjDashboard.prpty_sub1);
+						boolean title3 = mblock.ElementExists(ObjDashboard.edutn_sub1);
+						boolean title4 = mblock.ElementExists(ObjDashboard.chrt_sub1);
+						boolean title5 = mblock.ElementExists(ObjDashboard.hlth_sub1);
+						if(title1&&title2&&title3&&title4&&title5){
+							mblock.ValidateTest(true, true, "User can view all sub category");
+						}
+						
+						else{
+							mblock.ValidateTest(false, true, "User can not view some sub category");
+						}
+					}
+					else{
+						mblock.ValidateTest(false, true, "More option is not displayed under Income");
+					}
+				}
+				
+				
 }

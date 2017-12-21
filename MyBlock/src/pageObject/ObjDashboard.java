@@ -122,6 +122,8 @@ public class ObjDashboard {
 	
 	//Education
 	public static By edutn_sub1 = By.linkText("Student loan interest (Form 1098-E)");
+	public static By edutn_sub2 = By.linkText("Tuition and expenses (Form 1098-T)");
+	 
 	
 	
 	//Charitable Donations
@@ -139,6 +141,72 @@ public class ObjDashboard {
 	//State and Local Taxes
 	public static By stelcl_sub1 = By.linkText("Sales tax paid");
 	
+	//IRAs
+	public static By irs_sub1 = By.linkText("IRA contributions and distributions");
+	public static By irs_sub2 = By.linkText("Non-deductible IRA contributions");
+	
+	//Job Related Expenses
+	public static By job_sub1 = By.linkText("Employee expenses");
+	public static By job_sub2 = By.linkText("Job expenses");
+	
+	//Misc. Adj. and Ded.
+	public static By misc_sub1 = By.linkText("Mortgage points");
+	public static By misc_sub2 = By.linkText("Private mortgage insurance");
+	public static By misc_sub3 = By.linkText("Health insurance premiums");
+	public static By misc_sub4 = By.linkText("Education savings accounts");
+	public static By misc_sub5 = By.linkText("Other deductible expenses");
+	public static By misc_sub6 = By.linkText("Miscellaneous deductions");
+	public static By misc_sub = By.linkText("Investment interest deduction");
+	public static By misc_sub8 = By.linkText("Hurricane disaster retirement deduction");
+	public static By misc_sub9 = By.linkText("Charitable contributions");
+	public static By misc_sub10 = By.linkText("Alimony paid");
+	public static By misc_sub11 = By.linkText("Charitable Contribution of Motor Vehicles, etc. (Form 1098C)");
+	public static By misc_sub12 = By.linkText("Original Issue Discount (Form 1099OID)");
+	
+	//Default - Credits
+	public static By dfltcrdt_sub1 = By.linkText("Other - Credits");
+	public static By dfltcrdt_sub2 = By.linkText("Health Coverage Tax Credit - Adv. Payment (Form 1099H)");
+	
+	//Family
+	public static By fmly_sub1 = By.linkText("Child and dependent care expenses");
+	public static By fmly_sub2 = By.linkText("Adoption expenses");
+	
+	//Employment
+	public static By emp_sub1 = By.linkText("Saver's credit");
+	
+	//Home Ownership
+	
+	public static By res_sub1 = By.linkText("Residential energy credit");
+	public static By res_sub2 = By.linkText("Mortgage interest credit");
+	
+	//Misc. Credits
+	public static By plug_sub1 = By.linkText("Plug-in electric drive motor vehicle credit");
+	public static By plug_sub2 = By.linkText("Credit for prior year minimum tax");
+	public static By plug_sub3 = By.linkText("Credit for the elderly or the disabled");
+	public static By plug_sub4 = By.linkText("Health insurance premiums");
+	
+	
+	//Default - Taxes
+	public static By dfltax_sub1 = By.linkText("Other - Taxes");
+	
+	
+	//Federal Tax Payments
+	public static By fedtaxpay_sub1 = By.linkText("Estimated tax payments (Form 1040-ES)");
+	
+	//Misc. Tax Forms
+	
+	public static By misctax_sub1 = By.linkText("Household employee tax (Schedule H)");
+	public static By misctax_sub2 = By.linkText("Children with unearned income");
+	public static By misctax_sub3 = By.linkText("Prior Year Return (Form 1040A)");
+	public static By misctax_sub4 = By.linkText("Prior Year Return (Form 1040EZ)");
+	public static By misctax_sub5 = By.linkText("Prior Year Return (Form 1040NREZ)");
+	public static By misctax_sub6 = By.linkText("Prior Year Return (Form 1040NR)");
+	public static By misctax_sub7 = By.linkText("Prior Year Return (Form 1040)");
+	public static By misctax_sub8 = By.linkText("Prior Year Return (Form 1120S)");
+	public static By misctax_sub9 = By.linkText("Prior Year Return (Form 1120)");
+	public static By misctax_sub10 = By.linkText("Brokerage Statement (Form 1099 Combination)");
+	public static By misctax_sub11 = By.linkText("Taxable Distribution Received from Cooperatives (Form 1099PATR)");
+	public static By misctax_sub12 = By.linkText("Receipt");
 	
 	//Product and service menu and sub menu
 	public static By lnk_prdctsrvce = By.id("pslLi");
