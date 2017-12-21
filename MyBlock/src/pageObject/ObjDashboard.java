@@ -156,7 +156,7 @@ public class ObjDashboard {
 	public static By misc_sub4 = By.linkText("Education savings accounts");
 	public static By misc_sub5 = By.linkText("Other deductible expenses");
 	public static By misc_sub6 = By.linkText("Miscellaneous deductions");
-	public static By misc_sub = By.linkText("Investment interest deduction");
+	public static By misc_sub7 = By.linkText("Investment interest deduction");
 	public static By misc_sub8 = By.linkText("Hurricane disaster retirement deduction");
 	public static By misc_sub9 = By.linkText("Charitable contributions");
 	public static By misc_sub10 = By.linkText("Alimony paid");

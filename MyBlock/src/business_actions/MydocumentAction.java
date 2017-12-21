@@ -199,96 +199,56 @@ public class MydocumentAction {
 		}
 
 	}
-	
-	
+
 	// verify the uploaded document position
-		public void vrfyUpldDocPstn(String year) throws Exception {
+	public void vrfyUpldDocPstn(String year) throws Exception {
 
-			try {
-				boolean txt = mblock.ElementExists(ObjMyDocmnt.drp_taxyear);
-				if (txt) {
-					mblock.Element(ObjMyDocmnt.drp_taxyear).ufxSelectFromDropdown("MY " + year + " DOCS");
-					mblock.ElementExists(ObjDashboard.answr_col1, 5000);
+		try {
+			boolean txt = mblock.ElementExists(ObjMyDocmnt.drp_taxyear);
+			if (txt) {
+				mblock.Element(ObjMyDocmnt.drp_taxyear).ufxSelectFromDropdown("MY " + year + " DOCS");
+				mblock.ElementExists(ObjDashboard.answr_col1, 5000);
 
-					String val = mblock.Element(ObjMyDocmnt.doc_year).getAttribute("innerText");
+				String val = mblock.Element(ObjMyDocmnt.doc_year).getAttribute("innerText");
 
-					if (val.contains(year)) {
-						boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
-						List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc)
-								.findElements(ObjUploaddoc.count_doc1);
-						int val01 = val1.size();
-						mblock.Element(ObjUploaddoc.btn_adddoc).click();
-						Thread.sleep(2000); // this line is only for waiting purpose
-						Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
-						mblock.ElementExists(ObjDashboard.answr_col1, 8000);
-						List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc)
-								.findElements(ObjUploaddoc.count_doc1);
-						int val02 = val2.size();
-						if (val02 > val01) {
-							String txt1 = mblock.Element(ObjMyDocmnt.txt_filename).getAttribute("title");
-							if(txt1.contains("test")){
-								mblock.ValidateTest(true, true, "Document is displayed on the top of the list");	
-							}
-							
+				if (val.contains(year)) {
+					boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+					List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc)
+							.findElements(ObjUploaddoc.count_doc1);
+					int val01 = val1.size();
+					mblock.Element(ObjUploaddoc.btn_adddoc).click();
+					Thread.sleep(2000); // this line is only for waiting purpose
+					Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
+					mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+					List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc)
+							.findElements(ObjUploaddoc.count_doc1);
+					int val02 = val2.size();
+					if (val02 > val01) {
+						String txt1 = mblock.Element(ObjMyDocmnt.txt_filename).getAttribute("title");
+						if (txt1.contains("test")) {
+							mblock.ValidateTest(true, true, "Document is displayed on the top of the list");
 						}
 
 					}
-				}
 
-				else {
-					mblock.ValidateTest(false, true, "Document is not displayed on the top of the list");
-					Assert.assertFalse(true);
 				}
 			}
 
-			catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
+			else {
+				mblock.ValidateTest(false, true, "Document is not displayed on the top of the list");
+				Assert.assertFalse(true);
 			}
-
 		}
-	
-	
+
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
 	// Upload the document 10MB size
-		public void clkMydocYrUpld0MB() throws Exception {
-
-			try {
-
-				boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
-				List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
-				int val01 = val1.size();
-				mblock.Element(ObjUploaddoc.btn_adddoc).click();
-				Thread.sleep(2000); // this line is only for waiting purpose
-				Runtime.getRuntime().exec("wscript" + " "+ System.getProperty("user.dir") + "\\resources\\File10MB.vbs");
-				mblock.ElementExists(ObjDashboard.answr_col1, 8000);
-				List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
-				int val02 = val2.size();
-				while(val02 <= val01){
-					List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
-					int val02_1 = val2_1.size();
-					val02 = val02_1;
-				}
-				List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
-				int val02_1 = val2_1.size();
-				if (val02_1 > val01) {
-					mblock.ValidateTest(true, true, "Document is uploaded");
-				}
-
-				else {
-					mblock.ValidateTest(false, true, "Document is not uploaded ");
-					Assert.assertFalse(true);
-				}
-			}
-
-			catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
-			}
-
-		}
-
-	// Upload the document below 10MB size
-	public void clkMydocYrUpldBlw10MB() throws Exception {
+	public void clkMydocYrUpld0MB() throws Exception {
 
 		try {
 
@@ -297,11 +257,11 @@ public class MydocumentAction {
 			int val01 = val1.size();
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
-			Runtime.getRuntime().exec("wscript" + " "+ System.getProperty("user.dir") + "\\resources\\Below10MB.vbs");
+			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\File10MB.vbs");
 			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
 			List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
 			int val02 = val2.size();
-			while(val02 <= val01){
+			while (val02 <= val01) {
 				List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
 				int val02_1 = val2_1.size();
 				val02 = val02_1;
@@ -325,41 +285,77 @@ public class MydocumentAction {
 
 	}
 
-	
-	// Upload the document above 10MB size
-		public void clkMydocYrUpldAbv10MB() throws Exception {
+	// Upload the document below 10MB size
+	public void clkMydocYrUpldBlw10MB() throws Exception {
 
-			try {
+		try {
 
-				boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
-				List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
-				int val01 = val1.size();
-				mblock.Element(ObjUploaddoc.btn_adddoc).click();
-				Thread.sleep(2000); // this line is only for waiting purpose
-				Runtime.getRuntime().exec("wscript" + " "+ System.getProperty("user.dir") + "\\resources\\Above10MB.vbs");
-				mblock.ElementExists(ObjDashboard.answr_col1, 5000);
-				boolean err_msg = mblock.ElementExists(ObjMyDocmnt.err_msg, 5000);
-				if (err_msg) {
-					String msg = mblock.Element(ObjMyDocmnt.err_msg).getText();
-					if(msg.equalsIgnoreCase("Uploaded files must be smaller than 10MB.")){
-						mblock.ValidateTest(true, true, "Above 10 mb document is not uploaded");
-					}
-				}
-
-				else {
-					mblock.ValidateTest(false, true, "Error message is not displayed");
-					Assert.assertFalse(true);
-				}
+			boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+			List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+			int val01 = val1.size();
+			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			Thread.sleep(2000); // this line is only for waiting purpose
+			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\Below10MB.vbs");
+			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+			List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+			int val02 = val2.size();
+			while (val02 <= val01) {
+				List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+				int val02_1 = val2_1.size();
+				val02 = val02_1;
+			}
+			List<WebElement> val2_1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+			int val02_1 = val2_1.size();
+			if (val02_1 > val01) {
+				mblock.ValidateTest(true, true, "Document is uploaded");
 			}
 
-			catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
+			else {
+				mblock.ValidateTest(false, true, "Document is not uploaded ");
+				Assert.assertFalse(true);
 			}
-
 		}
-		
-		
+
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// Upload the document above 10MB size
+	public void clkMydocYrUpldAbv10MB() throws Exception {
+
+		try {
+
+			boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+			List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+			int val01 = val1.size();
+			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			Thread.sleep(2000); // this line is only for waiting purpose
+			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\Above10MB.vbs");
+			mblock.ElementExists(ObjDashboard.answr_col1, 5000);
+			boolean err_msg = mblock.ElementExists(ObjMyDocmnt.err_msg, 5000);
+			if (err_msg) {
+				String msg = mblock.Element(ObjMyDocmnt.err_msg).getText();
+				if (msg.equalsIgnoreCase("Uploaded files must be smaller than 10MB.")) {
+					mblock.ValidateTest(true, true, "Above 10 mb document is not uploaded");
+				}
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "Error message is not displayed");
+				Assert.assertFalse(true);
+			}
+		}
+
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
 	// Verify Add document button is present and '+' icon is not displayed
 	public void vrfyAddDocmntBtn() throws Exception {
 
@@ -709,7 +705,6 @@ public class MydocumentAction {
 		}
 
 	}
-	
 
 	// Click category option in my document
 	public void clkCategoryinMydoc() throws Exception {
@@ -747,79 +742,410 @@ public class MydocumentAction {
 		boolean sub5 = mblock.ElementExists(ObjDashboard.lnk_incmesub5);
 		if (sub1 && sub2 && sub3 && sub4 && sub5) {
 			mblock.ValidateTest(true, true, "All the sub-categories under Income are displayed");
-		}
-		else{
+		} else {
 			mblock.ValidateTest(false, true, "Some sub-categories under Income are not displayed");
 		}
 	}
+
+	// Verify Employment Income header.
+
+	public void vrfyEmpIncmHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.empincm_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.empincm_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.empincm_sub3);
+		boolean sub4 = mblock.ElementExists(ObjDashboard.empincm_sub4);
+
+		if (sub1 && sub2 && sub3 && sub4) {
+			mblock.ValidateTest(true, true, "Employment Income headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Employment Income headers is not displayed");
+		}
+	}
+
+	// Verify interest and invesment income
+
+	public void vrfyInterestIncmHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.instmt_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.instmt_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.instmt_sub3);
+		boolean sub4 = mblock.ElementExists(ObjDashboard.instmt_sub4);
+		boolean sub5 = mblock.ElementExists(ObjDashboard.instmt_sub5);
+		boolean sub6 = mblock.ElementExists(ObjDashboard.instmt_sub6);
+
+		if (sub1 && sub2 && sub3 && sub4 && sub5 && sub6) {
+			mblock.ValidateTest(true, true, "Interest Income headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some interest Income headers is not displayed");
+		}
+	}
+
+	// Verify Retirement and Social Security income
+
+	public void vrfyRtrmntIncmHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.rtmnt_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.rtmnt_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.rtmnt_sub3);
+
+		if (sub1 && sub2 && sub3) {
+			mblock.ValidateTest(true, true, "Retirement Income headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Retirement Income headers is not displayed");
+		}
+	}
+
+	// Verify Business, Rental, Partnership, Farm and Royalties
+
+	public void vrfyBusniessIncmHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.bnsns_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.bnsns_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.bnsns_sub3);
+		boolean sub4 = mblock.ElementExists(ObjDashboard.bnsns_sub4);
+		boolean sub5 = mblock.ElementExists(ObjDashboard.bnsns_sub5);
+		boolean sub6 = mblock.ElementExists(ObjDashboard.bnsns_sub6);
+		boolean sub7 = mblock.ElementExists(ObjDashboard.bnsns_sub7);
+
+		if (sub1 && sub2 && sub3 && sub4 && sub5 && sub6 && sub7) {
+			mblock.ValidateTest(true, true, "Business, Rental, Partnership Income headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Retirement Income headers is not displayed");
+		}
+	}
+
+	// Verify Miscellaneous Income header
+
+	public void vrfyMiscelIncmHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.mscls_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.mscls_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.mscls_sub3);
+		boolean sub4 = mblock.ElementExists(ObjDashboard.mscls_sub4);
+		boolean sub5 = mblock.ElementExists(ObjDashboard.mscls_sub5);
+
+		if (sub1 && sub2 && sub3 && sub4 && sub5) {
+			mblock.ValidateTest(true, true, "Miscellaneous Income headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Miscellaneous Income headers is not displayed");
+		}
+	}
+
+	// Verify Property header.
+
+	public void vrfyPrprtyDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.prpty_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.prpty_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.prpty_sub3);
+
+		if (sub1 && sub2 && sub3) {
+			mblock.ValidateTest(true, true, "Property headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Property headers is not displayed");
+		}
+	}
+
+	// Verify Education header.
+
+	public void vrfyEductnDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.edutn_sub1);
+		if (sub1) {
+			mblock.ValidateTest(true, true, "Education headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Education headers is not displayed");
+		}
+	}
+
+	// Verify Charitable Donations header.
+
+	public void vrfyCharitableDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.edutn_sub1);
+		if (sub1) {
+			mblock.ValidateTest(true, true, "Charitable headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Charitable headers is not displayed");
+		}
+	}
+
+	// Verify Health and Medical
+
+	public void vrfyHlthMedDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.hlth_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.hlth_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.hlth_sub3);
+		if (sub1 && sub2 && sub3) {
+			mblock.ValidateTest(true, true, "Health and Medical headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Health and Medical headers is not displayed");
+		}
+	}
+
+	// Verify State and Local Taxes header.
+
+	public void vrfyStateTaxDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.stelcl_sub1);
+		if (sub1) {
+			mblock.ValidateTest(true, true, "State and Local Taxes headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some State and Local Taxes headers is not displayed");
+		}
+	}
+
+	// Verify IRAs
+
+	public void vrfyIrsDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.irs_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.irs_sub2);
+
+		if (sub1 && sub2) {
+			mblock.ValidateTest(true, true, "IRAs headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some IRAs headers is not displayed");
+		}
+	}
+
+	// Verify Job Related Expenses
+	public void vrfyJobDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.job_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.job_sub1);
+
+		if (sub1 && sub2) {
+			mblock.ValidateTest(true, true, "Job headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Job headers is not displayed");
+		}
+	}
+
+	// Verify Misc. Adj. and Ded.
+	public void vrfyMiscDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.misc_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.misc_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.misc_sub3);
+		boolean sub4 = mblock.ElementExists(ObjDashboard.misc_sub4);
+		boolean sub5 = mblock.ElementExists(ObjDashboard.misc_sub5);
+		boolean sub6 = mblock.ElementExists(ObjDashboard.misc_sub6);
+		boolean sub7 = mblock.ElementExists(ObjDashboard.misc_sub7);
+		boolean sub8 = mblock.ElementExists(ObjDashboard.misc_sub8);
+		boolean sub9 = mblock.ElementExists(ObjDashboard.misc_sub9);
+		boolean sub10 = mblock.ElementExists(ObjDashboard.misc_sub10);
+
+		if (sub1 && sub2 && sub3 && sub4 && sub5 && sub6 && sub7 && sub8 && sub9 && sub10) {
+			mblock.ValidateTest(true, true, "Misc headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Misc headers is not displayed");
+		}
+	}
+
+	// verify Family
+	public void vrfyFamilyDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.fmly_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.fmly_sub2);
+
+		if (sub1 && sub2) {
+			mblock.ValidateTest(true, true, "Family headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Family headers is not displayed");
+		}
+	}
+
+	// Verify education of credits
+	public void vrfyEdutCredDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.edutn_sub2);
+		if (sub1) {
+			mblock.ValidateTest(true, true, "education of credits headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some education of credits headers is not displayed");
+		}
+	}
+
+	// Verify Employment
+
+	public void vrfyEmplymntDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.emp_sub1);
+		if (sub1) {
+			mblock.ValidateTest(true, true, "Employment of credits headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Employment of credits headers is not displayed");
+		}
+	}
+
+	// Verify Home Ownership
+	public void vrfyHmeOwnDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.res_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.res_sub2);
+
+		if (sub1 && sub2) {
+			mblock.ValidateTest(true, true, "Home Ownership headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Home Ownership headers is not displayed");
+		}
+	}
+
+	// verify Misc.Credits
+	public void vrfyMiscCrdtsDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.plug_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.plug_sub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.plug_sub3);
+		boolean sub4 = mblock.ElementExists(ObjDashboard.plug_sub4);
+
+		if (sub1 && sub2 && sub3 && sub4) {
+			mblock.ValidateTest(true, true, "Misc.Credits headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Misc.Credits headers is not displayed");
+		}
+	}
+
+	// Verify Federal Tax Payments
+	public void vrfyFedTaxDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.fedtaxpay_sub1);
+
+		if (sub1) {
+			mblock.ValidateTest(true, true, "Federal Tax headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Federal Tax headers is not displayed");
+		}
+	}
+
+	// Verify Misc. Tax Forms
+	public void vrfyMiscTaxDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.misctax_sub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.misctax_sub2);
+
+		if (sub1 && sub2) {
+			mblock.ValidateTest(true, true, "Misc. Tax headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Misc. Tax headers is not displayed");
+		}
+	}
+
+	// verify Default header and sub undare income category
+	public void vrfyDfltHdrIncme() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.dflt_sub1);
+
+		if (sub1) {
+			mblock.ValidateTest(true, true, "Default headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Default headers is not displayed");
+		}
+	}
+
+	// verify Default header and sub under deduction category
+	public void vrfyDfltDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.dfult_sub1);
+
+		if (sub1) {
+			mblock.ValidateTest(true, true, "Default headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Default headers is not displayed");
+		}
+	}
+
+	//verify Default - Credits
 	
+	public void vrfyDfltCrdtsDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.dfltcrdt_sub1);
+
+		if (sub1) {
+			mblock.ValidateTest(true, true, "Default - Credits headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Default - Credits headers is not displayed");
+		}
+	}
+
+	//Verify Default - Taxes
+	
+	public void vrfyDfltTaxDedHdr() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.dfltax_sub1);
+
+		if (sub1) {
+			mblock.ValidateTest(true, true, "Default - Tax headers are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some Default - Tax headers is not displayed");
+		}
+	}
+
 	
 	// Click Deduction&Expenses and validate sub categories
-		public void clkDeductionCatgry() throws Exception {
+	public void clkDeductionCatgry() throws Exception {
 
-			mblock.Element(ObjDashboard.lnk_dede).click();
-			boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_dedsub1);
-			boolean sub2 = mblock.ElementExists(ObjDashboard.lnk_dedsub2);
-			boolean sub3 = mblock.ElementExists(ObjDashboard.lnk_dedsub3);
-			boolean sub4 = mblock.ElementExists(ObjDashboard.lnk_dedsub4);
-			boolean sub5 = mblock.ElementExists(ObjDashboard.lnk_dedsub5);
-			boolean sub6 = mblock.ElementExists(ObjDashboard.lnk_dedsub6);
-			if (sub1 && sub2 && sub3 && sub4 && sub5&&sub6) {
-				mblock.ValidateTest(true, true, "All the sub-categories under deductions and expenses are displayed");
-			}
-			else{
-				mblock.ValidateTest(false, true, "Some sub-categories under deductions and expenses are not displayed");
-			}
+		mblock.Element(ObjDashboard.lnk_dede).click();
+		boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_dedsub1);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.lnk_dedsub2);
+		boolean sub3 = mblock.ElementExists(ObjDashboard.lnk_dedsub3);
+		boolean sub4 = mblock.ElementExists(ObjDashboard.lnk_dedsub4);
+		boolean sub5 = mblock.ElementExists(ObjDashboard.lnk_dedsub5);
+		boolean sub6 = mblock.ElementExists(ObjDashboard.lnk_dedsub6);
+		if (sub1 && sub2 && sub3 && sub4 && sub5 && sub6) {
+			mblock.ValidateTest(true, true, "All the sub-categories under deductions and expenses are displayed");
+		} else {
+			mblock.ValidateTest(false, true, "Some sub-categories under deductions and expenses are not displayed");
 		}
-		
-		// Click More option in Income sub categories
-				public void clkMoreIncome() throws Exception {
+	}
 
-					boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_incmesub6);
-					if (sub1) {
-						mblock.Element(ObjDashboard.lnk_incmesub6).click();
-						boolean title1 = mblock.ElementExists(ObjDashboard.empincm_sub1);
-						boolean title2 = mblock.ElementExists(ObjDashboard.instmt_sub1);
-						boolean title3 = mblock.ElementExists(ObjDashboard.rtmnt_sub1);
-						boolean title4 = mblock.ElementExists(ObjDashboard.bnsns_sub1);
-						boolean title5 = mblock.ElementExists(ObjDashboard.mscls_sub1);
-						if(title1&&title2&&title3&&title4&&title5){
-							mblock.ValidateTest(true, true, "User can view all sub category");
-						}
-						
-						else{
-							mblock.ValidateTest(false, true, "User can not view some sub category");
-						}
-					}
-					else{
-						mblock.ValidateTest(false, true, "More option is not displayed under Income");
-					}
-				}
+	// Click More option in Income sub categories
+	public void clkMoreIncome() throws Exception {
 
-				
-				// Click More option in Deduction sub categories
-				public void clkMoreDeduction() throws Exception {
+		boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_incmesub6);
+		if (sub1) {
+			mblock.Element(ObjDashboard.lnk_incmesub6).click();
+			boolean title1 = mblock.ElementExists(ObjDashboard.empincm_sub1);
+			boolean title2 = mblock.ElementExists(ObjDashboard.instmt_sub1);
+			boolean title3 = mblock.ElementExists(ObjDashboard.rtmnt_sub1);
+			boolean title4 = mblock.ElementExists(ObjDashboard.bnsns_sub1);
+			boolean title5 = mblock.ElementExists(ObjDashboard.mscls_sub1);
+			if (title1 && title2 && title3 && title4 && title5) {
+				mblock.ValidateTest(true, true, "User can view all sub category");
+			}
 
-					boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_dedsub7);
-					if (sub1) {
-						mblock.Element(ObjDashboard.lnk_dedsub7).click();
-						boolean title1 = mblock.ElementExists(ObjDashboard.dfult_sub1);
-						boolean title2 = mblock.ElementExists(ObjDashboard.prpty_sub1);
-						boolean title3 = mblock.ElementExists(ObjDashboard.edutn_sub1);
-						boolean title4 = mblock.ElementExists(ObjDashboard.chrt_sub1);
-						boolean title5 = mblock.ElementExists(ObjDashboard.hlth_sub1);
-						if(title1&&title2&&title3&&title4&&title5){
-							mblock.ValidateTest(true, true, "User can view all sub category");
-						}
-						
-						else{
-							mblock.ValidateTest(false, true, "User can not view some sub category");
-						}
-					}
-					else{
-						mblock.ValidateTest(false, true, "More option is not displayed under Income");
-					}
-				}
-				
-				
+			else {
+				mblock.ValidateTest(false, true, "User can not view some sub category");
+			}
+		} else {
+			mblock.ValidateTest(false, true, "More option is not displayed under Income");
+		}
+	}
+
+	// Click More option in Deduction sub categories
+	public void clkMoreDeduction() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjDashboard.lnk_dedsub7);
+		if (sub1) {
+			mblock.Element(ObjDashboard.lnk_dedsub7).click();
+			boolean title1 = mblock.ElementExists(ObjDashboard.dfult_sub1);
+			boolean title2 = mblock.ElementExists(ObjDashboard.prpty_sub1);
+			boolean title3 = mblock.ElementExists(ObjDashboard.edutn_sub1);
+			boolean title4 = mblock.ElementExists(ObjDashboard.chrt_sub1);
+			boolean title5 = mblock.ElementExists(ObjDashboard.hlth_sub1);
+			if (title1 && title2 && title3 && title4 && title5) {
+				mblock.ValidateTest(true, true, "User can view all sub category");
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "User can not view some sub category");
+			}
+		} else {
+			mblock.ValidateTest(false, true, "More option is not displayed under Income");
+		}
+	}
+
 }
