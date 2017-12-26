@@ -87,6 +87,95 @@ public class TaxHistoryAction {
 
 	}
 
+	// Verify the tax return fields
+
+	public void vrfyTaxRtnfield() throws Exception {
+		mblock.ElementExists(ObjDashboard.answr_col1,5000);
+		boolean fed_rtrn = mblock.ElementExists(ObjTaxHistory.fed_rtrn,5000);
+		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn,5000);
+		boolean filing_status = mblock.ElementExists(ObjTaxHistory.fed_fillngSts,5000);
+		boolean filing_date = mblock.ElementExists(ObjTaxHistory.fed_fillngDte,5000);
+
+		if (fed_rtrn && state_rtrn && filing_status && filing_date) {
+			String val = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val).getText();
+			String val1 = mblock.Element(ObjTaxHistory.txt_fed_fillngSts_val).getText();
+			String val2 = mblock.Element(ObjTaxHistory.txt_fed_fillngDte_val).getText();
+			String val3 = mblock.Element(ObjTaxHistory.txt_state_rtrn_val).getText();
+
+			if (!val.isEmpty() && !val1.isEmpty() && !val2.isEmpty() && !val3.isEmpty()) {
+				mblock.ValidateTest(true, true, "User can able to view Tax return fields");
+			} else {
+				mblock.ValidateTest(false, true, "User can not able to view some Tax return fields");
+				Assert.assertFalse(true);
+			}
+		}
+
+		else if (fed_rtrn || state_rtrn && filing_date && filing_status ) {
+
+			String val = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val).getText();
+			String val1 = mblock.Element(ObjTaxHistory.txt_fed_fillngSts_val).getText();
+			String val2 = mblock.Element(ObjTaxHistory.txt_fed_fillngDte_val).getText();
+
+			if (!val.isEmpty() && !val1.isEmpty() && !val2.isEmpty()) {
+				mblock.ValidateTest(true, true, "User can able to view Tax return fields");
+			} else {
+				mblock.ValidateTest(false, true, "User can not able to view some Tax return fields");
+				Assert.assertFalse(true);
+			}
+
+		}
+
+		else {
+			mblock.ValidateTest(true, "Tax return field is not available for this tax year");
+			
+		}
+
+	}
+	
+	
+	// Verify the tax return colour for positive and negative
+
+		public void vrfyTaxRtnclr() throws Exception {
+			mblock.ElementExists(ObjDashboard.answr_col1,5000);
+			boolean fed_rtrn = mblock.ElementExists(ObjTaxHistory.fed_rtrn,5000);
+			boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn,5000);
+			boolean filing_status = mblock.ElementExists(ObjTaxHistory.fed_fillngSts,5000);
+			boolean filing_date = mblock.ElementExists(ObjTaxHistory.fed_fillngDte,5000);
+
+			if (fed_rtrn && state_rtrn && filing_status && filing_date) {
+				String val = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val).getCssValue("color");
+				String val1 = mblock.Element(ObjTaxHistory.txt_state_rtrn_val).getCssValue("color");
+
+				if (!val.isEmpty() && !val1.isEmpty()) {
+					mblock.ValidateTest(true, true, "User can able to view Tax return fields");
+				} else {
+					mblock.ValidateTest(false, true, "User can not able to view some Tax return fields");
+					Assert.assertFalse(true);
+				}
+			}
+
+			else if (fed_rtrn || state_rtrn && filing_date && filing_status ) {
+
+				String val = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val).getText();
+				String val1 = mblock.Element(ObjTaxHistory.txt_fed_fillngSts_val).getText();
+				String val2 = mblock.Element(ObjTaxHistory.txt_fed_fillngDte_val).getText();
+
+				if (!val.isEmpty() && !val1.isEmpty() && !val2.isEmpty()) {
+					mblock.ValidateTest(true, true, "User can able to view Tax return fields");
+				} else {
+					mblock.ValidateTest(false, true, "User can not able to view some Tax return fields");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else {
+				mblock.ValidateTest(true, "Tax return field is not available for this tax year");
+				
+			}
+
+		}
+
 	// Verify the tax history year history for 2016 as default
 	public void vrfyDfltTaxhstryYr2016() throws Exception {
 
@@ -116,7 +205,7 @@ public class TaxHistoryAction {
 
 		boolean txt = mblock.ElementExists(ObjTaxHistory.drp_taxyear);
 		if (txt = true) {
-			
+
 			boolean val = mblock.Element(ObjTaxHistory.drp_taxyear).ufxIsItemExistInDropdown(year);
 
 			if (val == true) {

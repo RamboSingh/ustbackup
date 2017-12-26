@@ -21,6 +21,18 @@ public class ObjTaxHistory {
 	public static By rtn_doc_fld = By.xpath("//div[@id='taxyear']/span");
 	public static By rtn_doc = By.xpath("//div[@id='taxyear']/span/a");
 
+	//Tax return field
+	public static By fed_rtrn = By.xpath("//*[@id='refundTHAmt']/h2");
+	public static By txt_fed_rtrn_val = By.xpath("//*[@id='refundTHAmt']/span"); //*[@id="refundid"]/text()
+	
+	public static By fed_fillngSts = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[1]/div[2]/strong");
+	public static By txt_fed_fillngSts_val = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[1]/div[2]/span");
+	
+	public static By fed_fillngDte= By.xpath("//*[@id='viewMyReturnTHAvailable']/strong");
+	public static By txt_fed_fillngDte_val= By.xpath("//*[@id='viewMyReturnTHAvailable']/span");
+	
+	public static By state_rtrn = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/h2/div");
+	public static By txt_state_rtrn_val = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/div");
 	
 	//confirm my tax history
 	
