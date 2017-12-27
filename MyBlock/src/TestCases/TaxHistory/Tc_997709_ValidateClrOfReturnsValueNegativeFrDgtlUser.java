@@ -3,7 +3,7 @@ package TestCases.TaxHistory;
 import business_actions.MyblockActions;
 import utility.Config;
 
-public class Tc_997702_ValidateUITaxReturnDataInTaxHistoryIDPUser {
+public class Tc_997709_ValidateClrOfReturnsValueNegativeFrDgtlUser {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -26,32 +26,32 @@ public class Tc_997702_ValidateUITaxReturnDataInTaxHistoryIDPUser {
 			// Verify the tax history year with 2016 as default
 			mblock.actTaxhstry.vrfyDfltTaxhstryYr2016();
 
-			// Verify the tax return data
-			mblock.actTaxhstry.vrfyTaxRtnfield();
+			// Verify the tax return data color
+			mblock.actTaxhstry.vrfyTaxRtnclr();
 
 			// Choose Tax History year as 2015 from dropdown
 			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2015");
 
-			// Verify the tax return data
-			mblock.actTaxhstry.vrfyTaxRtnfield();
+			// Verify the tax return data color
+			mblock.actTaxhstry.vrfyTaxRtnclr();
 
 			// Choose Tax History year as 2015 from dropdown
 			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2014");
 
-			// Verify the tax return data
-			mblock.actTaxhstry.vrfyTaxRtnfield();
+			// Verify the tax return data color
+			mblock.actTaxhstry.vrfyTaxRtnclr();
 
 			// Choose Tax History year as 2015 from dropdown
 			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2013");
 
-			// Verify the tax return data
-			mblock.actTaxhstry.vrfyTaxRtnfield();
+			// Verify the tax return data color
+			mblock.actTaxhstry.vrfyTaxRtnclr();
 
 			// Choose Tax History year as 2015 from dropdown
 			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2012");
 
-			// Verify the tax return data
-			mblock.actTaxhstry.vrfyTaxRtnfield();
+			// Verify the tax return data color
+			mblock.actTaxhstry.vrfyTaxRtnclr();
 
 			// close the browser
 			mblock.Finalize();
