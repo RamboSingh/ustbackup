@@ -23,7 +23,7 @@ public class ObjTaxHistory {
 
 	//Tax return field
 	public static By fed_rtrn = By.xpath("//*[@id='refundTHAmt']/h2");
-	public static By txt_fed_rtrn_val = By.xpath("//*[@id='refundTHAmt']/span"); //*[@id="refundid"]/text()
+	public static By txt_fed_rtrn_val = By.xpath("//*[@id='refundTHAmt']/span");
 	
 	public static By fed_fillngSts = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[1]/div[2]/strong");
 	public static By txt_fed_fillngSts_val = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[1]/div[2]/span");
@@ -33,6 +33,12 @@ public class ObjTaxHistory {
 	
 	public static By state_rtrn = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/h2/div");
 	public static By txt_state_rtrn_val = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/div");
+	
+	public static By btn_indicator = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/a[2]");
+	
+	public static By btn_navigation1 = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/p/a[1]");
+	public static By btn_navigation2 = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/p/a[2]");
+	
 	
 	//confirm my tax history
 	
@@ -53,5 +59,5 @@ public class ObjTaxHistory {
 	public static By txt_smry2016 = By.id("liYearts1");
 	public static By lnk_prchsrtn = By.linkText("Purchase My Return");
 	
-	//
+	
 }
