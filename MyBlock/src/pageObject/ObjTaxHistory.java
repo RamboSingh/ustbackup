@@ -22,23 +22,33 @@ public class ObjTaxHistory {
 	public static By rtn_doc = By.xpath("//div[@id='taxyear']/span/a");
 
 	//Tax return field
+	public static By fed_rtrn_test = By.xpath("//*[@id='refundTHAmt']");
 	public static By fed_rtrn = By.xpath("//*[@id='refundTHAmt']/h2");
 	public static By txt_fed_rtrn_val = By.xpath("//*[@id='refundTHAmt']/span");
+	public static By txt_fed_superscript = By.xpath("//*[@id='refundTHAmt']/span/sup");
 	
 	public static By fed_fillngSts = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[1]/div[2]/strong");
 	public static By txt_fed_fillngSts_val = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[1]/div[2]/span");
 	
+	
 	public static By fed_fillngDte= By.xpath("//*[@id='viewMyReturnTHAvailable']/strong");
 	public static By txt_fed_fillngDte_val= By.xpath("//*[@id='viewMyReturnTHAvailable']/span");
 	
-	public static By state_rtrn = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/h2/div");
+	
+	public static By state_rtrn = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/h2");
 	public static By txt_state_rtrn_val = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/div");
+	public static By txt_state_rtrn_superscript = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/div/sup");
 	
 	public static By btn_indicator = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/a[2]");
 	
 	public static By btn_navigation1 = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/p/a[1]");
 	public static By btn_navigation2 = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/p/a[2]");
 	
+	public static By txt_state1 = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/div/ul/li[1]/div/div");
+	public static By txt_state2 = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/div/ul/li[2]/div/div");
+	
+	public static By txt_state_rtrn_superscript1 = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/div/ul/li[1]/div/div[2]/sup");
+	public static By txt_state_rtrn_superscript2 = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[2]/div/div/ul/li[2]/div/div[2]/sup");
 	
 	//confirm my tax history
 	

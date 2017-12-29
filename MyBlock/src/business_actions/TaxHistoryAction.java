@@ -134,6 +134,69 @@ public class TaxHistoryAction {
 
 	}
 
+	// Verify the super script($) of the tax return is displayed
+	public void vrfySuperScript() throws Exception {
+
+		mblock.ElementExists(ObjDashboard.answr_col1, 5000);
+		boolean fed_rtrn = mblock.ElementExists(ObjTaxHistory.fed_rtrn, 5000);
+		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 5000);
+		boolean txt_state1 = mblock.ElementExists(ObjTaxHistory.txt_state1, 5000);
+		if (fed_rtrn && state_rtrn && txt_state1) {
+			String fed_superscript = mblock.Element(ObjTaxHistory.fed_rtrn_test, 5000).getAttribute("outerHTML");
+			String state_superscript = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript1, 5000).getText();
+			String state_superscript1 = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript2, 5000).getText();
+			if (fed_superscript.equalsIgnoreCase("$") && state_superscript.equalsIgnoreCase("$")
+					&& state_superscript1.equalsIgnoreCase("$")) {
+				mblock.ValidateTest(true, true,
+						"Dollar symbol is displayed as superscript in Federal and State Returns");
+			}
+
+			else {
+
+				mblock.ValidateTest(false, true,
+						"Dollar symbol is not displayed as superscript in Federal and State Returns");
+			}
+
+		}
+
+		else if (fed_rtrn && state_rtrn) {
+			String fed_superscript = mblock.Element(ObjTaxHistory.txt_fed_superscript, 5000).getText();
+			String state_superscript = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript, 5000).getText();
+
+			if (fed_superscript.equalsIgnoreCase("$") && state_superscript.equalsIgnoreCase("$")) {
+				mblock.ValidateTest(true, true,
+						"Dollar symbol is displayed as superscript in Federal and State Returns");
+			}
+
+			else {
+
+				mblock.ValidateTest(false, true,
+						"Dollar symbol is not displayed as superscript in Federal and State Returns");
+			}
+
+		}
+
+		else if (fed_rtrn) {
+
+			String fed_superscript = mblock.Element(ObjTaxHistory.txt_fed_superscript, 5000).getText();
+			if (fed_superscript.equalsIgnoreCase("$")) {
+				mblock.ValidateTest(true, true, "Dollar symbol is displayed as superscript in Federal Returns");
+			}
+
+			else {
+
+				mblock.ValidateTest(false, true, "Dollar symbol is not displayed as superscript in Federal Returns");
+			}
+
+		}
+
+		else {
+			mblock.ValidateTest(true, "Tax return is not available for this tax year");
+
+		}
+
+	}
+
 	// Verify the tax return colour for positive and negative
 
 	public void vrfyTaxRtnclr() throws Exception {
@@ -284,42 +347,64 @@ public class TaxHistoryAction {
 
 	}
 
-	
 	// Verify State name is fully displayed.
 	public void vrfyTaxRtrnStateName() throws Exception {
 		mblock.ElementExists(ObjDashboard.answr_col1, 5000);
 		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 5000);
-		
+
 		if (state_rtrn) {
-			
+
 			String val = mblock.Element(ObjTaxHistory.state_rtrn).getText();
 
-			if (!val.contains("state")&&!val.isEmpty()) {
-				
+			if (!val.contains("State") && !val.isEmpty()) {
+
 				int length = val.length();
-				if(length>3){
-				
+				if (length > 10) {
+
 					mblock.ValidateTest(true, true, "State name is fully displayed");
 				}
-				
-				else{
+
+				else {
 					mblock.ValidateTest(false, true, "State name is not fully displayed");
 				}
-				
+
 			}
-			
-			else if(val.contains("state")&&!val.isEmpty()){
-				
+
+			else if (val.contains("State") && !val.isEmpty()) {
+
+				boolean indicator = mblock.ElementExists(ObjTaxHistory.btn_indicator, 5000);
+				boolean navgn1 = mblock.ElementExists(ObjTaxHistory.btn_navigation1, 5000);
+				boolean navgn2 = mblock.ElementExists(ObjTaxHistory.btn_navigation1, 5000);
+				String state1 = mblock.Element(ObjTaxHistory.txt_state1).getText();
+				String state2 = mblock.Element(ObjTaxHistory.txt_state2).getText();
+				int ste_lgnth1 = state1.length();
+				int ste_lgnth2 = state2.length();
+				if (indicator && navgn1 && navgn2 && ste_lgnth1 == 2 && ste_lgnth2 == 2) {
+
+					mblock.ValidateTest(true, true,
+							"State names is abbrevated and navigation buttons and indicators are present.");
+				}
+
+				else if (ste_lgnth1 == 2 && ste_lgnth2 == 2) {
+
+					mblock.ValidateTest(true, true, "Only two state are displayed which State names is abbrevated");
+				}
+
+				else {
+
+					mblock.ValidateTest(false, true,
+							"State names is not abbrevated and navigation buttons and indicators are not present.");
+				}
+
 			}
-			
+
 			else {
-				mblock.ValidateTest(true,true, "State tax is not available for this tax year");
-				
+				mblock.ValidateTest(true, true, "State tax is not available for this tax year");
+
 			}
 
 		}
 
-		
 	}
 
 	// Verify the tax history year history for 2016 as default
