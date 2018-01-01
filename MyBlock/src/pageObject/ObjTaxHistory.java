@@ -22,7 +22,7 @@ public class ObjTaxHistory {
 	public static By rtn_doc = By.xpath("//div[@id='taxyear']/span/a");
 
 	//Tax return field
-	public static By fed_rtrn_test = By.xpath("//*[@id='refundTHAmt']");
+	public static By fed_rtrn_test = By.xpath("//*[@id='refundid']");
 	public static By fed_rtrn = By.xpath("//*[@id='refundTHAmt']/h2");
 	public static By txt_fed_rtrn_val = By.xpath("//*[@id='refundTHAmt']/span");
 	public static By txt_fed_superscript = By.xpath("//*[@id='refundTHAmt']/span/sup");

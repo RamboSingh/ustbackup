@@ -142,10 +142,10 @@ public class TaxHistoryAction {
 		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 5000);
 		boolean txt_state1 = mblock.ElementExists(ObjTaxHistory.txt_state1, 5000);
 		if (fed_rtrn && state_rtrn && txt_state1) {
-			String fed_superscript = mblock.Element(ObjTaxHistory.fed_rtrn_test, 5000).getAttribute("outerHTML");
-			String state_superscript = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript1, 5000).getText();
-			String state_superscript1 = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript2, 5000).getText();
-			if (fed_superscript.equalsIgnoreCase("$") && state_superscript.equalsIgnoreCase("$")
+			String fed_superscript = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val).getText();
+			String state_superscript = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript1).getText();
+			String state_superscript1 = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript2).getText();
+			if (fed_superscript.contains("$") && state_superscript.equalsIgnoreCase("$")
 					&& state_superscript1.equalsIgnoreCase("$")) {
 				mblock.ValidateTest(true, true,
 						"Dollar symbol is displayed as superscript in Federal and State Returns");
@@ -160,8 +160,8 @@ public class TaxHistoryAction {
 		}
 
 		else if (fed_rtrn && state_rtrn) {
-			String fed_superscript = mblock.Element(ObjTaxHistory.txt_fed_superscript, 5000).getText();
-			String state_superscript = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript, 5000).getText();
+			String fed_superscript = mblock.Element(ObjTaxHistory.txt_fed_superscript).getText();
+			String state_superscript = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript).getText();
 
 			if (fed_superscript.equalsIgnoreCase("$") && state_superscript.equalsIgnoreCase("$")) {
 				mblock.ValidateTest(true, true,
@@ -178,7 +178,7 @@ public class TaxHistoryAction {
 
 		else if (fed_rtrn) {
 
-			String fed_superscript = mblock.Element(ObjTaxHistory.txt_fed_superscript, 5000).getText();
+			String fed_superscript = mblock.Element(ObjTaxHistory.txt_fed_superscript).getText();
 			if (fed_superscript.equalsIgnoreCase("$")) {
 				mblock.ValidateTest(true, true, "Dollar symbol is displayed as superscript in Federal Returns");
 			}
