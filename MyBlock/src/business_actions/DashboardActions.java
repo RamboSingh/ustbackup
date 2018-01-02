@@ -528,6 +528,34 @@ public class DashboardActions {
 
 	}
 
+	// click the My document button is displayed
+	public void clkMydocFrmDashbord() throws Exception {
+		try {
+
+			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_updoc, 8000);
+			boolean element2 = mblock.ElementExists(ObjDashboard.lnk_updoc1, 8000);
+
+			String val = mblock.Element(ObjDashboard.lnk_updoc).getText();
+			String val1 = mblock.Element(ObjDashboard.lnk_updoc1).getText();
+			if (val.contains("Document")) {
+				mblock.Element(ObjDashboard.lnk_updoc).ufxClick();
+
+			}
+
+			else if (val1.contains("Document")) {
+				mblock.Element(ObjDashboard.lnk_updoc1).ufxClick();
+			} else {
+				mblock.ValidateTest(false, true, "Upload My Documents is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
 	// Verify the My document button is not displayed
 	public void vrfyMydocBtnNotDsply() throws Exception {
 		try {
@@ -1162,6 +1190,28 @@ public class DashboardActions {
 
 	}
 
+	// click the Mydocument from POD
+	public void clkMydocFrmPOD() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.lnk_mydocmnt);
+
+			if (element) {
+
+				mblock.Element(ObjDashboard.lnk_mydocmnt).ufxClick();
+
+			} else {
+				mblock.ValidateTest(false, true, "Mydocument POD is not Displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
 	// Verify the Mydocument button color is green in POD
 	public void vrfyClrOfMydocBtn() throws Exception {
 		try {
@@ -1196,7 +1246,6 @@ public class DashboardActions {
 		try {
 
 			boolean element = mblock.ElementExists(ObjDashboard.lnk_taxestmor);
-		
 
 			if (element) {
 				mblock.Element(ObjDashboard.lnk_taxestmor).ufxScrollElementToView();
@@ -1452,163 +1501,155 @@ public class DashboardActions {
 
 			}
 
-			
-
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 
 	}
-	
-	
+
 	public void statusBarNotVisible() throws Exception {
 		try {
 
 			boolean element = mblock.ElementDoesNotExists(ObjDashboard.StatusBar);
 			if (element) {
-					mblock.ValidateTest(true, true, "Status Bar is Not Present");
-				}
+				mblock.ValidateTest(true, true, "Status Bar is Not Present");
+			}
 
-				else {
-					mblock.ValidateTest(false, true, "Status Bar is Present");
-					Assert.assertFalse(true);
-				}
-			
+			else {
+				mblock.ValidateTest(false, true, "Status Bar is Present");
+				Assert.assertFalse(true);
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	public void statusBarVisible() throws Exception {
 		try {
 
 			boolean element = mblock.ElementExists(ObjDashboard.StatusBar);
 			if (element) {
-					mblock.ValidateTest(true, true, "Status Bar is Present");
-					String SB_Width = mblock.Element(ObjDashboard.StatusBar).getCssValue("width");
-					System.out.println(SB_Width);
-					String SB_Height = mblock.Element(ObjDashboard.StatusBar).getCssValue("height");
-					System.out.println(SB_Height);
-					if ((SB_Width.contains("1263px")&&(SB_Height.contains("171px")))){
-						mblock.ValidateTest(true, true, "Status Bar is in Proper Alignment");
-						}
-					else{
-						mblock.ValidateTest(false, true, "Status Bar is Not Aligned Properly");
-						Assert.assertFalse(true);
-					}
-				}
-
-				else {
-					mblock.ValidateTest(false, true, "Status Bar is Not Present");
+				mblock.ValidateTest(true, true, "Status Bar is Present");
+				String SB_Width = mblock.Element(ObjDashboard.StatusBar).getCssValue("width");
+				System.out.println(SB_Width);
+				String SB_Height = mblock.Element(ObjDashboard.StatusBar).getCssValue("height");
+				System.out.println(SB_Height);
+				if ((SB_Width.contains("1263px") && (SB_Height.contains("171px")))) {
+					mblock.ValidateTest(true, true, "Status Bar is in Proper Alignment");
+				} else {
+					mblock.ValidateTest(false, true, "Status Bar is Not Aligned Properly");
 					Assert.assertFalse(true);
 				}
-			
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "Status Bar is Not Present");
+				Assert.assertFalse(true);
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	public void statusBarNewUser() throws Exception {
 		try {
 
 			boolean element = mblock.ElementExists(ObjDashboard.btn_cnfmid);
 			if (element) {
-					mblock.ValidateTest(true, true, "Prospective Status Bar is Present");
-					
-				}
+				mblock.ValidateTest(true, true, "Prospective Status Bar is Present");
 
-				else {
-					mblock.ValidateTest(false, true, "Prospective Status Bar is Not Present");
-					Assert.assertFalse(true);
-				}
-			
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "Prospective Status Bar is Not Present");
+				Assert.assertFalse(true);
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 
 	}
+
 	public void statusBarIconsVisible() throws Exception {
 		try {
 
 			boolean element = mblock.ElementExists(ObjDashboard.SB_THBtn);
 			if (element) {
-					mblock.ValidateTest(true, true, "Status Bar is Present");
-					boolean FedRefund = mblock.ElementExists(ObjDashboard.SB_FedRefund);
-					boolean FilingStatus = mblock.ElementExists(ObjDashboard.SB_FilingStatus);
-					boolean FiledOn= mblock.ElementExists(ObjDashboard.SB_FiledOn);
-					boolean FiledWith = mblock.ElementExists(ObjDashboard.SB_FiledWith);
-					if (FedRefund && FilingStatus && FiledOn && FiledWith){
-						mblock.ValidateTest(true, true, "Four Icons in About Me is Present");
-					}else{
-						mblock.ValidateTest(false, true, "Four Icons in About Me is not Present");
-					}
-			}
-					
-
-				else {
-					mblock.ValidateTest(false, true, "Prospective Status Bar is Not Present");
-					Assert.assertFalse(true);
+				mblock.ValidateTest(true, true, "Status Bar is Present");
+				boolean FedRefund = mblock.ElementExists(ObjDashboard.SB_FedRefund);
+				boolean FilingStatus = mblock.ElementExists(ObjDashboard.SB_FilingStatus);
+				boolean FiledOn = mblock.ElementExists(ObjDashboard.SB_FiledOn);
+				boolean FiledWith = mblock.ElementExists(ObjDashboard.SB_FiledWith);
+				if (FedRefund && FilingStatus && FiledOn && FiledWith) {
+					mblock.ValidateTest(true, true, "Four Icons in About Me is Present");
+				} else {
+					mblock.ValidateTest(false, true, "Four Icons in About Me is not Present");
 				}
-			
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "Prospective Status Bar is Not Present");
+				Assert.assertFalse(true);
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	public void statusBarViewHistoryBtn() throws Exception {
 		try {
 
 			boolean element = mblock.ElementExists(ObjDashboard.SB_THBtn);
 			if (element) {
-					
-				mblock.ValidateTest(true, true, "Tax History Button is present");	
-				//mblock.Element(ObjDashboard.SB_THBtn).click();
-					
-					String statusBar = mblock.Element(ObjDashboard.SB_THBtn).getText();
-					Pattern pattern = Pattern.compile("(\\d+)");
-					Matcher matcher = pattern.matcher(statusBar);
-				
-					if (matcher.find()) {
-						String str = matcher.group(matcher.groupCount());
-						System.out.println(str);
-						
-						mblock.Element(ObjDashboard.SB_THBtn).click();
-						mblock.WaitForPageLoad();
-						String TY = mblock.GetCurrentURL();
-						Pattern pattern1 = Pattern.compile("(\\d+)");
-						Matcher matcher1 = pattern1.matcher(statusBar);
-						
-						if (matcher1.find()) {
-							String ty = matcher1.group(matcher1.groupCount());
-							if (str.equalsIgnoreCase(ty)){
-								mblock.ValidateTest(true,true, "User lands in TH with TY "+ty);
-							}
-							else{
-								mblock.Log("TY displayed in Status Bar and Tax History Navigation Year Mismatches");
-							}
-							
-							
-						}
-						
-						}
-							
-						
-					}
-									
 
-				else {
-					mblock.ValidateTest(false, true, "Status Bar is Not Present");
-					Assert.assertFalse(true);
+				mblock.ValidateTest(true, true, "Tax History Button is present");
+				// mblock.Element(ObjDashboard.SB_THBtn).click();
+
+				String statusBar = mblock.Element(ObjDashboard.SB_THBtn).getText();
+				Pattern pattern = Pattern.compile("(\\d+)");
+				Matcher matcher = pattern.matcher(statusBar);
+
+				if (matcher.find()) {
+					String str = matcher.group(matcher.groupCount());
+					System.out.println(str);
+
+					mblock.Element(ObjDashboard.SB_THBtn).click();
+					mblock.WaitForPageLoad();
+					String TY = mblock.GetCurrentURL();
+					Pattern pattern1 = Pattern.compile("(\\d+)");
+					Matcher matcher1 = pattern1.matcher(statusBar);
+
+					if (matcher1.find()) {
+						String ty = matcher1.group(matcher1.groupCount());
+						if (str.equalsIgnoreCase(ty)) {
+							mblock.ValidateTest(true, true, "User lands in TH with TY " + ty);
+						} else {
+							mblock.Log("TY displayed in Status Bar and Tax History Navigation Year Mismatches");
+						}
+
+					}
+
 				}
-				
+
+			}
+
+			else {
+				mblock.ValidateTest(false, true, "Status Bar is Not Present");
+				Assert.assertFalse(true);
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

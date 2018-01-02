@@ -431,13 +431,38 @@ public class TaxHistoryAction {
 
 	}
 
+	// Verify the TY in Tax history is present in Dropdown
+	public void vrfyTaxhstryYrDsply(String year) throws Exception {
+
+		boolean txt = mblock.ElementExists(ObjTaxHistory.drp_taxyear);
+		if (txt = true) {
+
+			boolean val = mblock.Element(ObjTaxHistory.drp_taxyear).ufxIsItemExistInDropdown("MY " + year + " TAXES");
+
+			if (val == true) {
+				mblock.ValidateTest(true, true, year + " is displayed");
+
+			} else {
+				mblock.ValidateTest(false, true, year + " is not displayed");
+				Assert.assertFalse(true);
+
+			}
+		}
+
+		else {
+			mblock.ValidateTest(false, true, "Tax year dropdown is not displayed");
+			Assert.assertFalse(true);
+		}
+
+	}
+
 	// Verify the TY in Tax history is not present in Dropdown
 	public void vrfyTaxhstryYrNotDsply(String year) throws Exception {
 
 		boolean txt = mblock.ElementExists(ObjTaxHistory.drp_taxyear);
 		if (txt = true) {
 
-			boolean val = mblock.Element(ObjTaxHistory.drp_taxyear).ufxIsItemExistInDropdown(year);
+			boolean val = mblock.Element(ObjTaxHistory.drp_taxyear).ufxIsItemExistInDropdown("MY " + year + " TAXES");
 
 			if (val == true) {
 				mblock.ValidateTest(false, true, year + " is displayed");

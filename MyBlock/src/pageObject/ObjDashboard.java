@@ -316,7 +316,7 @@ public class ObjDashboard {
 	public static By lnk_taxorg = By.xpath("//*[@id='viewOrganizer']");
 	
 	//My Document POD
-	public static By lnk_mydocmnt = By.xpath("//*[@id='Upload Receipts']");
+	public static By lnk_mydocmnt = By.name("View My Documents");
 	
 	//Tax Estimator POD
 	public static By lnk_taxestmor = By.name("Estimate My Taxes");

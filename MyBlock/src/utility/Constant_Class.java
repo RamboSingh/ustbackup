@@ -19,7 +19,7 @@ public class Constant_Class {
      public static String Testcase_name = "";
      
      
-     public static final String txt_msg = "Get a head start on next year -- upload your 2017 tax docs as you get them!";
+     public static final String txt_msg = "Get a head start on next year's return -- upload your 2018 tax docs as you get them!";
      
      public static final String Path_TestData = System.getProperty("user.dir")+"/resources/TestData.xlsx";
      public static final String doc_uplScript="wscript" + " "+ System.getProperty("user.dir") + "\\resources\\script.vbs";
@@ -27,13 +27,13 @@ public class Constant_Class {
      public static final String doc_upldfile1 = "D://Ktb//Desert.jpg";
      
      public static final String URL1 = "http://devguaweb01.hrbinc.hrblock.net:8080/examples/QAADMINTOOL.jsp"; 
-     public static final String tax_aboutyouheader = "Please select your filing status for 2016.";
-     public static final String tax_incomeheader = "Please select all sources of income you had in 2016.";
-     public static final String tax_expenseheader = "Please select all expenses you had in 2016.";
+     public static final String tax_aboutyouheader = "Please select your filing status for 2017.";
+     public static final String tax_incomeheader = "Please select all sources of income you had in 2017.";
+     public static final String tax_expenseheader = "Please select all expenses you had in 2017.";
      public static final String tax_year = "2017";
      public static final String tax_year1 = "2016";
      
-     public static final String txt_copyright = "© 2016-2017 HRB Digital LLC. All Rights Reserved.";
+     public static final String txt_copyright = "© 2017-2018 HRB Digital LLC. All Rights Reserved.";
      public static final String src_logo= "/mytax/images/fy17/mb_logo_myb_b.png";
      public static final String src_logofooter= "/mytax/images/fy17/mb_logo_hrb.png";
      

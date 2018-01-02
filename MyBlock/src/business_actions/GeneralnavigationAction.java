@@ -192,7 +192,7 @@ public class GeneralnavigationAction {
 	}
 	
 	
-	// Click the Tax history in Footer
+	// Click the My doc in Footer
 		public void clkMydocFrmFooter() throws Exception {
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
