@@ -630,7 +630,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Emerland card is not displayed");
+				mblock.ValidateTest(false, true, "Emerland card is not displayed for this user");
 				Assert.assertFalse(true);
 			}
 
@@ -678,7 +678,7 @@ public class DashboardActions {
 			}
 
 			else {
-				mblock.ValidateTest(false, true, "POD is not displayed");
+				mblock.ValidateTest(false, true, "POD is not displayed for this user");
 				Assert.assertFalse(true);
 			}
 		}
@@ -775,7 +775,7 @@ public class DashboardActions {
 
 				mblock.ValidateTest(true, true, "Qstn and Access my card Buttons are displayed");
 			} else {
-				mblock.ValidateTest(false, true, "Qstn and Access my card Button are/is not displayed");
+				mblock.ValidateTest(false, true, "Qstn and Access my card Button are/is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -836,7 +836,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "pop up is not displayed");
+				mblock.ValidateTest(false, true, "pop up is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -856,7 +856,7 @@ public class DashboardActions {
 			if (element) {
 				mblock.ValidateTest(true, true, "Card proof model is displayed");
 			} else {
-				mblock.ValidateTest(false, true, "Card proof model is not displayed");
+				mblock.ValidateTest(false, true, "Card proof model is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -878,7 +878,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Schdule appointment POD is displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "Schdule appointment POD is not displayed");
+				mblock.ValidateTest(false, true, "Schdule appointment POD is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -906,7 +906,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Schdule appointment button is not displayed");
+				mblock.ValidateTest(false, true, "Schdule appointment button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -927,7 +927,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Go TO My Taxes POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "Go TO My Taxes POD is not Displayed");
+				mblock.ValidateTest(false, true, "Go TO My Taxes POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -955,7 +955,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Go My Taxes button is not displayed");
+				mblock.ValidateTest(false, true, "Go My Taxes button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -976,7 +976,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "TIS POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "TIS POD is not Displayed");
+				mblock.ValidateTest(false, true, "TIS POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1005,7 +1005,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "TIS button is not displayed");
+				mblock.ValidateTest(false, true, "TIS button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1026,7 +1026,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "W4 planner POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "W4 planner POD is not Displayed");
+				mblock.ValidateTest(false, true, "W4 planner POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1054,7 +1054,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "W4 planner button is not displayed");
+				mblock.ValidateTest(false, true, "W4 planner button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1076,7 +1076,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Taxhistory POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "Taxhistory POD is not Displayed");
+				mblock.ValidateTest(false, true, "Taxhistory POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1106,7 +1106,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Tax history button is not displayed");
+				mblock.ValidateTest(false, true, "Tax history button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1128,7 +1128,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "TaxOrganizer POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "TaxOrganizer POD is not Displayed");
+				mblock.ValidateTest(false, true, "TaxOrganizer POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1157,7 +1157,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Tax Organizer button is not displayed");
+				mblock.ValidateTest(false, true, "Tax Organizer button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1179,7 +1179,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Mydocument POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "Mydocument POD is not Displayed");
+				mblock.ValidateTest(false, true, "Mydocument POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1201,7 +1201,7 @@ public class DashboardActions {
 				mblock.Element(ObjDashboard.lnk_mydocmnt).ufxClick();
 
 			} else {
-				mblock.ValidateTest(false, true, "Mydocument POD is not Displayed");
+				mblock.ValidateTest(false, true, "Mydocument POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1230,7 +1230,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Mydocument button is not displayed");
+				mblock.ValidateTest(false, true, "Mydocument button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1252,7 +1252,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Tax Estimator POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "Tax Estimator POD is not Displayed");
+				mblock.ValidateTest(false, true, "Tax Estimator POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1281,7 +1281,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Tax Estimator button is not displayed");
+				mblock.ValidateTest(false, true, "Tax Estimator button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1303,7 +1303,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Get assistant POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "Get assistant POD is not Displayed");
+				mblock.ValidateTest(false, true, "Get assistant POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1332,7 +1332,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Get assistant button is not displayed");
+				mblock.ValidateTest(false, true, "Get assistant button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 

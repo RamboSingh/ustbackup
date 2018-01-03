@@ -15,8 +15,8 @@ public class TC_1012392_UserNameAvailabilityIfUserNameIs15char {
 
 			// Browser navigation
 			mblock.NavigateToURL();
-			mblock.actCtracnt.crtacnt();
-			// Create new account
+			mblock.actLogin.login();
+			
 			mblock.actDashboard.userNameDisplayed();
 			mblock.Finalize(true);
 
