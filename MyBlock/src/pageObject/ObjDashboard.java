@@ -213,8 +213,9 @@ public class ObjDashboard {
 	public static By lnk_makeappnmt = By.id("makeanappointmentmenu");
 	public static By lnk_filngonline = By.id("filingonlinemenu");
 	public static By lnk_pomlink = By.id("pommenulink");
-	public static By lnk_taxidshield = By.id("tismenulink");
+	public static By lnk_taxidshield = By.linkText("Tax Identity Shield");
 	public static By lnk_emrldcrd = By.className("mb_eclist");
+	public static By lnk_card = By.xpath("//*[@id='submenu-id']/li[1]/a");
 	
 	
 	//My account menu and sub menu
@@ -288,6 +289,7 @@ public class ObjDashboard {
 	public static By btn_nxt = By.id("nxtBtn");
 	public static By btn_okey = By.id("rdCardStatusBtn1");
 	public static By iframe_card = By.id("basic-modal-iframe-cardproof");
+	public static By iframe_card1 = By.id("basic-modal-cardproof");
 	
 	//POD position
 	public static By img_pod1 = By.xpath("//*[@class='mb_container']/div[1]/div[1]/div[1]");
@@ -352,7 +354,9 @@ public class ObjDashboard {
 	public static By lnk_footermngeacnt = By.className("maFooter");
 	public static By lnk_footerhelp = By.id("helpFLi");
 	public static By lnk_footerprfle = By.id("profileFLi");
+	public static By lnk_footertaxIdshiled = By.xpath("//*[@id='sb-site']/div[3]/div/div/div[3]/ul/li[3]/a");
 	public static By btn_help = By.className("mhrbbutton");
+	
 	
 	//POD
 	public static By lnk_getassistant = By.xpath("//*[@id='skiptoMainContent']/div[8]/div/div[2]/div/div[2]/a");

@@ -775,7 +775,8 @@ public class DashboardActions {
 
 				mblock.ValidateTest(true, true, "Qstn and Access my card Buttons are displayed");
 			} else {
-				mblock.ValidateTest(false, true, "Qstn and Access my card Button are/is not displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Qstn and Access my card Button are/is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -878,7 +879,8 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Schdule appointment POD is displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "Schdule appointment POD is not displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Schdule appointment POD is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -906,7 +908,8 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Schdule appointment button is not displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Schdule appointment button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -927,7 +930,8 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Go TO My Taxes POD is Displayed");
 
 			} else {
-				mblock.ValidateTest(false, true, "Go TO My Taxes POD is not Displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Go TO My Taxes POD is not Displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -955,7 +959,8 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Go My Taxes button is not displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Go My Taxes button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1106,7 +1111,8 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Tax history button is not displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Tax history button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1157,7 +1163,8 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Tax Organizer button is not displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Tax Organizer button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1281,7 +1288,8 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Tax Estimator button is not displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Tax Estimator button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1332,7 +1340,8 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "Get assistant button is not displayed for this user, Please check user");
+				mblock.ValidateTest(false, true,
+						"Get assistant button is not displayed for this user, Please check user");
 				Assert.assertFalse(true);
 			}
 
@@ -1648,6 +1657,60 @@ public class DashboardActions {
 			else {
 				mblock.ValidateTest(false, true, "Status Bar is Not Present");
 				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	// validate product and service
+
+	public void vldPrdctSrvce() throws Exception {
+		try {
+
+			boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
+			if (icon_lnk = true) {
+				if (mblock.strBrowserType.equals("FIREFOX")) {
+					mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
+
+				} else {
+					mblock.Element(ObjDashboard.lnk_prdctsrvce).ufxFocus();
+
+				}
+			}
+
+			boolean card = mblock.ElementExists(ObjDashboard.lnk_card);
+			if (card) {
+
+				mblock.Element(ObjDashboard.lnk_card).click();
+				boolean emrld_page = mblock.ElementExists(ObjDashboard.lnk_myblock);
+				if (emrld_page) {
+					mblock.ValidateTest(true, true, "User is directed to Emerald Online");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "User is not directed to Emerald Online");
+					Assert.assertFalse(true);
+				}
+			}
+
+			else {
+				mblock.ValidateTest(true, true, "Emerland card detail is not present");
+				mblock.Element(ObjDashboard.lnk_emrldcrd).ufxClick();
+				boolean iframe = mblock.ElementExists(ObjDashboard.iframe_card);
+				boolean iframe1 = mblock.ElementExists(ObjDashboard.iframe_card1);
+				if(iframe||iframe1){
+					mblock.ValidateTest(true, true, "User is able to view card proof modal");
+				}
+				
+				else{
+					mblock.ValidateTest(false, true, "User is not able to view card proof modal");
+					Assert.assertFalse(true);
+				}
+				
 			}
 
 		} catch (Exception e) {

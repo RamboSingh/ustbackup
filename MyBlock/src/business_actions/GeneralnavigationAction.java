@@ -114,7 +114,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
-				
 
 			}
 
@@ -138,24 +137,24 @@ public class GeneralnavigationAction {
 		}
 
 	}
-	
+
 	// Verify the Mydoc in Footer
-		public void vrfyMydocFrmFooter() throws Exception {
+	public void vrfyMydocFrmFooter() throws Exception {
 
-			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
-			if (txt_lnk = true) {
-				mblock.Element(ObjDashboard.lnk_footermydoc).ufxScrollElementToView();
-				mblock.ValidateTest(true, true, "My document link is present in footer");
-			}
-
-			else
-
-			{
-				mblock.ValidateTest(false, true, "My Document link is not present in the footer");
-				Assert.assertFalse(true);
-			}
-
+		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
+		if (txt_lnk = true) {
+			mblock.Element(ObjDashboard.lnk_footermydoc).ufxScrollElementToView();
+			mblock.ValidateTest(true, true, "My document link is present in footer");
 		}
+
+		else
+
+		{
+			mblock.ValidateTest(false, true, "My Document link is not present in the footer");
+			Assert.assertFalse(true);
+		}
+
+	}
 
 	// click the MY document link under My taxes
 	public void clkMydocFrmGlobalNav() throws Exception {
@@ -167,7 +166,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
-				
 
 			}
 
@@ -190,30 +188,27 @@ public class GeneralnavigationAction {
 		}
 
 	}
-	
-	
+
 	// Click the My doc in Footer
-		public void clkMydocFrmFooter() throws Exception {
+	public void clkMydocFrmFooter() throws Exception {
 
-			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
-			if (txt_lnk = true) {
-				mblock.Element(ObjDashboard.lnk_footermydoc).ufxScrollElementToView();
-				mblock.Element(ObjDashboard.lnk_footermydoc).ufxClick();
-				mblock.ElementExists(ObjUploaddoc.btn_adddoc);
-				mblock.ValidateTest(true, true, "User lands to My document page");
-			}
-
-			else
-
-			{
-				mblock.ValidateTest(false, true, "My document link is not present in the footer");
-				Assert.assertFalse(true);
-			}
-
+		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
+		if (txt_lnk = true) {
+			mblock.Element(ObjDashboard.lnk_footermydoc).ufxScrollElementToView();
+			mblock.Element(ObjDashboard.lnk_footermydoc).ufxClick();
+			mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+			mblock.ValidateTest(true, true, "User lands to My document page");
 		}
 
-	
-	
+		else
+
+		{
+			mblock.ValidateTest(false, true, "My document link is not present in the footer");
+			Assert.assertFalse(true);
+		}
+
+	}
+
 	// Verify the Tax History shield link under My Taxes (global navigation)
 	public void vrfyTaxHstryFrmGlobalNav() throws Exception {
 
@@ -224,7 +219,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
-	
 
 			}
 
@@ -277,7 +271,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
-			
 
 			}
 
@@ -330,7 +323,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
-			
 
 			}
 
@@ -364,7 +356,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
-			
 
 			}
 
@@ -397,7 +388,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
-				
 
 			}
 
@@ -432,7 +422,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_mytax).ufxFocus();
-			
 
 			}
 
@@ -471,8 +460,7 @@ public class GeneralnavigationAction {
 				mblock.ValidateTest(false, true, "Page is not back to Dashboard");
 				Assert.assertFalse(true);
 			}
-		}
-		else{
+		} else {
 			mblock.ValidateTest(false, true, "Button is not displayed");
 			Assert.assertFalse(true);
 		}
@@ -504,7 +492,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_calctr).ufxFocus();
-			
 
 			}
 
@@ -538,7 +525,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_calctr).ufxFocus();
-				
 
 			}
 
@@ -617,7 +603,6 @@ public class GeneralnavigationAction {
 
 			} else {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).ufxFocus();
-				
 
 			}
 
@@ -774,6 +759,40 @@ public class GeneralnavigationAction {
 
 	}
 
+	// Verify the Tax id shield link is not displayed under Product&Service
+	public void vrfyTaxIdShldNotDsplGlobalNav() throws Exception {
+
+		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
+
+		if (icon_lnk) {
+			if (mblock.strBrowserType.equals("FIREFOX")) {
+				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
+
+			} else {
+				mblock.Element(ObjDashboard.lnk_prdctsrvce).ufxFocus();
+
+			}
+
+			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxidshield, 5000);
+			boolean icon_lnk_ftr = mblock.ElementExists(ObjDashboard.lnk_footertaxIdshiled, 5000);
+			if (txt_lnk == false && icon_lnk_ftr == false) {
+				if (mblock.strBrowserType.equals("CHROME")) {
+					mblock.ValidateTest(true, true, "Tax id shield link is not present in Glovbal and footer");
+				}
+
+			} else {
+				mblock.ValidateTest(false, true, "Tax id shield link is  present");
+				Assert.assertFalse(true);
+			}
+		}
+
+		else {
+			mblock.ValidateTest(false, true, "Product and service link is not present in the status bar");
+			Assert.assertFalse(true);
+		}
+
+	}
+
 	// click the Tax ID shield link under Product&Service
 	public void clkTaxIdShldFrmGlobalNav() throws Exception {
 
@@ -803,6 +822,20 @@ public class GeneralnavigationAction {
 			Assert.assertFalse(true);
 		}
 
+	}
+
+	// Verify TaxID shield link is present in the footer
+	public void vrfyTaxIdShldFrmfooter() throws Exception {
+
+		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footertaxIdshiled);
+		if (txt_lnk = true) {
+			mblock.Element(ObjDashboard.lnk_footertaxIdshiled).ufxScrollElementToView();
+			mblock.ValidateTest(true, true, "TaxID shield link is present in footer");
+
+		} else {
+			mblock.ValidateTest(false, true, "TaxID shield link is not present in footer");
+			Assert.assertFalse(true);
+		}
 	}
 
 	// Verify the EmerlandCard link under Product&Service
