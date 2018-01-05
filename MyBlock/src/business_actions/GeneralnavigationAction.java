@@ -481,6 +481,38 @@ public class GeneralnavigationAction {
 		}
 
 	}
+	
+	
+	// Verify the taxestimator link in global navigation (status bar)
+		public void vrfyTaxEstmrLnkFrmGlobalNa() throws Exception {
+
+			boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
+			if (icon_lnk = true) {
+
+				if (mblock.strBrowserType.equals("FIREFOX")) {
+					mblock.Element(ObjDashboard.lnk_calctr).click();
+
+				} else {
+					mblock.Element(ObjDashboard.lnk_calctr).ufxFocus();
+
+				}
+				
+				boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxestmr);
+				if (txt_lnk = true) {
+
+					mblock.ValidateTest(true, true, "Tax Estimator link is present");
+				} else {
+					mblock.ValidateTest(false, true, "Tax Estimator link is not present");
+					Assert.assertFalse(true);
+				}
+			}
+
+			else {
+				mblock.ValidateTest(true, true, "Calculato and tax icon is not present in the status bar");
+				Assert.assertFalse(true);
+			}
+
+		}
 
 	// click the Tax estimator link under Calculator&tools
 	public void clkTaxEstmtrFrmGlobalNav() throws Exception {
@@ -514,6 +546,36 @@ public class GeneralnavigationAction {
 		}
 
 	}
+	
+	//Veify W4calculator link under Calculator&tools
+
+	public void vrfyW4CaltrFrmGlobalNav() throws Exception {
+
+		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
+		if (icon_lnk = true) {
+			if (mblock.strBrowserType.equals("FIREFOX")) {
+				mblock.Element(ObjDashboard.lnk_calctr).click();
+
+			} else {
+				mblock.Element(ObjDashboard.lnk_calctr).ufxFocus();
+
+			}
+
+			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_w4calctr);
+			if (txt_lnk = true) {
+			mblock.ValidateTest(true, true, "W4Calculator link is present");
+
+			} else {
+				mblock.ValidateTest(false, true, "W4Calculator link is not present");
+				Assert.assertFalse(true);
+			}
+		}
+
+		else {
+			mblock.ValidateTest(false, true, "Calculator&tools link is not present in the status bar");
+		}
+
+	}
 
 	// click the W4calculator link under Calculator&tools
 	public void clkW4CaltrFrmGlobalNav() throws Exception {
@@ -542,6 +604,38 @@ public class GeneralnavigationAction {
 
 		else {
 			mblock.ValidateTest(false, true, "Calculator&tools link is not present in the status bar");
+		}
+
+	}
+	
+	
+	//Verify the Tax organizer link under Calculator&tools
+	public void vrfyTaxOrgnzrFrmGlobalNav() throws Exception {
+
+		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
+		if (icon_lnk = true) {
+			if (mblock.strBrowserType.equals("FIREFOX")) {
+				mblock.Element(ObjDashboard.lnk_calctr).click();
+
+			} else {
+				mblock.Element(ObjDashboard.lnk_calctr).ufxFocus();
+
+			}
+
+			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxorgnzr);
+			if (txt_lnk = true) {
+			
+				mblock.ValidateTest(true, true, "Tax Organaizer link is present");
+
+			} else {
+				mblock.ValidateTest(false, true, "Tax Organaizer link is not present");
+				Assert.assertFalse(true);
+			}
+		}
+
+		else {
+			mblock.ValidateTest(false, true, "Calculator&tools link is not present in the status bar");
+			Assert.assertFalse(true);
 		}
 
 	}
