@@ -1720,4 +1720,270 @@ public class DashboardActions {
 
 	}
 
+	public void TIS_RiskAssessment() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.tis_newsletter);
+			if (element) {
+				String EH_TIS_riskAssesment = "Tax Identity Shield";
+				String H_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_Header).getText();
+				String Text_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("font-weight");
+				String Color_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("color");
+				if((H_TIS_riskAssessment.equalsIgnoreCase(EH_TIS_riskAssesment))&&(Text_TIS_riskAssessment.equalsIgnoreCase("bold"))&&(Color_TIS_riskAssessment.equalsIgnoreCase("#30d8e7"))){
+					mblock.ValidateTest(true, true, "HeaderText is displayed");
+				}
+				else{
+					mblock.ValidateTest(false, true, "HeaderText is not displayed");
+
+				}
+				String Header_TIS_riskAssessment = "WHAT IS YOUR RISK LEVEL?";
+				String Head_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_content).getText();
+				String HeadF_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_content).getCssValue("font-weight");
+				String HeaderColor_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_content).getCssValue("color");
+				if((Head_TIS_riskAssessment.equalsIgnoreCase(Header_TIS_riskAssessment))&&(HeadF_TIS_riskAssessment.equalsIgnoreCase("bold"))&&(HeaderColor_TIS_riskAssessment.equalsIgnoreCase("#fff"))){
+					mblock.ValidateTest(true, true, "Content is displayed");
+				}
+				else{
+					mblock.ValidateTest(false, true, "Content Text is not displayed");
+
+				}
+				String Explain_Text = "Your tax identity theft Risk Assessment results are now available.";
+				String AExplain_Text = mblock.Element(ObjDashboard.tis_newsletter_expl).getText();
+				if((AExplain_Text.equalsIgnoreCase(Explain_Text))){
+					mblock.ValidateTest(true, true, "Explanatory is displayed");
+					}
+				else{
+					mblock.ValidateTest(false, true, "Explanatory Text is not displayed");
+
+				}
+				}
+				
+				
+
+			 else {
+				mblock.ValidateTest(false, true, "Newsletter Hero is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void TIS_Newsletter() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.tis_newsletter);
+			if (element) {
+				String EH_TIS_newsletter = "Tax Identity Shield";
+				String H_TIS_newsletter = mblock.Element(ObjDashboard.tis_newsletter_Header).getText();
+				String Text_TIS_newsletter = mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("font-weight");
+				String Color_TIS_newsletter = mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("color");
+				if((H_TIS_newsletter.equalsIgnoreCase(EH_TIS_newsletter))&&(Text_TIS_newsletter.equalsIgnoreCase("bold"))&&(Color_TIS_newsletter.equalsIgnoreCase("#30d8e7"))){
+					mblock.ValidateTest(true, true, "HeaderText is displayed");
+				}
+				else{
+					mblock.ValidateTest(false, true, "HeaderText is not displayed");
+
+				}
+				String Header_TIS_Newsletter = "ACCESS YOUR ACCOUNT";
+				String Head_TIS_Newsletter = mblock.Element(ObjDashboard.tis_newsletter_content).getText();
+				String HeadF_TIS_Newsletter = mblock.Element(ObjDashboard.tis_newsletter_content).getCssValue("font-weight");
+				String HeaderColor_TIS_newsletter = mblock.Element(ObjDashboard.tis_newsletter_content).getCssValue("color");
+				if((Head_TIS_Newsletter.equalsIgnoreCase(Header_TIS_Newsletter))&&(HeadF_TIS_Newsletter.equalsIgnoreCase("bold"))&&(HeaderColor_TIS_newsletter.equalsIgnoreCase("#fff"))){
+					mblock.ValidateTest(true, true, "Content is displayed");
+				}
+				else{
+					mblock.ValidateTest(false, true, "Content Text is not displayed");
+
+				}
+				String Explain_Text = "Your credit report is now available!";
+				String AExplain_Text = mblock.Element(ObjDashboard.tis_newsletter_expl).getText();
+				if((AExplain_Text.equalsIgnoreCase(Explain_Text))){
+					mblock.ValidateTest(true, true, "Explanatory is displayed");
+					}
+				else{
+					mblock.ValidateTest(false, true, "Explanatory Text is not displayed");
+
+				}
+				}
+				
+				
+
+			 else {
+				mblock.ValidateTest(false, true, "Newsletter Hero is not displayed");
+				Assert.assertFalse(true);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	public void TIS_RiskAssessmentHeroBtn() throws Exception {
+		try {
+			
+			boolean element = mblock.ElementExists(ObjDashboard.tis_newsletter);
+			if (element) {
+				String A_Text = mblock.Element(ObjDashboard.tis_newsletter).getText();
+				String E_Text = "View My Risk Assessment";
+				if(E_Text.equalsIgnoreCase(A_Text)){
+					mblock.ValidateTest(true, true, "Risk Assessment Hero Text is displayed");
+							
+				}else{
+					mblock.ValidateTest(false, true, "Risk Assessment Hero Text is not displayed");
+					Assert.assertFalse(true);
+				}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	public void TIS_RiskAssessmentHeroBtnBehavior() throws Exception {
+		try {
+			
+			boolean element = mblock.ElementExists(ObjDashboard.tis_newsletter);
+			if (element) {
+				
+					mblock.Element(ObjDashboard.tis_newsletter).click();
+					boolean element1 = mblock.ElementExists(ObjDashboard.TISiframe);
+					if(element1){
+						mblock.ValidateTest(true, true, "IDP modal frame is displayed");
+							
+				}
+					else{
+					mblock.ValidateTest(false, true, "IDP modal frame is not displayed");
+					Assert.assertFalse(true);
+				}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	public void TIS_NewsLetterHeroBtnBehavior() throws Exception {
+		try {
+			
+			boolean element = mblock.ElementExists(ObjDashboard.tis_newsletter);
+			if (element) {
+				
+					mblock.Element(ObjDashboard.tis_newsletter).click();
+					boolean element1 = mblock.ElementExists(ObjDashboard.TISiframe);
+					if(element1){
+						mblock.ValidateTest(true, true, "IDP modal frame is displayed");
+							
+				}
+					else{
+					mblock.ValidateTest(false, true, "IDP modal frame is not displayed");
+					Assert.assertFalse(true);
+				}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	public void TIS_NewsLetterHeroBtn() throws Exception {
+		try {
+			
+			boolean element = mblock.ElementExists(ObjDashboard.tis_newsletter);
+			if (element) {
+				String A_Text = mblock.Element(ObjDashboard.tis_newsletter).getText();
+				String E_Text = "View My Credit Report";
+				if(E_Text.equalsIgnoreCase(A_Text)){
+					mblock.ValidateTest(true, true, "News Letter Hero Text is displayed");
+							
+				}else{
+					mblock.ValidateTest(false, true, "News Letter Hero Text is not displayed");
+					Assert.assertFalse(true);
+				}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	
+	//Personalized Dashboard
+	public void Federal_RefundCheck() throws Exception {
+		try {
+			
+			boolean element = mblock.ElementExists(ObjDashboard.StatusBarTHBtn);
+			if (element) {
+				
+				String A_Text = mblock.Element(ObjDashboard.RefundAmt).getText();
+				mblock.Element(ObjDashboard.StatusBarTHBtn).click();
+				String E_Text = mblock.Element(ObjDashboard.RefundID).getText();
+				if(E_Text.equalsIgnoreCase(A_Text)){
+					mblock.ValidateTest(true, true, "Refund Amount Matches in Status Bar and TH");
+							
+				}else{
+					mblock.ValidateTest(false, true, "Refund Amount is not matched in Status Bar and TH");
+					Assert.assertFalse(true);
+				}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void Federal_FilingStatus() throws Exception {
+		try {
+			
+			boolean element = mblock.ElementExists(ObjDashboard.StatusBarTHBtn);
+			if (element) {
+				
+				String A_Text = mblock.Element(ObjDashboard.filingStatusSts).getText();
+				mblock.Element(ObjDashboard.StatusBarTHBtn).click();
+				String E_Text = mblock.Element(ObjDashboard.filingStatusSts).getText();
+				if(E_Text.equalsIgnoreCase(A_Text)){
+					mblock.ValidateTest(true, true, "Filing Status Matches in Status Bar and TH");
+							
+				}else{
+					mblock.ValidateTest(false, true, "Filing Status is not matched in Status Bar and TH");
+					Assert.assertFalse(true);
+				}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	public void Federal_TH() throws Exception {
+		try {
+			
+			boolean element = mblock.ElementExists(ObjDashboard.StatusBarTHBtn);
+			if (element) {
+				
+				String A_Text = mblock.Element(ObjDashboard.StatusBarTHBtn).getText();
+				mblock.Element(ObjDashboard.StatusBarTHBtn).click();
+				String E_Text = mblock.Element(ObjDashboard.TH).getText();
+				if(E_Text.equalsIgnoreCase(A_Text)){
+					mblock.ValidateTest(true, true, "Filing Year Matches in Status Bar and TH");
+							
+				}else{
+					mblock.ValidateTest(false, true, "Filing Year is not matched in Status Bar and TH");
+					Assert.assertFalse(true);
+				}
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+
+	
 }

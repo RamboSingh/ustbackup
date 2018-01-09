@@ -3,7 +3,7 @@ package TestCases.Dashboard;
 import business_actions.MyblockActions;
 import utility.Config;
 
-public class Tc_1015025_ValidateAvlbtyPOMPurchase2016ForRetailUserUnderProductservices {
+public class TC_1059074_ValidateheroButtonforusernavigatingthroughNewsletteremail {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -20,19 +20,20 @@ public class Tc_1015025_ValidateAvlbtyPOMPurchase2016ForRetailUserUnderProductse
 			// login with retail user
 			mblock.actLogin.login();
 
-			// Verify taxid shield is displayed in global nav
-			mblock.actGnrlNvgtn.vrfyTaxIdShldFrmGlobalNav();
+			//News Letter Navigation
+			mblock.Newsletter_TIS();
+			
+			
+			//Verify the News Letter TIS content
+			mblock.actDashboard.TIS_NewsLetterHeroBtn();
 
-			// Verify taxid shield is displayed in footer
-			mblock.actGnrlNvgtn.vrfyTaxIdShldFrmfooter();
-
-			// close the browser
-			mblock.Finalize(true);
+			// Close the browser
+			mblock.Finalize();
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
 		}
+		
 	}
 
 }

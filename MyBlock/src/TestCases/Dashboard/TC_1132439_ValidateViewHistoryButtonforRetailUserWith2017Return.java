@@ -3,30 +3,22 @@ package TestCases.Dashboard;
 import business_actions.MyblockActions;
 import utility.Config;
 
-public class Tc_1015025_ValidateAvlbtyPOMPurchase2016ForRetailUserUnderProductservices {
-
+public class TC_1132439_ValidateViewHistoryButtonforRetailUserWith2017Return {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		try {
 
 			// Configuration settings
 			Config objConfig = new Config();
 			MyblockActions mblock = new MyblockActions(objConfig.GetConfig());
+			
+			
 
 			// Browser navigation
 			mblock.NavigateToURL();
-
-			// login with retail user
 			mblock.actLogin.login();
-
-			// Verify taxid shield is displayed in global nav
-			mblock.actGnrlNvgtn.vrfyTaxIdShldFrmGlobalNav();
-
-			// Verify taxid shield is displayed in footer
-			mblock.actGnrlNvgtn.vrfyTaxIdShldFrmfooter();
-
-			// close the browser
+			mblock.actDashboard.statusBarVisible();
+			mblock.actDashboard.statusBarIconsVisible();
+			mblock.actDashboard.statusBarViewHistoryBtn();
 			mblock.Finalize(true);
 
 		} catch (Exception e) {
@@ -34,5 +26,4 @@ public class Tc_1015025_ValidateAvlbtyPOMPurchase2016ForRetailUserUnderProductse
 			e.printStackTrace();
 		}
 	}
-
 }

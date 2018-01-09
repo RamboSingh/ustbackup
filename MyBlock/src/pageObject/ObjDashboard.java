@@ -241,6 +241,7 @@ public class ObjDashboard {
 	public static By MDiframe_idp2 = By.id("basic-modal-iframe");
 	public static By THiframe_idp1 = By.id("basic-modal-iframe1");
 	public static By THiframe_idp2 = By.id("basic-modal-iframe1");
+	public static By TISiframe = By.id("hero-basic-modal-contentIdp");
 	
 	
 	
@@ -383,4 +384,28 @@ public class ObjDashboard {
 		public static By SB_FilingStatus = By.id("filingDiv");
 		public static By SB_FiledOn = By.id("prBusTransDtDiv");
 		public static By SB_FiledWith = By.id("tPNameDiv");
+		
+		
+
+		//TIS 
+
+		public static By tis_newsletter = By.id("tisDisplay");
+		public static By tis_newsletter_Header = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/h1/strong");
+		public static By tis_newsletter_content = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/h2/strong");
+		public static By tis_newsletter_expl = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/p");
+		public static By tis_RiskAssessment_Header = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/h1/strong");
+		public static By tis_RiskAssessmentr_content = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/h2/strong");
+		public static By tis_RiskAssessment_expl = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/p");
+		
+		
+		
+		//Status Bar
+		public static By RefundAmt = By.id("addressDiv");
+		public static By StatusBarTHBtn = By.id("mybPbutton");
+		public static By RefundID = By.id("refundid");
+		public static By filingStatus = By.xpath("html/body/div[6]/div[2]/div/div[2]/div[5]/div/div[1]/div[1]/div[2]/span");
+		public static By filingDate = By.xpath("html/body/div[6]/div[2]/div/div[2]/div[5]/div/div[1]/div[1]/div[3]/span");
+		public static By filingStatusSts = By.id("filingDiv");
+		public static By filingDateSts = By.id("prBusTransDtDiv");
+		public static By TH = By.id("taxYears");
 }

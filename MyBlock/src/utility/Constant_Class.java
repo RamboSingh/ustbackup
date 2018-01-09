@@ -8,6 +8,8 @@ public class Constant_Class {
 	 
 	 public static final String URL = "https://myaccountqa.hrblock.net/mytax/";
 	 public static final String Digital_URL = "https://tcxqa.hrblock.net/hrblock/default_TPS.aspx";
+	 public static final String TIS_Newsletter = "https://myaccountqa.hrblock.net/mytax/dashboardHome?origin=newsletter.tis.sn";
+	 public static final String TIS_RiskAssessment = "https://myaccountqa.hrblock.net/mytax/dashboardHome?origin=riskassessment.tis.sn";
 	 
      public static final String Username = "winner1717";
 
