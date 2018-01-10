@@ -408,4 +408,12 @@ public class ObjDashboard {
 		public static By filingStatusSts = By.id("filingDiv");
 		public static By filingDateSts = By.id("prBusTransDtDiv");
 		public static By TH = By.id("taxYears");
+		
+		
+		//Dashboard Changes
+		public static By Hero_WelcomeString = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/h1/strong");
+		public static By Hero_FNString = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/h1/span");
+		public static By Hero_BoldText = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/h2/strong");
+		public static By Hero_ExplanatoryText = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/p");
+		public static By Hero_Btn = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[2]/a");
 }
