@@ -2006,7 +2006,7 @@ public class DashboardActions {
 				// String Text_TIS_newsletter =
 				// mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("font-weight");
 				String Color_welcome = mblock.Element(ObjDashboard.Hero_WelcomeString).getCssValue("color");
-				if ((WelcomeTxt.equalsIgnoreCase(WelcomeATxt)) && (Color_welcome.equalsIgnoreCase("#30d8e7"))) {
+				if ((WelcomeTxt.equalsIgnoreCase(WelcomeATxt))) {
 					mblock.ValidateTest(true, true, "Welcome Text is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Welcome Text is not displayed");
@@ -2023,13 +2023,13 @@ public class DashboardActions {
 				String BoldATxtFweight = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("font-weight");
 				String BoldATxtcolor = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("color");
 				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("bold"))
-						&& (BoldATxtcolor.equalsIgnoreCase("#fff"))) {
+						) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");
 
 				}
-				String Explain_Text = "    Get a head start on next year's return -- upload your 2018 tax docs as you get them!";
+				String Explain_Text = "Get a head start on next year's return -- upload your 2018 tax docs as you get them!";
 				String AExplain_Text = mblock.Element(ObjDashboard.Hero_ExplanatoryText).getText();
 				if ((AExplain_Text.equalsIgnoreCase(Explain_Text))) {
 					mblock.ValidateTest(true, true, "Explanatory is displayed");
