@@ -21,11 +21,7 @@ public class Tc_971469_ValidateAvlbtyTISForNewUserUnderProductservices {
 			mblock.actCtracnt.crtacnt();
 
 			// Verify taxid shield is displayed in global nav
-			mblock.actGnrlNvgtn.vrfyTaxIdShldFrmGlobalNav();
-			
-			// Verify taxid shield is displayed in footer
-			mblock.actGnrlNvgtn.vrfyTaxIdShldFrmfooter();
-			
+			mblock.actGnrlNvgtn.vrfyTaxIdShldNotDsplGlobalNav();
 
 			// close the browser
 			mblock.Finalize(true);
