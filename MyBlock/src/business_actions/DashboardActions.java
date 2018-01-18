@@ -1548,9 +1548,9 @@ public class DashboardActions {
 				String SB_Height = mblock.Element(ObjDashboard.StatusBar).getCssValue("height");
 				System.out.println(SB_Height);
 				if ((SB_Width.contains("1263px") && (SB_Height.contains("171px")))) {
-					mblock.ValidateTest(true, true, "Status Bar is in Proper Alignment");
+					mblock.ValidateTest(true, true, "Status Bar is in Proper Alignment.");
 				} else {
-					mblock.ValidateTest(false, true, "Status Bar is Not Aligned Properly");
+					mblock.ValidateTest(false, true, "Status Bar is Not Aligned Properly.");
 					Assert.assertFalse(true);
 				}
 			}
