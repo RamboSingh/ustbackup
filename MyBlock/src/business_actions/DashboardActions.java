@@ -1556,7 +1556,7 @@ public class DashboardActions {
 			}
 
 			else {
-				mblock.ValidateTest(false, true, "Status Bar is Not Present");
+				mblock.ValidateTest(false, true, "Status Bar is Not Present.");
 				Assert.assertFalse(true);
 			}
 
