@@ -101,7 +101,7 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_pomlink);
 			if (element1) {
-				mblock.ValidateTest(true, true, "POM is displayed");
+				mblock.ValidateTest(true, true, "POM is displayed.");
 				mblock.Element(ObjDashboard.lnk_pomlink).click();
 
 			}
