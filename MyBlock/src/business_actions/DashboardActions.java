@@ -64,7 +64,7 @@ public class DashboardActions {
 				}
 
 			} else {
-				mblock.ValidateTest(false, true, "User Name is not displayed");
+				mblock.ValidateTest(false, true, "User Name is not displayed.");
 				Assert.assertFalse(true);
 			}
 
