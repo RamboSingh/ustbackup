@@ -85,7 +85,7 @@ public class DashboardActions {
 			}
 
 			else {
-				mblock.ValidateTest(false, true, "Products and Services is not displayed");
+				mblock.ValidateTest(false, true, "Products and Services is not displayed.");
 				Assert.assertFalse(true);
 			}
 
