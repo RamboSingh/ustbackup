@@ -28,7 +28,7 @@ public class CreateNewAccount {
 		try {
 			boolean element1 = mblock.ElementExists(ObjLogin.btn_crtacnt);
 			if (element1) {
-				mblock.ValidateTest(true, true,"Create account link is displayed");
+				mblock.ValidateTest(true, true,"Create account link is displayed.");
 				mblock.Element(ObjLogin.btn_crtacnt).click();
 				
 			} else {
