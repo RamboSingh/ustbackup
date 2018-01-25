@@ -79,7 +79,7 @@ public class DashboardActions {
 
 			boolean element1 = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
 			if (element1) {
-				mblock.ValidateTest(true, true, "Product and Services field is displayed");
+				mblock.ValidateTest(true, true, "Product and Services field is displayed.");
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).ufxFocus();
 
 			}
