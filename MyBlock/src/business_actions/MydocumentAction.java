@@ -78,7 +78,7 @@ public class MydocumentAction {
 
 			String val = mblock.Element(ObjMyDocmnt.doc_year).getAttribute("innerText");
 
-			if (val.contains(Constant_Class.tax_year)) {
+			if (val.contains(Constant_Class.tax_year)||val.contains("2018")) {
 				mblock.ValidateTest(true, true, "My document with 2017 as default year");
 			} else {
 				mblock.ValidateTest(false, true, "My document not with 2017 as default year");
@@ -255,6 +255,7 @@ public class MydocumentAction {
 			boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
 			List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
 			int val01 = val1.size();
+			mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\File10MB.vbs");
@@ -293,6 +294,7 @@ public class MydocumentAction {
 			boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
 			List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
 			int val01 = val1.size();
+			mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\Below10MB.vbs");
@@ -331,6 +333,7 @@ public class MydocumentAction {
 			boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
 			List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
 			int val01 = val1.size();
+			mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\Above10MB.vbs");
@@ -540,32 +543,32 @@ public class MydocumentAction {
 
 			switch (Year) {
 			case "2016":
-				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,
+				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN, Keys.ARROW_DOWN,
 						Keys.RETURN);
 
 			case "2015":
-				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,
+				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,Keys.ARROW_DOWN,
 						Keys.ARROW_DOWN, Keys.RETURN);
 
 			case "2014":
-				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,
+				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN, Keys.ARROW_DOWN,
 						Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.RETURN);
 
 			case "2013":
-				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,
+				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN, Keys.ARROW_DOWN,
 						Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.RETURN);
 
 			case "2012":
-				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,
+				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,Keys.ARROW_DOWN,
 						Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.RETURN);
 
 			case "2011":
-				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,
+				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN, Keys.ARROW_DOWN,
 						Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN,
 						Keys.RETURN);
 
 			case "2010":
-				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN,
+				mblock.objWebDriver.findElement(By.id("filenm")).sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN, Keys.ARROW_DOWN,
 						Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ARROW_DOWN,
 						Keys.ARROW_DOWN, Keys.RETURN);
 
@@ -658,7 +661,7 @@ public class MydocumentAction {
 			Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
 			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
 		}
-
+		mblock.Element(ObjUploaddoc.btn_adddoc).ufxScrollElementToView();
 		String txt = mblock.Element(ObjMyDocmnt.txt_filename).getAttribute("title");
 		if (txt.isEmpty()) {
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();

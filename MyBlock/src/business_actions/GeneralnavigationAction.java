@@ -70,14 +70,15 @@ public class GeneralnavigationAction {
 
 	// Verify the copy right year for 2016
 	public void vrfyCopyRightDate2016() throws Exception {
-
+		
 		boolean txt = mblock.ElementExists(ObjDashboard.txt_copyright);
-		if (txt = true) {
+		if (txt) {
+			mblock.Element(ObjDashboard.txt_copyright).ufxScrollElementToView();
 			String text = mblock.Element(ObjDashboard.txt_copyright).getText();
 			if (text.equalsIgnoreCase(Constant_Class.txt_copyright)) {
-				mblock.ValidateTest(true, true, "Copy right date to be displayed for 2016-2017");
+				mblock.ValidateTest(true, true, "Copy right date to be displayed for 2017-2018");
 			} else {
-				mblock.ValidateTest(false, true, "Copy right date not to be displayed for 2016-2017");
+				mblock.ValidateTest(false, true, "Copy right date not to be displayed for 2017-2018");
 				Assert.assertFalse(true);
 			}
 		}

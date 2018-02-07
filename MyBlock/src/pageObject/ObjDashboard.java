@@ -342,7 +342,7 @@ public class ObjDashboard {
 	public static By continueMyTaxes  = By.linkText("Continue My 2016 Taxes");
 	
 	//footer - copy right
-	public static By txt_copyright = By.xpath("//div[@id='sb-site']/div[4]/div/div/ul/li[1]");
+	public static By txt_copyright = By.xpath("//div[@id='sb-site']/div[4]/div/div/div/ul/li[1]");
 	public static By lnk_footermydoc = By.id("documentFLi");
 	public static By lnk_footertaxhsty= By.id("taxhistoryFLi");
 	public static By lnk_footermyonlinetax = By.id("mytaxonlinemenufooter");

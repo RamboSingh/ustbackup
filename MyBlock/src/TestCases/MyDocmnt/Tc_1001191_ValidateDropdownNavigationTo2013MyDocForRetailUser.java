@@ -38,6 +38,7 @@ public class Tc_1001191_ValidateDropdownNavigationTo2013MyDocForRetailUser {
 
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 	}
