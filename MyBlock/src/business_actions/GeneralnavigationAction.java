@@ -27,7 +27,7 @@ public class GeneralnavigationAction {
 	public void vrfyMyblockLogo() throws Exception {
 
 		boolean txt = mblock.ElementExists(ObjDashboard.img_logo);
-		if (txt = true) {
+		if (txt ) {
 			mblock.Element(ObjDashboard.img_logo).ufxScrollElementToView();
 			String text = mblock.Element(ObjDashboard.img_logo).getAttribute("src");
 			if (text.contains(Constant_Class.src_logo)) {
@@ -50,7 +50,7 @@ public class GeneralnavigationAction {
 	public void vrfyHRblockLogofooter() throws Exception {
 
 		boolean txt = mblock.ElementExists(ObjDashboard.img_logofooter);
-		if (txt = true) {
+		if (txt ) {
 			mblock.Element(ObjDashboard.img_logofooter).ufxScrollElementToView();
 			String text = mblock.Element(ObjDashboard.img_logofooter).getAttribute("src");
 			if (text.contains(Constant_Class.src_logofooter)) {
@@ -94,7 +94,7 @@ public class GeneralnavigationAction {
 	public void VrfyMyTaxFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			mblock.ValidateTest(true, true, "My Tax link is present in the Golbal navigation");
 		}
 
@@ -109,7 +109,7 @@ public class GeneralnavigationAction {
 	public void vrfyMydocFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_mytax).click();
 
@@ -119,7 +119,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mydoc);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_mydoc).ufxFocus();
 
@@ -143,7 +143,7 @@ public class GeneralnavigationAction {
 	public void vrfyMydocFrmFooter() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
-		if (txt_lnk = true) {
+		if (txt_lnk ) {
 			mblock.Element(ObjDashboard.lnk_footermydoc).ufxScrollElementToView();
 			mblock.ValidateTest(true, true, "My document link is present in footer");
 		}
@@ -161,7 +161,7 @@ public class GeneralnavigationAction {
 	public void clkMydocFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_mytax).click();
 
@@ -171,7 +171,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mydoc);
-			if (txt_lnk = true) {
+			if (txt_lnk) {
 
 				mblock.Element(ObjDashboard.lnk_mydoc).ufxClick();
 				mblock.ElementExists(ObjUploaddoc.btn_adddoc);
@@ -194,7 +194,7 @@ public class GeneralnavigationAction {
 	public void clkMydocFrmFooter() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermydoc);
-		if (txt_lnk = true) {
+		if (txt_lnk) {
 			mblock.Element(ObjDashboard.lnk_footermydoc).ufxScrollElementToView();
 			mblock.Element(ObjDashboard.lnk_footermydoc).ufxClick();
 			mblock.ElementExists(ObjUploaddoc.btn_adddoc);
@@ -214,7 +214,7 @@ public class GeneralnavigationAction {
 	public void vrfyTaxHstryFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_mytax).click();
 
@@ -224,7 +224,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxhstry);
-			if (txt_lnk = true) {
+			if (txt_lnk) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_taxhstry).ufxFocus();
 
@@ -248,7 +248,7 @@ public class GeneralnavigationAction {
 	public void vrfyTaxHstryFrmFooter() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footertaxhsty);
-		if (txt_lnk = true) {
+		if (txt_lnk) {
 			mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxScrollElementToView();
 			mblock.ValidateTest(true, true, "Tax History link is present in footer");
 		}
@@ -266,7 +266,7 @@ public class GeneralnavigationAction {
 	public void clkTaxHstryFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_mytax).click();
 
@@ -276,7 +276,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxhstry);
-			if (txt_lnk = true) {
+			if (txt_lnk) {
 				mblock.Element(ObjDashboard.lnk_taxhstry).ufxClick();
 				mblock.ElementExists(ObjTaxHistory.txt_taxhstry);
 				mblock.ValidateTest(true, true, "User lands to Tax history page");
@@ -298,7 +298,7 @@ public class GeneralnavigationAction {
 	public void clkTaxHstryFrmFooter() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footertaxhsty);
-		if (txt_lnk = true) {
+		if (txt_lnk) {
 			mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxScrollElementToView();
 			mblock.Element(ObjDashboard.lnk_footertaxhsty).ufxClick();
 			mblock.ElementExists(ObjTaxHistory.txt_taxhstry);
@@ -318,7 +318,7 @@ public class GeneralnavigationAction {
 	public void vrfyTaxproFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_mytax).click();
 
@@ -328,7 +328,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mytaxpro);
-			if (txt_lnk = true) {
+			if (txt_lnk) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_mytaxpro).ufxFocus();
 				}
@@ -351,7 +351,7 @@ public class GeneralnavigationAction {
 	public void clkMyTaxProFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_mytax).click();
 
@@ -361,7 +361,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mytaxpro);
-			if (txt_lnk = true) {
+			if (txt_lnk) {
 				mblock.Element(ObjDashboard.lnk_mytaxpro).ufxClick();
 				mblock.ElementExists(ObjDashboard.lnk_makeapnmt);
 				mblock.ValidateTest(true, true, "User lands in Tax Pro Page");
@@ -383,7 +383,7 @@ public class GeneralnavigationAction {
 	public void vrfyMyOnlneTaxFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_mytax).click();
 
@@ -393,7 +393,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mydonlinetax);
-			if (txt_lnk = true) {
+			if (txt_lnk) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_mydonlinetax).ufxFocus();
 
@@ -417,7 +417,7 @@ public class GeneralnavigationAction {
 	public void clkMyOnlneTaxFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-		if (icon_lnk = true) {
+		if (icon_lnk) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_mytax).click();
 
@@ -427,7 +427,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mydonlinetax);
-			if (txt_lnk = true) {
+			if (txt_lnk) {
 
 				mblock.Element(ObjDashboard.lnk_mydonlinetax).ufxClick();
 				mblock.ElementExists(ObjDashboard.lnk_myblock);
@@ -450,11 +450,11 @@ public class GeneralnavigationAction {
 	public void clkMyblockbtnTCX() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_myblock);
-		if (icon_lnk = true) {
+		if (icon_lnk) {
 
 			mblock.Element(ObjDashboard.lnk_myblock).ufxClick();
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mytax);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.ValidateTest(true, true, "Successfully back to Dashboard");
 
 			} else {
@@ -472,7 +472,7 @@ public class GeneralnavigationAction {
 	public void VrfyCalcToolFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			mblock.ValidateTest(true, true, "Calculator&tools link is present in the Golbal navigation");
 		}
 
@@ -488,7 +488,7 @@ public class GeneralnavigationAction {
 		public void vrfyTaxEstmrLnkFrmGlobalNa() throws Exception {
 
 			boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
-			if (icon_lnk = true) {
+			if (icon_lnk ) {
 
 				if (mblock.strBrowserType.equals("FIREFOX")) {
 					mblock.Element(ObjDashboard.lnk_calctr).click();
@@ -499,7 +499,7 @@ public class GeneralnavigationAction {
 				}
 				
 				boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxestmr);
-				if (txt_lnk = true) {
+				if (txt_lnk ) {
 
 					mblock.ValidateTest(true, true, "Tax Estimator link is present");
 				} else {
@@ -519,7 +519,7 @@ public class GeneralnavigationAction {
 	public void clkTaxEstmtrFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_calctr).click();
 
@@ -529,7 +529,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxestmr);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_taxestmr).ufxClick();
 				mblock.ElementExists(ObjTaxestimator.txt_aboutyouheader, 5000);
 				mblock.ElementExists(ObjTaxestimator.txt_expenseheader, 5000);
@@ -553,7 +553,7 @@ public class GeneralnavigationAction {
 	public void vrfyW4CaltrFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_calctr).click();
 
@@ -563,7 +563,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_w4calctr);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 			mblock.ValidateTest(true, true, "W4Calculator link is present");
 
 			} else {
@@ -582,7 +582,7 @@ public class GeneralnavigationAction {
 	public void clkW4CaltrFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_calctr).click();
 
@@ -592,7 +592,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_w4calctr);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_w4calctr).ufxClick();
 				mblock.ElementExists(objW4Calc.payFreq);
 				mblock.ValidateTest(true, true, "User lands to W4calculator page");
@@ -614,7 +614,7 @@ public class GeneralnavigationAction {
 	public void vrfyTaxOrgnzrFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_calctr).click();
 
@@ -624,7 +624,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxorgnzr);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 			
 				mblock.ValidateTest(true, true, "Tax Organaizer link is present");
 
@@ -645,7 +645,7 @@ public class GeneralnavigationAction {
 	public void clkTaxOrgnzrFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_calctr);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_calctr).click();
 
@@ -655,7 +655,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxorgnzr);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_taxorgnzr).ufxClick();
 				mblock.ElementExists(ObjTaxOrganizer.btn_additem);
 				mblock.ValidateTest(true, true, "User lands to Tax Organizer page");
@@ -677,7 +677,7 @@ public class GeneralnavigationAction {
 	public void VrfyProductServiceFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			mblock.ValidateTest(true, true, "Product&Service link is present in the Golbal navigation");
 		}
 
@@ -692,7 +692,7 @@ public class GeneralnavigationAction {
 	public void vrfyMakeAppnmtFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
 
@@ -702,7 +702,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_makeappnmt);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_makeappnmt).ufxFocus();
 
@@ -726,7 +726,7 @@ public class GeneralnavigationAction {
 	public void clkMakeAppnmtFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
 
@@ -736,7 +736,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_makeappnmt);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_makeappnmt).ufxClick();
 				mblock.ElementExists(Objcommon.txt_search);
 				mblock.ValidateTest(true, true, "User lands to Make appointment page");
@@ -758,7 +758,7 @@ public class GeneralnavigationAction {
 	public void vrfyFillingOnlneFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
 
@@ -768,7 +768,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_filngonline);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_filngonline).ufxFocus();
 
@@ -792,7 +792,7 @@ public class GeneralnavigationAction {
 	public void clkFillingOnlneFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
 
@@ -802,7 +802,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_filngonline);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_filngonline).ufxClick();
 				mblock.ElementExists(ObjDashboard.lnk_myblock);
 				mblock.ValidateTest(true, true, "User lands to TCX page");
@@ -824,7 +824,7 @@ public class GeneralnavigationAction {
 	public void vrfyTaxIdShldFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
 
@@ -834,7 +834,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxidshield);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_taxidshield).ufxFocus();
 
@@ -892,7 +892,7 @@ public class GeneralnavigationAction {
 	public void clkTaxIdShldFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
 
@@ -902,7 +902,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_taxidshield);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.ValidateTest(true, true, "Tax id shield link is present");
 				mblock.Element(ObjDashboard.lnk_taxidshield).ufxClick();
 
@@ -923,7 +923,7 @@ public class GeneralnavigationAction {
 	public void vrfyTaxIdShldFrmfooter() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footertaxIdshiled);
-		if (txt_lnk = true) {
+		if (txt_lnk ) {
 			mblock.Element(ObjDashboard.lnk_footertaxIdshiled).ufxScrollElementToView();
 			mblock.ValidateTest(true, true, "TaxID shield link is present in footer");
 
@@ -937,7 +937,7 @@ public class GeneralnavigationAction {
 	public void vrfyEmrldCardFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
 
@@ -947,7 +947,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_emrldcrd);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_emrldcrd).ufxFocus();
 
@@ -971,7 +971,7 @@ public class GeneralnavigationAction {
 	public void clkEmrldCardFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_prdctsrvce);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_prdctsrvce).click();
 
@@ -981,7 +981,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_emrldcrd);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.ValidateTest(true, true, "EmerlandCard link is present");
 				mblock.Element(ObjDashboard.lnk_emrldcrd).ufxClick();
 
@@ -1002,7 +1002,7 @@ public class GeneralnavigationAction {
 	public void VrfyMyAccountFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_profile);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			mblock.ValidateTest(true, true, "My Account link is present in the Golbal navigation");
 		}
 
@@ -1016,7 +1016,7 @@ public class GeneralnavigationAction {
 	// Verify My Account link is present in the global navigation
 	public void VrfyMngeAccntFrmGlobalNav() throws Exception {
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_profile);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_profile).click();
 
@@ -1026,7 +1026,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mngacnt);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_mngacnt).ufxFocus();
 
@@ -1050,7 +1050,7 @@ public class GeneralnavigationAction {
 	public void VrfyMngeAccntFrmfooter() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footermngeacnt);
-		if (txt_lnk = true) {
+		if (txt_lnk ) {
 			mblock.Element(ObjDashboard.lnk_footermngeacnt).ufxScrollElementToView();
 			mblock.ValidateTest(true, true, "Manage account link is present in footer");
 
@@ -1064,7 +1064,7 @@ public class GeneralnavigationAction {
 	public void clkMngeAccntFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_profile);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_profile).click();
 
@@ -1074,7 +1074,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_mngacnt);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.ValidateTest(true, true, "Manage account link is present");
 				mblock.Element(ObjDashboard.lnk_mngacnt).ufxClick();
 
@@ -1095,7 +1095,7 @@ public class GeneralnavigationAction {
 	public void vrfyProfileFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_profile);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_profile).click();
 
@@ -1105,7 +1105,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_prfle);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_prfle).ufxFocus();
 
@@ -1129,7 +1129,7 @@ public class GeneralnavigationAction {
 	public void vrfyProfileFrmfooter() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footerprfle);
-		if (txt_lnk = true) {
+		if (txt_lnk ) {
 			mblock.Element(ObjDashboard.lnk_footerprfle).ufxScrollElementToView();
 			mblock.ValidateTest(true, true, "profile link is present in footer");
 
@@ -1143,7 +1143,7 @@ public class GeneralnavigationAction {
 	public void clkProfileFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_profile);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_profile).click();
 
@@ -1153,7 +1153,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_prfle);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_prfle).ufxClick();
 				mblock.ElementExists(objProfile.Edit);
 				mblock.ValidateTest(true, true, "User lands in MDM page");
@@ -1176,7 +1176,7 @@ public class GeneralnavigationAction {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_getassistant);
 
-		if (icon_lnk == true) {
+		if (icon_lnk) {
 
 			mblock.Element(ObjDashboard.lnk_getassistant).ufxClick();
 
@@ -1196,7 +1196,7 @@ public class GeneralnavigationAction {
 	public void vrfyHelpFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_profile);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_profile).click();
 
@@ -1206,7 +1206,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_help);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				if (mblock.strBrowserType.equals("CHROME")) {
 					mblock.Element(ObjDashboard.lnk_help).ufxFocus();
 
@@ -1230,7 +1230,7 @@ public class GeneralnavigationAction {
 	public void vrfyHelpFrmfooter() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_footerhelp);
-		if (txt_lnk = true) {
+		if (txt_lnk ) {
 			mblock.Element(ObjDashboard.lnk_footerhelp).ufxScrollElementToView();
 			mblock.ValidateTest(true, true, "Help link is present in footer");
 
@@ -1244,7 +1244,7 @@ public class GeneralnavigationAction {
 	public void clkHelpFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_profile);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_profile).click();
 
@@ -1254,7 +1254,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_help);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_help).ufxClick();
 				mblock.ElementExists(ObjDashboard.btn_help);
 				mblock.ValidateTest(true, true, "User lands to Helps page");
@@ -1276,7 +1276,7 @@ public class GeneralnavigationAction {
 	public void vrfySignOutFrmGlobalNav() throws Exception {
 
 		boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_signout);
-		if (txt_lnk = true) {
+		if (txt_lnk ) {
 			if (mblock.strBrowserType.equals("CHROME")) {
 				mblock.Element(ObjDashboard.lnk_signout).ufxFocus();
 
@@ -1293,7 +1293,7 @@ public class GeneralnavigationAction {
 	public void clkSignOutFrmGlobalNav() throws Exception {
 
 		boolean icon_lnk = mblock.ElementExists(ObjDashboard.lnk_profile);
-		if (icon_lnk = true) {
+		if (icon_lnk ) {
 			if (mblock.strBrowserType.equals("FIREFOX")) {
 				mblock.Element(ObjDashboard.lnk_profile).click();
 
@@ -1303,7 +1303,7 @@ public class GeneralnavigationAction {
 			}
 
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_signout);
-			if (txt_lnk = true) {
+			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_signout).ufxClick();
 				mblock.ElementExists(ObjLogin.txt_username);
 				mblock.ValidateTest(true, true, "Successfully signout");

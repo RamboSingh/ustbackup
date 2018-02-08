@@ -173,6 +173,7 @@ public class MydocumentAction {
 					List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc)
 							.findElements(ObjUploaddoc.count_doc1);
 					int val01 = val1.size();
+					mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 					mblock.Element(ObjUploaddoc.btn_adddoc).click();
 					Thread.sleep(2000); // this line is only for waiting purpose
 					Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
@@ -216,6 +217,7 @@ public class MydocumentAction {
 					List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc)
 							.findElements(ObjUploaddoc.count_doc1);
 					int val01 = val1.size();
+					mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 					mblock.Element(ObjUploaddoc.btn_adddoc).click();
 					Thread.sleep(2000); // this line is only for waiting purpose
 					Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
@@ -380,7 +382,7 @@ public class MydocumentAction {
 			String lne1 = mblock.Element(ObjMyDocmnt.txt_lne1).getText();
 			String lne2 = mblock.Element(ObjMyDocmnt.txt_lne2).getText();
 
-			if (hdr.equalsIgnoreCase(Constant_Class.txt_hdr) && lne1.equalsIgnoreCase(Constant_Class.txt_lne1)
+			if (hdr.equalsIgnoreCase(Constant_Class.txt_hdr) && lne1.contains(Constant_Class.txt_lne1)
 					&& lne2.contains(Constant_Class.txt_lne2)) {
 
 				mblock.ValidateTest(true, true, "My document veribage content is displayed correctly");
@@ -524,6 +526,7 @@ public class MydocumentAction {
 			int val_1 = val01.size();
 			String file = mblock.Element(ObjMyDocmnt.txt_filename).getAttribute("title");
 			String trns_yr = mblock.Element(ObjMyDocmnt.doc_year).getAttribute("innerText");
+			mblock.Element(ObjUploaddoc.btn_adddoc).ufxScrollElementToView();
 			mblock.Element(ObjMyDocmnt.lnk_more).ufxClick();
 			boolean edit = mblock.ElementExists(ObjMyDocmnt.lnk_edit);
 			boolean view = mblock.ElementExists(ObjMyDocmnt.lnk_view);

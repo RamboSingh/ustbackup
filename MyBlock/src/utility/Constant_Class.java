@@ -62,7 +62,7 @@ public class Constant_Class {
      
      //My document verbiage content
      public static final String txt_hdr ="UPLOAD AND MANAGE YOUR TAX DOCUMENTS";
-     public static final String txt_lne1 = "Drag and drop your receipts, donations, and other tax-related items into your account. We'll upload them for you, and store everything safely and securely until it's time to file.";
+     public static final String txt_lne1 = "Drag and drop your receipts, donations, and other tax-related items into your account. We'll upload them for you";
      public static final String txt_lne2 = "When you add documents to your MyBlock account, H&R Block might access them to assist you with tax preparation or enhance its services. Please see our";
 
      
