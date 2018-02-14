@@ -12,6 +12,7 @@ import net.sourceforge.htmlunit.corejs.javascript.regexp.SubString;
 import pageObject.ObjDashboard;
 import pageObject.ObjIntegratedServices;
 import pageObject.ObjLogin;
+import pageObject.ObjMyDocmnt;
 import pageObject.ObjUploaddoc;
 import pageObject.objPOM;
 import utility.Constant_Class;
@@ -512,11 +513,18 @@ public class DashboardActions {
 
 			String val = mblock.Element(ObjDashboard.lnk_updoc).getText();
 			String val1 = mblock.Element(ObjDashboard.lnk_updoc1).getText();
-			if (val.contains("Document") || val1.contains("Document")) {
+			if (val.contains("Document")) {
 				mblock.Element(ObjDashboard.lnk_updoc).ufxScrollElementToView();
 				mblock.ValidateTest(true, true, "Upload My Documents is displayed");
 
-			} else {
+			} 
+			
+			else if(val1.contains("Document")) {
+				mblock.Element(ObjDashboard.lnk_updoc1).ufxScrollElementToView();
+				mblock.ValidateTest(true, true, "Upload My Documents is displayed");
+
+			}
+			else {
 				mblock.ValidateTest(false, true, "Upload My Documents is not displayed");
 				Assert.assertFalse(true);
 			}
@@ -1206,6 +1214,14 @@ public class DashboardActions {
 			if (element) {
 
 				mblock.Element(ObjDashboard.lnk_mydocmnt).ufxClick();
+				boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+				if(btn){
+					mblock.ValidateTest(true, true, "User land into my document page");
+				}
+				
+				else{
+					mblock.ValidateTest(false, true, "User not land into my document page");
+				}
 
 			} else {
 				mblock.ValidateTest(false, true, "Mydocument POD is not Displayed for this user, Please check user");
@@ -1961,6 +1977,28 @@ public class DashboardActions {
 					Assert.assertFalse(true);
 				}
 			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	
+	
+	//Verify the filling status
+	public void vrfyFilingStatus() throws Exception {
+		try {
+
+			boolean element = mblock.ElementExists(ObjDashboard.flng_sts);
+			if (element) {
+
+					mblock.ValidateTest(true, true, "Filing Status is displayed");
+
+				} else {
+					mblock.ValidateTest(false, true, "Filing Status is not displayed");
+					Assert.assertFalse(true);
+				}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

@@ -180,7 +180,7 @@ public class CreateNewAccount {
 	
 	public void Verifyhomepage() throws Exception{
 		try {
-			boolean home_page =mblock.ElementExists(ObjDashboard.txt_msg_h1, 5000);
+			boolean home_page = mblock.ElementExists(ObjDashboard.lnk_profile);
 			if(home_page){
 				mblock.ValidateTest(true, true,"New user Account has been Created");
 			}

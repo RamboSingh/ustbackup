@@ -16,6 +16,7 @@ import pageObject.ObjDashboard;
 import pageObject.ObjMyDocmnt;
 import pageObject.ObjTaxHistory;
 import pageObject.ObjUploaddoc;
+import pageObject.objPOM;
 import utility.Constant_Class;
 
 public class MydocumentAction {
@@ -1153,5 +1154,151 @@ public class MydocumentAction {
 			mblock.ValidateTest(false, true, "More option is not displayed under Income");
 		}
 	}
+	
+	// Verify search icon
+	public void vrfySearchiconIsdsply() throws Exception {
+
+		boolean sub1 = mblock.ElementExists(ObjMyDocmnt.search_icon);
+		if (sub1) {
+			
+			mblock.ValidateTest(true, true, "Search icon is displayed");
+			
+		} else {
+			mblock.ValidateTest(false, true, "Search icon is not displayed");
+		}
+	}
+
+	// Verify sort icon
+		public void vrfySortordericonIsdsply() throws Exception {
+
+			boolean sub1 = mblock.ElementExists(ObjMyDocmnt.sort_icon);
+			if (sub1) {
+				
+				mblock.ValidateTest(true, true, "Sort order icon is displayed");
+				
+			} else {
+				mblock.ValidateTest(false, true, "Sort order icon is not displayed");
+			}
+		}
+		
+		
+		// click search icon
+		public void clkSearchiconIsdsply() throws Exception {
+
+			List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+			int val01 = val1.size();
+			if (val01 < 2) {
+				mblock.Element(ObjUploaddoc.btn_adddoc).click();
+				Thread.sleep(2000); // this line is only for waiting purpose
+				Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
+				mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+			}
+			boolean sub1 = mblock.ElementExists(ObjMyDocmnt.search_icon);
+			if (sub1) {
+				mblock.Element(ObjMyDocmnt.search_icon).ufxClick();
+				String clr = mblock.Element(ObjMyDocmnt.search_icon).getCssValue("color");
+				if(clr.equalsIgnoreCase("(rgba(70, 133, 34, 1)||rgb(70, 133, 34))")){
+				
+					mblock.ValidateTest(true, true, "Search icon color is green");
+				}
+				
+				
+				
+			} else {
+				mblock.ValidateTest(false, true, "Search icon color is not green");
+			}
+		}
+		
+		
+		// click sort icon
+				public void clkSorticonIsdsply() throws Exception {
+
+					List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+					int val01 = val1.size();
+					if (val01 < 2) {
+						mblock.Element(ObjUploaddoc.btn_adddoc).click();
+						Thread.sleep(2000); // this line is only for waiting purpose
+						Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
+						mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+					}
+					boolean sub1 = mblock.ElementExists(ObjMyDocmnt.search_icon);
+					if (sub1) {
+						mblock.Element(ObjMyDocmnt.search_icon).ufxClick();
+						String clr = mblock.Element(ObjMyDocmnt.search_icon).getCssValue("color");
+						if(clr.equalsIgnoreCase("(rgba(70, 133, 34, 1)||rgb(70, 133, 34))")){
+						
+							mblock.ValidateTest(true, true, "Search icon color is green");
+						}
+						
+						
+						
+					} else {
+						mblock.ValidateTest(false, true, "Search icon color is not green");
+					}
+				}
+				
+				
+				// click sigle file and verify the background color
+				public void clkSnglFile() throws Exception {
+
+					List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+					int val01 = val1.size();
+					if (val01 < 2) {
+						mblock.Element(ObjUploaddoc.btn_adddoc).click();
+						Thread.sleep(2000); // this line is only for waiting purpose
+						Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
+						mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+					}
+					boolean sub1 = mblock.ElementExists(ObjMyDocmnt.first_file);
+					
+					if (sub1) {
+						mblock.Element(ObjMyDocmnt.first_file).ufxClick();
+						String clr = mblock.Element(ObjMyDocmnt.first_file).getCssValue("background");
+						String count = mblock.Element(ObjMyDocmnt.file_count).getText();
+								
+						if(clr.equalsIgnoreCase("(rgba(208,237,238, 0.8)||rgb(208,237,238))")&&count.contains("1")){
+						
+							mblock.ValidateTest(true, true, "Selected Single file color is green and count is 1");
+						}
+						
+						
+						
+					} else {
+						mblock.ValidateTest(false, true, "Selected Single file  color is not green or selected file count value is not 1");
+					}
+				}
+				
+				// click multiple file and verify the background color
+				public void clkmultipleFile() throws Exception {
+
+					List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
+					int val01 = val1.size();
+					if (val01 < 2) {
+						mblock.Element(ObjUploaddoc.btn_adddoc).click();
+						Thread.sleep(2000); // this line is only for waiting purpose
+						Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
+						mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+					}
+					boolean sub1 = mblock.ElementExists(ObjMyDocmnt.first_file);
+					
+					if (sub1) {
+						mblock.Element(ObjMyDocmnt.first_file).ufxSetAttribute("class","ng-scope checkme");
+						mblock.Element(ObjMyDocmnt.scnd_file).ufxSetAttribute("class","ng-scope checkme");
+						String clr = mblock.Element(ObjMyDocmnt.first_file).getCssValue("background");
+						String count = mblock.Element(ObjMyDocmnt.file_count).getText();
+								
+						if(clr.equalsIgnoreCase("(rgba(208,237,238, 0.8)||rgb(208,237,238))")&&count.contains("2")){
+						
+							mblock.ValidateTest(true, true, "Selected Single file color is green and count is 2");
+						}
+						
+						
+						
+					} else {
+						mblock.ValidateTest(false, true, "Selected Single file  color is not green or selected file count value is not 2");
+					}
+				}
+
+
 
 }

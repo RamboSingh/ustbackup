@@ -3,7 +3,7 @@ package TestCases.MyDocmnt;
 import business_actions.MyblockActions;
 import utility.Config;
 
-public class Tc_1012375_ValidateDfltYearForUserFiled2016FrmFooter {
+public class Tc_1015065_ValidateIconsPresent {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,24 +17,26 @@ public class Tc_1012375_ValidateDfltYearForUserFiled2016FrmFooter {
 			// Browser navigation
 			mblock.NavigateToURL();
 
-			// create account
-			mblock.actCtracnt.crtacnt();
+			// login with retail user
+			mblock.actLogin.login();
 
-			// Click my document link from Global nav
-			mblock.actGnrlNvgtn.clkMydocFrmFooter();
+			// Click My document from global navigation
+			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
 
-			// Verify default year as 2017
+			// Verify the default Drop down tax year
 			mblock.actMydoc.vrfyDfltMydocYr2016();
 			
-			//Logout the user
-			mblock.actLogout.LgoutFrmPrfle();
+			//verify the search icon
+			mblock.actMydoc.vrfySearchiconIsdsply();
+			
+			//Verify the sort order icon
+			mblock.actMydoc.vrfySortordericonIsdsply();
 
 			// Close the browser
 			mblock.Finalize();
 
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
 		}
 	}
 

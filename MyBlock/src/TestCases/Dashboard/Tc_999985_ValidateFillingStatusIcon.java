@@ -1,11 +1,13 @@
-package TestCases;
+package TestCases.Dashboard;
 
 import business_actions.MyblockActions;
 import utility.Config;
 
-public class Upload_Document_Newuser {
+public class Tc_999985_ValidateFillingStatusIcon {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
 		try {
 
 			// Configuration settings
@@ -15,20 +17,20 @@ public class Upload_Document_Newuser {
 			// Browser navigation
 			mblock.NavigateToURL();
 
-			
-			for(int i=0; i<30;i++){
-			// Create new account
+			// login with retail user
 			mblock.actLogin.login();
-			mblock.actLogout.LgoutFrmPrfle();
+
+			//verify the filling status
+			mblock.actDashboard.vrfyFilingStatus();
 			
-			}
-			
-			
-			
+
+			// Close the browser
+			mblock.Finalize();
+
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
 		}
 
 	}
+
 }

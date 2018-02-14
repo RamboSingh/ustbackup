@@ -28,6 +28,23 @@ public class LoginAction {
 			mblock.Element(ObjLogin.txt_username).sendKeys(Susername);
 			mblock.Element(ObjLogin.txt_password).sendKeys(Spassword);
 			mblock.Element(ObjLogin.btn_singin).click();
+			boolean err_msg = mblock.ElementExists(ObjLogin.txt_errmsg,3000);
+			String css = mblock.Element(ObjLogin.txt_pgerr).getCssValue("display");
+			if(err_msg&&!css.contains("none")){
+				boolean msg = false; 
+				while(msg==false){
+					mblock.NavigateToURL();
+					mblock.ElementExists(ObjLogin.txt_username);
+					mblock.Element(ObjLogin.txt_username).sendKeys(Susername);
+					mblock.Element(ObjLogin.txt_password).sendKeys(Spassword);
+					mblock.Element(ObjLogin.btn_singin).click();
+					boolean msg1 = mblock.ElementExists(ObjLogin.txt_errmsg,3000);
+					msg1=msg;
+					
+				}
+			}
+			
+			
 			boolean val = mblock.ElementExists(ObjLogin.SecurityAnswerLink,3000);
 			if(val){
 			mblock.Element(ObjLogin.SecurityAnswerLink).click();

@@ -416,4 +416,8 @@ public class ObjDashboard {
 		public static By Hero_BoldText = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/h2/strong");
 		public static By Hero_ExplanatoryText = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/p");
 		public static By Hero_Btn = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[2]/a");
+		
+		
+		//Filling status
+		public static By flng_sts = By.id("clFilingLi1");
 }

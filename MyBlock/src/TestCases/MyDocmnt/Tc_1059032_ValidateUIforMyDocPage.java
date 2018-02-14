@@ -1,11 +1,12 @@
-package TestCases;
+package TestCases.MyDocmnt;
 
 import business_actions.MyblockActions;
 import utility.Config;
 
-public class Upload_Document_Newuser {
+public class Tc_1059032_ValidateUIforMyDocPage {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		try {
 
 			// Configuration settings
@@ -15,20 +16,22 @@ public class Upload_Document_Newuser {
 			// Browser navigation
 			mblock.NavigateToURL();
 
-			
-			for(int i=0; i<30;i++){
-			// Create new account
+			// login with retail user
 			mblock.actLogin.login();
-			mblock.actLogout.LgoutFrmPrfle();
-			
-			}
-			
-			
-			
+
+			// Click My document from global navigation
+			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
+
+			// Verify the default Drop down tax year
+			mblock.actMydoc.vrfyDfltMydocYr2016();
+
+			// Close the browser
+			mblock.Finalize();
+
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
 		}
 
 	}
+
 }

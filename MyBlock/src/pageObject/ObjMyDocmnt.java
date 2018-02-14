@@ -21,6 +21,11 @@ public class ObjMyDocmnt {
 	public static By txt_filename = By.xpath("//*[@id='myb_udListDoc']/li/p[1]/a");
 	public static By lnk_category = By.id("hierarchybreadcrumb0");
 	
+	public static By first_file  = By.xpath("//*[@id='myb_udListDoc']/li[1]");
+	public static By scnd_file  = By.xpath("//*[@id='myb_udListDoc']/li[2]");
+	
+	public static By file_count = By.xpath("//*[@id='seletedFieldNumber']");
+	
 	//Edit pop up field
 	public static By lnk_trnsfyear = By.xpath("//a[@id='yearbreadcrumb']");
 	public static By txt_flenme = By.id("filenm");
@@ -48,4 +53,10 @@ public class ObjMyDocmnt {
 	
 	//Error messge while upload above 10mb file
 	public static By err_msg = By.xpath("//*[@id='filelistingcontainer']/div/span[2]");	
+	
+	
+	//Search and sort icon
+	
+	public static By search_icon = By.xpath("//*[@id='searchSortSec']/p/a[1]");
+	public static By sort_icon = By.xpath("//*[@id='searchSortSec']/p/a[2]");
 }
