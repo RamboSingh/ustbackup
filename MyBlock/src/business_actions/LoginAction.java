@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 
 import pageObject.ObjDashboard;
 import pageObject.ObjLogin;
+import utility.Config;
 import utility.Constant_Class;
 
 public class LoginAction {
@@ -28,20 +29,30 @@ public class LoginAction {
 			mblock.Element(ObjLogin.txt_username).sendKeys(Susername);
 			mblock.Element(ObjLogin.txt_password).sendKeys(Spassword);
 			mblock.Element(ObjLogin.btn_singin).click();
-			boolean err_msg = mblock.ElementExists(ObjLogin.txt_errmsg,3000);
-			String css = mblock.Element(ObjLogin.txt_pgerr).getCssValue("display");
-			if(err_msg&&!css.contains("none")){
+			boolean err_msg = mblock.ElementExists(ObjLogin.SecurityAnswerLink,3000);
+			boolean err_msg1 = mblock.ElementExists(ObjDashboard.lnk_profile,5000);
+			if(err_msg==false&&err_msg1==false){
+			
+			//if(val){
 				boolean msg = false; 
 				while(msg==false){
+					mblock.objWebDriver.manage().deleteAllCookies();
 					mblock.NavigateToURL();
+					//mblock.objWebDriver.navigate().to("https://qaidp.hrblock.net/idp/profile/SAML2/Redirect/SSO?execution=e1s1");
 					mblock.ElementExists(ObjLogin.txt_username);
 					mblock.Element(ObjLogin.txt_username).sendKeys(Susername);
 					mblock.Element(ObjLogin.txt_password).sendKeys(Spassword);
 					mblock.Element(ObjLogin.btn_singin).click();
-					boolean msg1 = mblock.ElementExists(ObjLogin.txt_errmsg,3000);
-					msg1=msg;
+					boolean val  = mblock.ElementExists(ObjLogin.SecurityAnswerLink,3000);
+					boolean val1 = mblock.ElementExists(ObjDashboard.lnk_profile,2000);
 					
-				}
+					if(val||val1){
+						msg=true;
+					}
+					
+					
+				//}
+			}
 			}
 			
 			
