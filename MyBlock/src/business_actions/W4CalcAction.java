@@ -99,7 +99,7 @@ public class W4CalcAction {
 				mblock.Log("Clicking on Last check Date");
 				
 				mblock.Element(objW4Calc.lastCheckDate).click();
-				mblock.Element(objW4Calc.lastCheckDate).ufxSetAttribute("value", "2017-10-10");
+				mblock.Element(objW4Calc.lastCheckDate).ufxSetAttribute("value", "2018-10-10");
 				
 				
 				

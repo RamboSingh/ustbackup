@@ -27,7 +27,7 @@ public class Tc_994017_ValidateUIRetailUserOnly2015YoY {
 			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2015");
 
 			// Verify the Fedaral tax summary coloumn
-			mblock.actTaxhstry.vrfyFedarlTaxClmn2015();
+			mblock.actTaxhstry.vrfyYoyNotDsply();
 
 			// close the browser
 			mblock.Finalize();

@@ -33,7 +33,7 @@ public class Tc_937724_ValidateTaxHistoryUIforTY2011TransctUser {
 			mblock.actTaxhstry.vrfyDfltTaxhstryYr2016();
 
 			// Choose Tax History year as 2011 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2011");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2016");
 
 			// Validate the tax history header text for new user
 			mblock.actTaxhstry.vrfyTaxhdrfrNewuser();

@@ -24,7 +24,7 @@ public class Tc_994028_ValidateUIDigitalUserOnly2011YoY {
 			mblock.actGnrlNvgtn.clkTaxHstryFrmGlobalNav();
 
 			// Choose Tax History year as 2011 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2011");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2015");
 
 			// Verify YOY data is not displayed
 			mblock.actTaxhstry.vrfyYoyNotDsply();

@@ -418,8 +418,13 @@ public class TaxHistoryAction {
 
 			if (val.contains(Constant_Class.tax_year1)) {
 				mblock.ValidateTest(true, true, "Tax History with 2016 as default year");
-			} else {
-				mblock.ValidateTest(false, true, "Tax History not with 2016 as default year");
+			}
+			
+			else if(val.contains("2017")){
+				mblock.ValidateTest(true, true, "Tax History with 2017 as default year");
+			}
+			else {
+				mblock.ValidateTest(false, true, "Tax History not with 2017 as default year");
 				Assert.assertFalse(true);
 			}
 		}
@@ -595,7 +600,7 @@ public class TaxHistoryAction {
 			String yr2 = mblock.Element(ObjTaxHistory.txt_yoy2015).getText();
 			String var = mblock.Element(ObjTaxHistory.txt_yoyvar).getText();
 
-			if (Yoy.equalsIgnoreCase("Year to Year") && yr1.equalsIgnoreCase("2016") && yr2.equalsIgnoreCase("2015")
+			if (Yoy.equalsIgnoreCase("Year to Year") && yr1.equalsIgnoreCase("2017") && yr2.equalsIgnoreCase("2016")
 					&& var.equalsIgnoreCase("Variations")) {
 
 				mblock.ValidateTest(true, true, "YOY Coloums are displayed correctly");

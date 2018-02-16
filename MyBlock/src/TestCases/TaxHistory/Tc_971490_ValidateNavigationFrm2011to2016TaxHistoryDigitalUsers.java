@@ -26,9 +26,6 @@ public class Tc_971490_ValidateNavigationFrm2011to2016TaxHistoryDigitalUsers {
 			// Verify the tax history year with 2016 as default
 			mblock.actTaxhstry.vrfyDfltTaxhstryYr2016();
 
-			// Choose Tax History year as 2011 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2011");
-
 			// Choose Tax History year as 2012 from dropdown
 			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2012");
 

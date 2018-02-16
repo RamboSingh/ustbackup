@@ -17,63 +17,58 @@ public class Tc_999306_ValidateCopyrightInFooterForSWuser {
 
 			// login with soft user
 			mblock.actLogin.login();
-			
-			//Click get assistant link under POD
-			mblock.actGnrlNvgtn.clkGetasstFrmPOD();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
 
-			// Click My Documents under My Taxes 
+			// Click My Documents under My Taxes
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
 
-			// Click Tax History under My Taxes 
+			// Click Tax History under My Taxes
 			mblock.actGnrlNvgtn.clkTaxHstryFrmGlobalNav();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
-			
-			//Click Tax Organizer under Calculators & Tools 
+
+			// Click Tax Organizer under Calculators & Tools
 			mblock.actGnrlNvgtn.clkTaxOrgnzrFrmGlobalNav();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
-			
-			//Click Tax Estimator under Calculators & Tools 
+
+			// Click Tax Estimator under Calculators & Tools
 			mblock.actGnrlNvgtn.clkTaxEstmtrFrmGlobalNav();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
-			
-			//Click W4 Calculator under Calculators & Tools 
+
+			// Click W4 Calculator under Calculators & Tools
 			mblock.actGnrlNvgtn.clkW4CaltrFrmGlobalNav();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
-			
-			//Click Schedule Appointment under Products & Services
+
+			// Click Schedule Appointment under Products & Services
 			mblock.actGnrlNvgtn.clkMakeAppnmtFrmGlobalNav();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
-			
-			//Click profile under My account
+
+			// Click profile under My account
 			mblock.actGnrlNvgtn.clkProfileFrmGlobalNav();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
 
-			
-			//Click Help under My Account 
+			// Click Help under My Account
 			mblock.actGnrlNvgtn.clkHelpFrmGlobalNav();
 
 			// Validate the copyright dates in footer
 			mblock.actGnrlNvgtn.vrfyCopyRightDate2016();
-			
-			
+
 			// close the browser
 			mblock.Finalize();
 
@@ -81,6 +76,6 @@ public class Tc_999306_ValidateCopyrightInFooterForSWuser {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
+
 	}
 }

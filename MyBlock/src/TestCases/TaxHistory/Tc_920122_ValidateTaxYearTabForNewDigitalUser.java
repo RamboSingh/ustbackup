@@ -30,20 +30,19 @@ public class Tc_920122_ValidateTaxYearTabForNewDigitalUser {
 			mblock.actTaxhstry.vrfyDfltTaxhstryYr2016();
 
 			// Choose Tax History year as 2015 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2015");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2016");
 
 			// Choose Tax History year as 2014 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2014");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2015");
 
 			// Choose Tax History year as 2013 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2013");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2014");
 
 			// Choose Tax History year as 2012 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2012");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2013");
 
 			// Choose Tax History year as 2011 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2011");
-
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2012");
 			// close the browser
 			mblock.Finalize();
 

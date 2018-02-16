@@ -63,7 +63,7 @@ public class Tc_997701_ValidateUITaxReturnDataInTaxHistoryNewUser {
 			mblock.actCardIdnty.vrfyCnfrmIdbtn();
 			
 			//Choose Tax History year as 2011 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2011");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2016");
 			
 			//Validate the tax history header text for new user
 			mblock.actTaxhstry.vrfyTaxhdrfrNewuser();

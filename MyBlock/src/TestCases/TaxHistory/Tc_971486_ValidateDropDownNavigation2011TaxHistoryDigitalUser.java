@@ -27,7 +27,7 @@ public class Tc_971486_ValidateDropDownNavigation2011TaxHistoryDigitalUser {
 			mblock.actTaxhstry.vrfyDfltTaxhstryYr2016();
 			
 			//Choose Tax History year as 2011 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2011");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2016");
 			
 			//click Tax return doc and verify new window is opened
 			mblock.actTaxhstry.clkRtrnDocDgtlUsr();

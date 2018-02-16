@@ -27,7 +27,7 @@ public class Tc_997722_ValidateAvailabilityPurchaseMyReturnButtonForDigitalUser2
 			mblock.actTaxhstry.vrfyDfltTaxhstryYr2016();
 
 			// Choose Tax History year as 2011 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2011");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2016");
 
 			//Verify Purchase my return button is displaye
 			mblock.actTaxhstry.vrfyPrchsRtnBtn();
