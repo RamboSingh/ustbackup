@@ -24,7 +24,7 @@ public class Tc_994023_ValidateUIDigitalUserOnly2016YoY {
 			mblock.actGnrlNvgtn.clkTaxHstryFrmGlobalNav();
 
 			// Verify the Fedaral tax summary coloumn
-			mblock.actTaxhstry.vrfyFedarlTaxClmn2016();
+			mblock.actTaxhstry.vrfyYoyNotDsply();
 
 			// close the browser
 			mblock.Finalize();

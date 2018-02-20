@@ -27,7 +27,7 @@ public class Tc_994021_ValidateUIRetailUserOnly2011YoY {
 			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2016");
 
 			// Verify YOY data is not displayed
-			mblock.actTaxhstry.vrfyFedarlTaxClmn2016();
+			mblock.actTaxhstry.vrfyYoyNotDsply();
 
 			// close the browser
 			mblock.Finalize();

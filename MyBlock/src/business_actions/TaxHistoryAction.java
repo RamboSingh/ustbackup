@@ -419,11 +419,10 @@ public class TaxHistoryAction {
 			if (val.contains(Constant_Class.tax_year1)) {
 				mblock.ValidateTest(true, true, "Tax History with 2016 as default year");
 			}
-			
-			else if(val.contains("2017")){
+
+			else if (val.contains("2017")) {
 				mblock.ValidateTest(true, true, "Tax History with 2017 as default year");
-			}
-			else {
+			} else {
 				mblock.ValidateTest(false, true, "Tax History not with 2017 as default year");
 				Assert.assertFalse(true);
 			}

@@ -39,7 +39,7 @@ public class Tc_936822_ValidateTaxYearTabForTransctUser {
 			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2012");
 
 			// Choose Tax History year as 2011 from dropdown
-			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2011");
+			mblock.actTaxhstry.clkTaxhstryYrFrmDrpdwn("2016");
 
 			// close the browser
 			mblock.Finalize();
