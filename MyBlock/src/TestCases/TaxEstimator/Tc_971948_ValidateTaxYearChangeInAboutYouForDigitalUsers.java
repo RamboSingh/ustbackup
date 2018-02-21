@@ -23,7 +23,7 @@ public class Tc_971948_ValidateTaxYearChangeInAboutYouForDigitalUsers {
 			mblock.actTaxEstimator.clkTaxEstmrLnkFrmStusBar();
 			
 			//verify the about you header
-			mblock.actTaxEstimator.vrfyAbtyouHeadingText();
+		//	mblock.actTaxEstimator.vrfyAbtyouHeadingText();
 			
 			//close the browser
 			mblock.Finalize();

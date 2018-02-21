@@ -24,10 +24,10 @@ public class Tc_971949_ValidateTaxYearInIncometabForDigitalUsers {
 			mblock.actTaxEstimator.clkTaxEstmrLnkFrmStusBar();
 
 			// Entering basic detail and click next
-			mblock.actTaxEstimator.entrAboutDetailandClkNext();
+		//	mblock.actTaxEstimator.entrAboutDetailandClkNext();
 
 			// verify the header text of Income tab
-			mblock.actTaxEstimator.vrfyIncomeHeadingText();
+		//	mblock.actTaxEstimator.vrfyIncomeHeadingText();
 
 			// close the browser
 			mblock.Finalize();

@@ -22,10 +22,10 @@ public class Tc_971942_ValidateTaxYearChangesHelpTextIncomeTab {
 			mblock.actTaxEstimator.clkTaxEstmrLnkFrmStusBar();
 
 			// Entering basic detail and click next
-			mblock.actTaxEstimator.entrAboutDetailandClkNext();
+			//mblock.actTaxEstimator.entrAboutDetailandClkNext();
 			
 			//Verify the help text under income tab for tax year 2016
-			mblock.actTaxEstimator.vrfyHelpTextIncometabforTY2016();
+			//mblock.actTaxEstimator.vrfyHelpTextIncometabforTY2016();
 			
 			//close the browser
 			mblock.Finalize();
