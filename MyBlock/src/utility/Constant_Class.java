@@ -45,6 +45,7 @@ public class Constant_Class {
      
      public static final String img_taxyear = "mytax/images/fy17/myb_banner_th.jpg";
      public static final String img_mydoc = "mytax/images/fy17/myb_banner_td.jpg";
+     public static final String img_taxorg = "mytax/images/fy17/myb_banner_to.png";
      
      //Emerland card Qstn popup
      

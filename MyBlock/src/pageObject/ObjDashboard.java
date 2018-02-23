@@ -11,8 +11,8 @@ public class ObjDashboard {
 	public static By lnk_myblock = By.linkText("MyBlock");
 	
 	//upload doc button
-	public static By lnk_updoc = By.xpath("//*[@id='skiptoMainContent']/div[1]/div/div/div[2]/a[1]");
-	public static By lnk_updoc1 = By.xpath("//*[@id='skiptoMainContent']/div[1]/div/div/div[2]/a[2]");
+	public static By lnk_updoc = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div/div[2]/a[1]");
+	public static By lnk_updoc1 = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div/div[2]/a[2]");
 	//All Global navigation
 	public static By glb_nav = By.xpath("//*[@id='myb_contentNav']/div/div/div");
 	

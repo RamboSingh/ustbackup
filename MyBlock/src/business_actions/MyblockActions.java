@@ -32,6 +32,7 @@ public class MyblockActions extends SInteractive {
 	public DashboardActions actDashboard;
 	public TaxHistoryAction actTaxhstry;
 	public MydocumentAction actMydoc;
+	public TaxOrganizerAction actTaxorg;
 	public static String browser = null;
 
 	public MyblockActions(String[] args) throws Exception {
@@ -52,6 +53,7 @@ public class MyblockActions extends SInteractive {
 		actDashboard = new DashboardActions(this);
 		actTaxhstry = new TaxHistoryAction(this);
 		actMydoc = new MydocumentAction(this);
+		actTaxorg = new TaxOrganizerAction(this);
 	}
 
 	public void NavigateToURL() throws Exception {
