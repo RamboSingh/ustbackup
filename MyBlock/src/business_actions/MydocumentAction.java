@@ -419,9 +419,10 @@ public class MydocumentAction {
 
 	public void clkMoreBtn() throws Exception {
 
+		String val = mblock.objWebDriver.findElement(By.id("docListTable")).getCssValue("display");
 		List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
 		int val01 = val1.size();
-		if (val01 < 2) {
+		if (val01 <2||val.contains("none")) {
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
@@ -497,7 +498,7 @@ public class MydocumentAction {
 				mblock.ElementExists(ObjDashboard.answr_col1, 5000);
 				List<WebElement> val2 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
 				int val02 = val2.size();
-				if (val02 < val01) {
+				if (val02 <= val01) {
 					mblock.ValidateTest(true, true, "Document successfully deleted");
 				}
 
