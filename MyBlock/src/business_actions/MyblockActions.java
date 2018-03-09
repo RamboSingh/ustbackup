@@ -61,16 +61,20 @@ public class MyblockActions extends SInteractive {
 
 			Navigate(ExcelAction.env);
 
-			/*
-			 * boolean element = ElementExists(Objcommon.Zsclr_clicklink);
-			 * boolean element1 = ElementExists(Objcommon.Zsclr_accptButtn);
-			 * if(element==true){ Element(Objcommon.Zsclr_clicklink).click();
-			 * ElementExists(Objcommon.Zsclr_accptButtn);
-			 * Element(Objcommon.Zsclr_accptButtn).click(); } else if
-			 * (element==false&&element1==true){
-			 * Element(Objcommon.Zsclr_accptButtn).click(); } else{
-			 * System.out.println("page is loaded directly"); }
-			 */
+			boolean element = ElementExists(Objcommon.Zsclr_clicklink,2000);
+			boolean element1 = ElementExists(Objcommon.Zsclr_accptButtn,2000);
+			if (element) {
+				Element(Objcommon.Zsclr_clicklink).click();
+				ElementExists(Objcommon.Zsclr_accptButtn);
+				Element(Objcommon.Zsclr_accptButtn).click();
+			}
+			
+			else if (element1) {
+				Element(Objcommon.Zsclr_accptButtn).click();
+			} else {
+				System.out.println("page is loaded directly");
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 
@@ -82,6 +86,20 @@ public class MyblockActions extends SInteractive {
 		try {
 
 			Navigate(Constant_Class.Digital_URL);
+			
+			boolean element = ElementExists(Objcommon.Zsclr_clicklink,2000);
+			boolean element1 = ElementExists(Objcommon.Zsclr_accptButtn,2000);
+			if (element) {
+				Element(Objcommon.Zsclr_clicklink).click();
+				ElementExists(Objcommon.Zsclr_accptButtn);
+				Element(Objcommon.Zsclr_accptButtn).click();
+			}
+			
+			else if (element1) {
+				Element(Objcommon.Zsclr_accptButtn).click();
+			} else {
+				System.out.println("page is loaded directly");
+			}
 
 			ElementExists(ObjLogin.lnk_freeEdtn);
 			Element(ObjLogin.lnk_freeEdtn).click();

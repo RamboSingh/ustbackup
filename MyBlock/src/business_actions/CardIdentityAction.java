@@ -182,9 +182,7 @@ public class CardIdentityAction {
 
 	public void clrSsdob() throws Exception {
 		try {
-			Config objConfig = new Config();
-			MyblockActions mblock = new MyblockActions(objConfig.GetConfig());
-
+			
 			mblock.NavigateToSSDURL();
 			mblock.ElementExists(ObjDashboard.txt_ssod);
 			for (int i = 0; i < 1; i++) {

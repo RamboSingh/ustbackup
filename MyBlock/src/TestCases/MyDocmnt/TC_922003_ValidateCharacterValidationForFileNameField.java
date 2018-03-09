@@ -29,6 +29,9 @@ public class TC_922003_ValidateCharacterValidationForFileNameField {
 			//Select the year from dropdown
 			mblock.actMydoc.clkMydocYrFrmDrpdwn("2016");
 			
+			//click more option
+			mblock.actMydoc.clkMoreBtn();
+			
 			//click edit option
 			mblock.actMydoc.clkEditOptn();
 

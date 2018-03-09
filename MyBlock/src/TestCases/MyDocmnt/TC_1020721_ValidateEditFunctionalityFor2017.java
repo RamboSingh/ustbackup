@@ -29,6 +29,9 @@ public class TC_1020721_ValidateEditFunctionalityFor2017 {
 			//Upload the documnet for the mentioned year
 			mblock.actMydoc.clkMydocYrUpldDoc("2012");
 			
+			//click more option
+			mblock.actMydoc.clkMoreBtn();
+			
 			//click edit option
 			mblock.actMydoc.clkEditOptn();
 

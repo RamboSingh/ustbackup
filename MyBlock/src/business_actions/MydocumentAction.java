@@ -428,6 +428,7 @@ public class MydocumentAction {
 			Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
 			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
 		}
+		mblock.Element(ObjUploaddoc.btn_adddoc).ufxScrollElementToView();
 		boolean more = mblock.ElementExists(ObjMyDocmnt.lnk_more);
 		if (more) {
 
@@ -476,10 +477,11 @@ public class MydocumentAction {
 	// Click Delete option
 
 	public void clkDeleteOptn() throws Exception {
-		boolean more = mblock.ElementExists(ObjMyDocmnt.lnk_delete);
-		if (more) {
+		boolean delete = mblock.ElementExists(ObjMyDocmnt.lnk_delete);
+		if (delete) {
 			List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc).findElements(ObjUploaddoc.count_doc1);
 			int val01 = val1.size();
+			mblock.Element(ObjUploaddoc.btn_adddoc).ufxScrollElementToView();
 			String file = mblock.Element(ObjMyDocmnt.txt_filename).getAttribute("title");
 			mblock.Element(ObjMyDocmnt.lnk_delete).ufxClick();
 			boolean del = mblock.ElementExists(ObjMyDocmnt.btn_ok);
@@ -726,7 +728,7 @@ public class MydocumentAction {
 			Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
 			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
 		}
-
+		mblock.Element(ObjUploaddoc.btn_adddoc).ufxScrollElementToView();
 		mblock.Element(ObjMyDocmnt.lnk_category).ufxClick();
 		boolean incme = mblock.ElementExists(ObjDashboard.lnk_income);
 		boolean dedctn = mblock.ElementExists(ObjDashboard.lnk_dede);

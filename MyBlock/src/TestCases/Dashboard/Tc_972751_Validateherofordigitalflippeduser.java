@@ -22,6 +22,7 @@ public class Tc_972751_Validateherofordigitalflippeduser {
 
 			// Verify Upload my document button is not displayed
 			mblock.actDashboard.Digitalstart();
+
 			// close the browser
 			mblock.Finalize();
 

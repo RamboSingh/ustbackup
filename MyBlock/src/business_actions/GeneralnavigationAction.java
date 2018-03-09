@@ -804,8 +804,15 @@ public class GeneralnavigationAction {
 			boolean txt_lnk = mblock.ElementExists(ObjDashboard.lnk_filngonline);
 			if (txt_lnk ) {
 				mblock.Element(ObjDashboard.lnk_filngonline).ufxClick();
-				mblock.ElementExists(ObjDashboard.lnk_myblock);
+				boolean lnk = mblock.ElementExists(ObjDashboard.lnk_myblock);
+				if(lnk){
 				mblock.ValidateTest(true, true, "User lands to TCX page");
+				}
+				
+				else{
+					
+					mblock.ValidateTest(false, true, "User is not land to TCX page");
+				}
 
 			} else {
 				mblock.ValidateTest(false, true, "Filling Online link is not present");
