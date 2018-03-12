@@ -17,15 +17,6 @@ public class test {
 						// Browser navigation
 						mblock.NavigateToURL();
 
-						// login with retail user
-						mblock.actLogin.login();
-
-						//Verify the Tax orgn POD
-						mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
-						mblock.actMydoc.clkMydocYrUpldDoc("2016");
-						mblock.actMydoc.clkEditBtnTrnsfrFile("2012");
-						
-						
 						// Close the browser
 						mblock.Finalize();
 			

@@ -22,7 +22,7 @@ public class Tc_971940_ValidateTaxYearinHelpTextUnderAboutYou {
 			mblock.actTaxEstimator.clkTaxEstmrLnkFrmStusBar();
 			
 			//Validate help icon near About you tab heading text
-		//	mblock.actTaxEstimator.vrfyHelpTextforTY2016();
+			mblock.actTaxEstimator.vrfyHelpTextforTY2016();
 			
 			//close the browser
 			mblock.Finalize();

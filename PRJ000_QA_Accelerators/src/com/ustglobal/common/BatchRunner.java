@@ -643,37 +643,46 @@ public class BatchRunner {
 		cell1.setPaddingLeft(10);
 		cell1.setHorizontalAlignment(Element.ALIGN_CENTER);
 		cell1.setVerticalAlignment(Element.ALIGN_MIDDLE);
-
-		PdfPCell cell2 = new PdfPCell(new Paragraph("Date : " + new Date()));
+		
+		PdfPCell cell2 = new PdfPCell(new Paragraph("Stat Time : " +SInteractive.date));
 		cell2.setBorderColor(BaseColor.BLACK);
 		cell2.setBackgroundColor(new BaseColor(211, 211, 211));
 		cell2.setPaddingLeft(10);
 		cell2.setHorizontalAlignment(Element.ALIGN_LEFT);
 		cell2.setVerticalAlignment(Element.ALIGN_MIDDLE);
 
-		PdfPCell cell3 = new PdfPCell(new Paragraph("Browser : " + SInteractive.strBrowserType));
+		PdfPCell cell3 = new PdfPCell(new Paragraph("End Time : " + new Date()));
 		cell3.setBorderColor(BaseColor.BLACK);
 		cell3.setBackgroundColor(new BaseColor(211, 211, 211));
 		cell3.setPaddingLeft(10);
 		cell3.setHorizontalAlignment(Element.ALIGN_LEFT);
 		cell3.setVerticalAlignment(Element.ALIGN_MIDDLE);
 
-		PdfPCell cell4 = new PdfPCell(new Paragraph("Application : MyBlock Web"));
+		PdfPCell cell4 = new PdfPCell(new Paragraph("Browser : " + SInteractive.strBrowserType));
 		cell4.setBorderColor(BaseColor.BLACK);
 		cell4.setBackgroundColor(new BaseColor(211, 211, 211));
 		cell4.setPaddingLeft(10);
 		cell4.setHorizontalAlignment(Element.ALIGN_LEFT);
 		cell4.setVerticalAlignment(Element.ALIGN_MIDDLE);
 
+		PdfPCell cell5 = new PdfPCell(new Paragraph("Application : MyBlock Web"));
+		cell5.setBorderColor(BaseColor.BLACK);
+		cell5.setBackgroundColor(new BaseColor(211, 211, 211));
+		cell5.setPaddingLeft(10);
+		cell5.setHorizontalAlignment(Element.ALIGN_LEFT);
+		cell5.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
 		cell1.setUseBorderPadding(true);
 		cell2.setUseBorderPadding(true);
 		cell3.setUseBorderPadding(true);
 		cell4.setUseBorderPadding(true);
+		cell5.setUseBorderPadding(true);
 
 		table.addCell(cell1);
 		table.addCell(cell2);
 		table.addCell(cell3);
 		table.addCell(cell4);
+		table.addCell(cell5);
 		document.add(table);
 
 		for (int s = 0; s < model.getRowCount(); s++) {

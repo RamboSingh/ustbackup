@@ -517,14 +517,13 @@ public class DashboardActions {
 				mblock.Element(ObjDashboard.lnk_updoc).ufxScrollElementToView();
 				mblock.ValidateTest(true, true, "Upload My Documents is displayed");
 
-			} 
-			
-			else if(val1.contains("Document")) {
+			}
+
+			else if (val1.contains("Document")) {
 				mblock.Element(ObjDashboard.lnk_updoc1).ufxScrollElementToView();
 				mblock.ValidateTest(true, true, "Upload My Documents is displayed");
 
-			}
-			else {
+			} else {
 				mblock.ValidateTest(false, true, "Upload My Documents is not displayed");
 				Assert.assertFalse(true);
 			}
@@ -609,8 +608,10 @@ public class DashboardActions {
 	public void vrfyECpodForRtlUsr() throws Exception {
 		try {
 
-			boolean element1 = mblock.ElementExists(ObjDashboard.img_emrcard, 5000);
-			boolean element01 = mblock.ElementExists(ObjDashboard.img_emrcard01, 5000);
+			boolean element1 = mblock.ElementExists(ObjDashboard.img_emrcard, 2000);
+			boolean element01 = mblock.ElementExists(ObjDashboard.img_emrcard01, 2000);
+			boolean element02 = mblock.ElementExists(ObjDashboard.img_emrcard02, 2000);
+			boolean element03 = mblock.ElementExists(ObjDashboard.img_emrcard03, 2000);
 			if (element1) {
 				mblock.Element(ObjDashboard.img_emrcard).ufxScrollElementToView();
 				String clsnme = mblock.Element(ObjDashboard.img_emrcard).getAttribute("class");
@@ -637,7 +638,37 @@ public class DashboardActions {
 					Assert.assertFalse(true);
 				}
 
-			} else {
+			}
+
+			else if (element02) {
+				mblock.Element(ObjDashboard.img_emrcard02).ufxScrollElementToView();
+				String clsnme = mblock.Element(ObjDashboard.img_emrcard02).getAttribute("class");
+				if (clsnme.contains("Emerald")) {
+					mblock.ValidateTest(true, true, "Emerland card is displayed and position at 3rd");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Emerland card is not display/position at 3rd");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else if (element03) {
+				mblock.Element(ObjDashboard.img_emrcard03).ufxScrollElementToView();
+				String clsnme = mblock.Element(ObjDashboard.img_emrcard03).getAttribute("class");
+				if (clsnme.contains("Emerald")) {
+					mblock.ValidateTest(true, true, "Emerland card is displayed and position at 3rd");
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Emerland card is not display/position at 3rd");
+					Assert.assertFalse(true);
+				}
+
+			}
+
+			else {
 				mblock.ValidateTest(false, true, "Emerland card is not displayed for this user");
 				Assert.assertFalse(true);
 			}
@@ -702,8 +733,11 @@ public class DashboardActions {
 	public void vrfyTxtInEcPod() throws Exception {
 		try {
 
-			boolean element1 = mblock.ElementExists(ObjDashboard.txt_opt1, 5000);
-			boolean element01 = mblock.ElementExists(ObjDashboard.txt_opt01, 5000);
+			boolean element1 = mblock.ElementExists(ObjDashboard.txt_opt1, 2000);
+			boolean element01 = mblock.ElementExists(ObjDashboard.txt_opt01, 2000);
+			boolean element001 = mblock.ElementExists(ObjDashboard.txt_opt001, 2000);
+			boolean element0001 = mblock.ElementExists(ObjDashboard.txt_opt0001, 2000);
+			
 			if (element1) {
 				String opt1 = mblock.Element(ObjDashboard.txt_opt1).getText();
 				String opt2 = mblock.Element(ObjDashboard.txt_opt2).getText();
@@ -742,6 +776,62 @@ public class DashboardActions {
 					String algn1 = mblock.Element(ObjDashboard.txt_opt01).getCssValue("text-align");
 					String algn2 = mblock.Element(ObjDashboard.txt_opt02).getCssValue("text-align");
 					String algn3 = mblock.Element(ObjDashboard.txt_opt03).getCssValue("text-align");
+					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
+							&& algn3.equalsIgnoreCase("center")) {
+						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
+					}
+
+					else {
+						mblock.ValidateTest(false, true, "Points are not align into center");
+						Assert.assertFalse(true);
+					}
+
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Some point is missing/misspelled in Emerland card ");
+					Assert.assertFalse(true);
+				}
+
+			}
+			
+			else if (element001) {
+				String opt1 = mblock.Element(ObjDashboard.txt_opt001).getText();
+				String opt2 = mblock.Element(ObjDashboard.txt_opt002).getText();
+				String opt3 = mblock.Element(ObjDashboard.txt_opt003).getText();
+				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")
+						&& opt3.equalsIgnoreCase("View Emerald Cash Reward offers")) {
+					String algn1 = mblock.Element(ObjDashboard.txt_opt001).getCssValue("text-align");
+					String algn2 = mblock.Element(ObjDashboard.txt_opt002).getCssValue("text-align");
+					String algn3 = mblock.Element(ObjDashboard.txt_opt003).getCssValue("text-align");
+					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
+							&& algn3.equalsIgnoreCase("center")) {
+						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
+					}
+
+					else {
+						mblock.ValidateTest(false, true, "Points are not align into center");
+						Assert.assertFalse(true);
+					}
+
+				}
+
+				else {
+					mblock.ValidateTest(false, true, "Some point is missing/misspelled in Emerland card ");
+					Assert.assertFalse(true);
+				}
+
+			}
+			
+			else if (element0001) {
+				String opt1 = mblock.Element(ObjDashboard.txt_opt0001).getText();
+				String opt2 = mblock.Element(ObjDashboard.txt_opt0002).getText();
+				String opt3 = mblock.Element(ObjDashboard.txt_opt0003).getText();
+				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")
+						&& opt3.equalsIgnoreCase("View Emerald Cash Reward offers")) {
+					String algn1 = mblock.Element(ObjDashboard.txt_opt0001).getCssValue("text-align");
+					String algn2 = mblock.Element(ObjDashboard.txt_opt0002).getCssValue("text-align");
+					String algn3 = mblock.Element(ObjDashboard.txt_opt0003).getCssValue("text-align");
 					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
 							&& algn3.equalsIgnoreCase("center")) {
 						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
@@ -1215,11 +1305,11 @@ public class DashboardActions {
 
 				mblock.Element(ObjDashboard.lnk_mydocmnt).ufxClick();
 				boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
-				if(btn){
+				if (btn) {
 					mblock.ValidateTest(true, true, "User land into my document page");
 				}
-				
-				else{
+
+				else {
 					mblock.ValidateTest(false, true, "User not land into my document page");
 				}
 
@@ -1556,7 +1646,7 @@ public class DashboardActions {
 	public void statusBarVisible() throws Exception {
 		try {
 
-			boolean element = mblock.ElementExists(ObjDashboard.StatusBar);
+			boolean element = mblock.ElementExists(ObjDashboard.StatusBar, 5000);
 			if (element) {
 				mblock.ValidateTest(true, true, "Status Bar is Present");
 				String SB_Width = mblock.Element(ObjDashboard.StatusBar).getCssValue("width");
@@ -1610,14 +1700,14 @@ public class DashboardActions {
 			boolean element = mblock.ElementExists(ObjDashboard.SB_THBtn);
 			if (element) {
 				mblock.ValidateTest(true, true, "Status Bar is Present");
-				boolean FedRefund = mblock.ElementExists(ObjDashboard.SB_FedRefund);
-				boolean FilingStatus = mblock.ElementExists(ObjDashboard.SB_FilingStatus);
-				boolean FiledOn = mblock.ElementExists(ObjDashboard.SB_FiledOn);
-				boolean FiledWith = mblock.ElementExists(ObjDashboard.SB_FiledWith);
-				if (FedRefund && FilingStatus && FiledOn && FiledWith) {
-					mblock.ValidateTest(true, true, "Four Icons in About Me is Present");
+				boolean FedRefund = mblock.ElementExists(ObjDashboard.SB_FedRefund, 3000);
+				boolean FilingStatus = mblock.ElementExists(ObjDashboard.SB_FilingStatus, 3000);
+				boolean FiledOn = mblock.ElementExists(ObjDashboard.SB_FiledOn, 3000);
+				boolean FiledWith = mblock.ElementExists(ObjDashboard.SB_FiledWith, 3000);
+				if (FedRefund && FilingStatus || FiledOn || FiledWith) {
+					mblock.ValidateTest(true, true, "About Me icons are Present");
 				} else {
-					mblock.ValidateTest(false, true, "Four Icons in About Me is not Present");
+					mblock.ValidateTest(false, true, "About me icon is missing");
 				}
 			}
 
@@ -1636,7 +1726,7 @@ public class DashboardActions {
 	public void statusBarViewHistoryBtn() throws Exception {
 		try {
 
-			boolean element = mblock.ElementExists(ObjDashboard.SB_THBtn);
+			boolean element = mblock.ElementExists(ObjDashboard.SB_THBtn, 5000);
 			if (element) {
 
 				mblock.ValidateTest(true, true, "Tax History Button is present");
@@ -1651,7 +1741,7 @@ public class DashboardActions {
 					System.out.println(str);
 
 					mblock.Element(ObjDashboard.SB_THBtn).click();
-					mblock.WaitForPageLoad();
+					mblock.ElementExists(ObjDashboard.answr_col1, 8000);
 					String TY = mblock.GetCurrentURL();
 					Pattern pattern1 = Pattern.compile("(\\d+)");
 					Matcher matcher1 = pattern1.matcher(statusBar);
@@ -1983,22 +2073,21 @@ public class DashboardActions {
 		}
 
 	}
-	
-	
-	//Verify the filling status
+
+	// Verify the filling status
 	public void vrfyFilingStatus() throws Exception {
 		try {
 
 			boolean element = mblock.ElementExists(ObjDashboard.flng_sts);
 			if (element) {
 
-					mblock.ValidateTest(true, true, "Filing Status is displayed");
+				mblock.ValidateTest(true, true, "Filing Status is displayed");
 
-				} else {
-					mblock.ValidateTest(false, true, "Filing Status is not displayed");
-					Assert.assertFalse(true);
-				}
-			
+			} else {
+				mblock.ValidateTest(false, true, "Filing Status is not displayed");
+				Assert.assertFalse(true);
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -2060,8 +2149,7 @@ public class DashboardActions {
 				String BoldATxt = mblock.Element(ObjDashboard.Hero_BoldText).getText();
 				String BoldATxtFweight = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("font-weight");
 				String BoldATxtcolor = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("color");
-				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("700"))
-						) {
+				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("700"))) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");
@@ -2117,8 +2205,7 @@ public class DashboardActions {
 				String BoldATxt = mblock.Element(ObjDashboard.Hero_BoldText).getText();
 				String BoldATxtFweight = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("font-weight");
 				String BoldATxtcolor = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("color");
-				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("700"))
-						) {
+				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("700"))) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");

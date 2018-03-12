@@ -29,9 +29,9 @@ public class Constant_Class {
      public static final String doc_upldfile1 = "D://Ktb//Desert.jpg";
      
      public static final String URL1 = "http://devguaweb01.hrbinc.hrblock.net:8080/examples/QAADMINTOOL.jsp"; 
-     public static final String tax_aboutyouheader = "Please select your filing status for 2017.";
-     public static final String tax_incomeheader = "Please select all sources of income you had in 2017.";
-     public static final String tax_expenseheader = "Please select all expenses you had in 2017.";
+     public static final String tax_aboutyouheader = "Tell us if you are:";
+     public static final String tax_incomeheader = "Select all income sources that apply:";
+     public static final String tax_expenseheader = "Select all expenses that apply:";
      public static final String tax_year = "2017";
      public static final String tax_year1 = "2016";
      

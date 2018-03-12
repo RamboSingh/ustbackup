@@ -266,14 +266,29 @@ public class ObjDashboard {
 	
 	public static By img_emrcard = By.xpath("//div[@id='skiptoMainContent']/div[9]/div/div[3]/div[1]/div[1]");
 	public static By img_emrcard01 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div/div[3]/div[1]/div[1]");
+	public static By img_emrcard02 = By.xpath("//div[@id='skiptoMainContent']/div[8]/div/div[3]/div[1]/div[1]");
+	public static By img_emrcard03 = By.xpath("//div[@id='skiptoMainContent']/div[7]/div/div[3]/div[1]/div[1]");
+											
+	
 											
 	
 	public static By txt_opt1 = By.xpath("//div[@id='skiptoMainContent']/div[9]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[1]");
-	public static By txt_opt01 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[1]");
 	public static By txt_opt2 = By.xpath("//div[@id='skiptoMainContent']/div[9]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]");
-	public static By txt_opt02 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]");
 	public static By txt_opt3 = By.xpath("//div[@id='skiptoMainContent']/div[9]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[3]");
+	
+	public static By txt_opt01 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[1]");
+	public static By txt_opt02 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]");
 	public static By txt_opt03 = By.xpath("//div[@id='skiptoMainContent']/div[10]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[3]");
+	
+	public static By txt_opt001 = By.xpath("//div[@id='skiptoMainContent']/div[8]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[1]");
+	public static By txt_opt002 = By.xpath("//div[@id='skiptoMainContent']/div[8]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]");
+	public static By txt_opt003 = By.xpath("//div[@id='skiptoMainContent']/div[8]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[3]");
+	
+	public static By txt_opt0001 = By.xpath("//div[@id='skiptoMainContent']/div[7]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[1]");
+	public static By txt_opt0002 = By.xpath("//div[@id='skiptoMainContent']/div[7]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[2]");
+	public static By txt_opt0003 = By.xpath("//div[@id='skiptoMainContent']/div[7]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[3]");
+	
+	
 	public static By txt_popup1 = By.xpath("//div[@id='emeraldquestions']/div[2]/p[1]");
 	public static By txt_popup2 = By.xpath("//div[@id='emeraldquestions']/div[2]/p[2]");
 	public static By txt_popup3 = By.xpath("//div[@id='emeraldquestions']/div[2]/p[3]");

@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -61,6 +64,7 @@ import com.ustglobal.common.Utility.FinalizableInterface;
 public class SInteractive implements FinalizableInterface {
 	public WebDriver objWebDriver = null;
 	public static String strBrowserType="";
+	public static Date date = new Date();
 	public String strMobileEmulationType="";
 	public boolean boolBringElementToFocus = true;
 	public int nThreadRampUpInMillis = 2000;
@@ -86,6 +90,7 @@ public class SInteractive implements FinalizableInterface {
 	public static boolean boolGlobalSettingReportsEnabled = true;
 	public static boolean boolGlobalSystemTrayEnabled = true;
 	public static boolean boolGlobalDebuggerEnabled = true;
+	
 	
 	//Return the reporter object. [Pappan: disabling this for timebeing. Looking for a better interface for external access]
 	/*public CustomReporter fnGetNativeReporter(){
