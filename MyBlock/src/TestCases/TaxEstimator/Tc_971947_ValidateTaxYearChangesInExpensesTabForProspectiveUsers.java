@@ -23,13 +23,13 @@ public class Tc_971947_ValidateTaxYearChangesInExpensesTabForProspectiveUsers {
 						mblock.actTaxEstimator.clkTaxEstmrLnkFrmStusBar();
 
 						// Entering basic detail of About you and click next
-				//		mblock.actTaxEstimator.entrAboutDetailandClkNext();
+						mblock.actTaxEstimator.entrAboutDetailandClkNext();
 						
 						//Entering Detail of Income and Click next
-				//		mblock.actTaxEstimator.entrincomeDetailandClkNext();
+						mblock.actTaxEstimator.entrincomeDetailandClkNext();
 						
 						//Verify the Expense tab heading text
-				//		mblock.actTaxEstimator.vrfyExpensesHeadingText();
+						mblock.actTaxEstimator.vrfyExpensesHeadingText();
 						
 						//close the browser
 						mblock.Finalize();
