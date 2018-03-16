@@ -44,7 +44,7 @@ public class LoginAction {
 					mblock.Element(ObjLogin.txt_password).sendKeys(Spassword);
 					mblock.Element(ObjLogin.btn_singin).click();
 					boolean val  = mblock.ElementExists(ObjLogin.SecurityAnswerLink,3000);
-					boolean val1 = mblock.ElementExists(ObjDashboard.lnk_profile,2000);
+					boolean val1 = mblock.ElementExists(ObjDashboard.lnk_profile,3000);
 					
 					if(val||val1){
 						msg=true;
