@@ -16,7 +16,7 @@ public class TC_971893_ValidateViewHistoryButtonforDigitalUserWith2013Return {
 			// Browser navigation
 			mblock.NavigateToURL();
 			mblock.actLogin.login();
-			mblock.actDashboard.statusBarNotVisible();
+			mblock.actDashboard.statusBarVisible();
 			mblock.Finalize(true);
 
 		} catch (Exception e) {

@@ -15,7 +15,7 @@ public class Constant_Class {
 
      public static final String Password = "Welcome@1";
      
-     public static final String txt_wlcm = "Welcome,";
+     public static final String txt_wlcm = "Welcome";
      
      public static final String txt_filing = "FILING DONE, TAXES WON.";
      public static String Testcase_name = "";

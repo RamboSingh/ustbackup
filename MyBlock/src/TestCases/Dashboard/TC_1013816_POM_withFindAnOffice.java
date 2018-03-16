@@ -20,8 +20,8 @@ public class TC_1013816_POM_withFindAnOffice {
 		
 			mblock.actDashboard.Product_Services_Launch();
 			mblock.actDashboard.POM_Launch();
-			mblock.actDashboard.POM_ApptLink();
-			mblock.actDashboard.POM_LetterFromAuthority();
+			
+			mblock.actDashboard.POM_AMLink();
 			
 			mblock.Finalize(true);
 

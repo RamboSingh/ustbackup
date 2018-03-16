@@ -1,5 +1,7 @@
 package business_actions;
 
+import java.util.ArrayList;
+
 import org.junit.Assert;
 
 import pageObject.ObjDashboard;
@@ -107,7 +109,7 @@ public class CardIdentityAction {
 
 	public void choosePrsnInfo1() throws Exception {
 		try {
-			mblock.ElementExists(ObjDashboard.iframe_idp1);
+			mblock.ElementExists(ObjDashboard.iframe_idp1,5000);
 			String qstn = mblock.Element(ObjDashboard.qstn_col1).getText();
 			int cnt = qstn.length();
 			String qstn1 = qstn.substring(3, cnt);
@@ -182,7 +184,7 @@ public class CardIdentityAction {
 
 	public void clrSsdob() throws Exception {
 		try {
-			
+
 			mblock.NavigateToSSDURL();
 			mblock.ElementExists(ObjDashboard.txt_ssod);
 			for (int i = 0; i < 1; i++) {
@@ -191,8 +193,10 @@ public class CardIdentityAction {
 				mblock.Element(ObjDashboard.btn_reset).click();
 
 			}
-
-			mblock.Finalize();
+			ArrayList<String> tabs = new ArrayList<String>(mblock.objWebDriver.getWindowHandles());
+			mblock.objWebDriver.switchTo().window(tabs.get(0));
+			
+			
 
 		} catch (Exception e) {
 			// TODO: handle exception

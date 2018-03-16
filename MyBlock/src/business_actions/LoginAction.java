@@ -88,7 +88,7 @@ public class LoginAction {
 			
 			}
 		
-			boolean dhs_brd = mblock.ElementExists(ObjDashboard.lnk_profile);
+			boolean dhs_brd = mblock.ElementExists(ObjDashboard.lnk_profile,5000);
 			if(dhs_brd){
 				mblock.ValidateTest(true, true, "successfully login");
 			}
@@ -132,7 +132,7 @@ public class LoginAction {
 				String txt2 = mblock.Element(ObjDashboard.txt_msg_h2).getText();
 				String txt3 = mblock.Element(ObjDashboard.txt_msg_P).getText();
 
-				if (txt1.equalsIgnoreCase(Constant_Class.txt_wlcm.trim())
+				if (txt1.contains(Constant_Class.txt_wlcm.trim())
 						&& txt2.equalsIgnoreCase(Constant_Class.txt_filing.trim())
 						&& txt3.equalsIgnoreCase(Constant_Class.txt_msg.trim())) {
 

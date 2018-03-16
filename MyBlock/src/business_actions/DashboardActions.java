@@ -300,7 +300,7 @@ public class DashboardActions {
 				mblock.ValidateTest(true, true, "Link is displayed");
 				mblock.Element(objPOM.BtnPOM).isDisplayed();
 				mblock.Element(objPOM.BtnPOM).click();
-
+				mblock.ElementExists(ObjDashboard.answr_col1, 5000);
 				String URL = "https://myaccountqa.hrblock.net/mytax/tax-offices/local-offices/index.html#!/en/office-locator/";
 				if (URL.equalsIgnoreCase(mblock.GetCurrentURL())) {
 					mblock.ValidateTest(true, true, "User lands in AM page");
@@ -399,16 +399,16 @@ public class DashboardActions {
 
 	}
 
-	public void DashBoard_GoToMyTaxes() throws Exception {
+	public void DashBoard_PrepareTaxesMyself() throws Exception {
 		try {
 
-			boolean element1 = mblock.ElementExists(ObjDashboard.goToMyTaxes);
+			boolean element1 = mblock.ElementExists(ObjDashboard.prpreTaxMyslf);
 			if (element1) {
-				mblock.ValidateTest(true, true, " Go to My Taxes is present");
-				mblock.Element(ObjDashboard.goToMyTaxes).click();
+				mblock.ValidateTest(true, true, "Prepare Taxes Myself Btn is present");
+				mblock.Element(ObjDashboard.prpreTaxMyslf).click();
 
 			} else {
-				mblock.ValidateTest(false, true, "Go to My Taxes Btn is not present");
+				mblock.ValidateTest(false, true, "Prepare Taxes Myself Btn is not present");
 				Assert.assertFalse(true);
 			}
 
@@ -428,7 +428,7 @@ public class DashboardActions {
 				mblock.Element(ObjDashboard.continueMyTaxes).click();
 
 			} else {
-				mblock.ValidateTest(false, true, "Go to My Taxes Btn is not present");
+				mblock.ValidateTest(false, true, "Continue My Taxes Btn is not present");
 				Assert.assertFalse(true);
 			}
 
@@ -486,7 +486,7 @@ public class DashboardActions {
 			boolean element1 = mblock.ElementExists(ObjIntegratedServices.tcxCurrentYear);
 			if (element1) {
 				mblock.ValidateTest(true, true, " TCX Current Year is present");
-				String CurrentYear = "My 2016 Taxes";
+				String CurrentYear = "My 2017 Taxes";
 				if (CurrentYear.equalsIgnoreCase(mblock.Element(ObjIntegratedServices.tcxCurrentYear).getText())) {
 					mblock.ValidateTest(true, true,
 							"Current Year is displayed as" + mblock.Element(ObjIntegratedServices.tcxCurrentYear));
@@ -710,15 +710,15 @@ public class DashboardActions {
 				}
 
 				else {
-					mblock.ValidateTest(true, true, "Emerland card is not display for this user");
+					mblock.ValidateTest(false, true, "Emerland card is not display for this user");
 
 				}
 
 			}
 
 			else {
-				mblock.ValidateTest(false, true, "POD is not displayed for this user");
-				Assert.assertFalse(true);
+				mblock.ValidateTest(true, true, "POD is not displayed for this user");
+
 			}
 		}
 
@@ -737,18 +737,18 @@ public class DashboardActions {
 			boolean element01 = mblock.ElementExists(ObjDashboard.txt_opt01, 2000);
 			boolean element001 = mblock.ElementExists(ObjDashboard.txt_opt001, 2000);
 			boolean element0001 = mblock.ElementExists(ObjDashboard.txt_opt0001, 2000);
-			
+
 			if (element1) {
 				String opt1 = mblock.Element(ObjDashboard.txt_opt1).getText();
 				String opt2 = mblock.Element(ObjDashboard.txt_opt2).getText();
-				String opt3 = mblock.Element(ObjDashboard.txt_opt3).getText();
-				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")
-						&& opt3.equalsIgnoreCase("View Emerald Cash Reward offers")) {
+				// String opt3 =
+				// mblock.Element(ObjDashboard.txt_opt3).getText();
+				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")) {
 					String algn1 = mblock.Element(ObjDashboard.txt_opt1).getCssValue("text-align");
 					String algn2 = mblock.Element(ObjDashboard.txt_opt2).getCssValue("text-align");
-					String algn3 = mblock.Element(ObjDashboard.txt_opt3).getCssValue("text-align");
-					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
-							&& algn3.equalsIgnoreCase("center")) {
+					// String algn3 =
+					// mblock.Element(ObjDashboard.txt_opt3).getCssValue("text-align");
+					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")) {
 						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
 					}
 
@@ -770,14 +770,14 @@ public class DashboardActions {
 
 				String opt1 = mblock.Element(ObjDashboard.txt_opt01).getText();
 				String opt2 = mblock.Element(ObjDashboard.txt_opt02).getText();
-				String opt3 = mblock.Element(ObjDashboard.txt_opt03).getText();
-				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")
-						&& opt3.equalsIgnoreCase("View Emerald Cash Reward offers")) {
+				// String opt3 =
+				// mblock.Element(ObjDashboard.txt_opt03).getText();
+				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")) {
 					String algn1 = mblock.Element(ObjDashboard.txt_opt01).getCssValue("text-align");
 					String algn2 = mblock.Element(ObjDashboard.txt_opt02).getCssValue("text-align");
-					String algn3 = mblock.Element(ObjDashboard.txt_opt03).getCssValue("text-align");
-					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
-							&& algn3.equalsIgnoreCase("center")) {
+					// String algn3 =
+					// mblock.Element(ObjDashboard.txt_opt03).getCssValue("text-align");
+					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")) {
 						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
 					}
 
@@ -794,18 +794,18 @@ public class DashboardActions {
 				}
 
 			}
-			
+
 			else if (element001) {
 				String opt1 = mblock.Element(ObjDashboard.txt_opt001).getText();
 				String opt2 = mblock.Element(ObjDashboard.txt_opt002).getText();
-				String opt3 = mblock.Element(ObjDashboard.txt_opt003).getText();
-				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")
-						&& opt3.equalsIgnoreCase("View Emerald Cash Reward offers")) {
+				// String opt3 =
+				// mblock.Element(ObjDashboard.txt_opt003).getText();
+				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")) {
 					String algn1 = mblock.Element(ObjDashboard.txt_opt001).getCssValue("text-align");
 					String algn2 = mblock.Element(ObjDashboard.txt_opt002).getCssValue("text-align");
-					String algn3 = mblock.Element(ObjDashboard.txt_opt003).getCssValue("text-align");
-					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
-							&& algn3.equalsIgnoreCase("center")) {
+					// String algn3 =
+					// mblock.Element(ObjDashboard.txt_opt003).getCssValue("text-align");
+					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")) {
 						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
 					}
 
@@ -822,18 +822,18 @@ public class DashboardActions {
 				}
 
 			}
-			
+
 			else if (element0001) {
 				String opt1 = mblock.Element(ObjDashboard.txt_opt0001).getText();
 				String opt2 = mblock.Element(ObjDashboard.txt_opt0002).getText();
-				String opt3 = mblock.Element(ObjDashboard.txt_opt0003).getText();
-				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")
-						&& opt3.equalsIgnoreCase("View Emerald Cash Reward offers")) {
+				// String opt3 =
+				// mblock.Element(ObjDashboard.txt_opt0003).getText();
+				if (opt1.equalsIgnoreCase("Check your balance") && opt2.equalsIgnoreCase("Pay monthly bills")) {
 					String algn1 = mblock.Element(ObjDashboard.txt_opt0001).getCssValue("text-align");
 					String algn2 = mblock.Element(ObjDashboard.txt_opt0002).getCssValue("text-align");
-					String algn3 = mblock.Element(ObjDashboard.txt_opt0003).getCssValue("text-align");
-					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")
-							&& algn3.equalsIgnoreCase("center")) {
+					// String algn3 =
+					// mblock.Element(ObjDashboard.txt_opt0003).getCssValue("text-align");
+					if (algn1.equalsIgnoreCase("center") && algn2.equalsIgnoreCase("center")) {
 						mblock.ValidateTest(true, true, "Points in EC are displayed and align in center");
 					}
 
@@ -951,6 +951,7 @@ public class DashboardActions {
 		try {
 
 			mblock.Element(ObjDashboard.lnk_emracssmycard).ufxClick();
+			mblock.ElementExists(ObjDashboard.answr_col1, 5000);
 			boolean element = mblock.ElementExists(ObjDashboard.iframe_card);
 			if (element) {
 				mblock.ValidateTest(true, true, "Card proof model is displayed");
@@ -1833,13 +1834,8 @@ public class DashboardActions {
 			if (element) {
 				String EH_TIS_riskAssesment = "Tax Identity Shield";
 				String H_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_Header).getText();
-				String Text_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_Header)
-						.getCssValue("font-weight");
-				String Color_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_Header)
-						.getCssValue("color");
-				if ((H_TIS_riskAssessment.equalsIgnoreCase(EH_TIS_riskAssesment))
-						&& (Text_TIS_riskAssessment.equalsIgnoreCase("bold"))
-						&& (Color_TIS_riskAssessment.equalsIgnoreCase("#30d8e7"))) {
+
+				if (H_TIS_riskAssessment.contains(EH_TIS_riskAssesment)) {
 					mblock.ValidateTest(true, true, "HeaderText is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "HeaderText is not displayed");
@@ -1847,13 +1843,8 @@ public class DashboardActions {
 				}
 				String Header_TIS_riskAssessment = "WHAT IS YOUR RISK LEVEL?";
 				String Head_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_content).getText();
-				String HeadF_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_content)
-						.getCssValue("font-weight");
-				String HeaderColor_TIS_riskAssessment = mblock.Element(ObjDashboard.tis_newsletter_content)
-						.getCssValue("color");
-				if ((Head_TIS_riskAssessment.equalsIgnoreCase(Header_TIS_riskAssessment))
-						&& (HeadF_TIS_riskAssessment.equalsIgnoreCase("bold"))
-						&& (HeaderColor_TIS_riskAssessment.equalsIgnoreCase("#fff"))) {
+
+				if (Head_TIS_riskAssessment.equalsIgnoreCase(Header_TIS_riskAssessment)) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");
@@ -1881,6 +1872,28 @@ public class DashboardActions {
 
 	}
 
+	public void NavigatetoRiskAssmnt() throws Exception {
+		try {
+
+			mblock.RiskAssessment_TIS();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+	public void NavigatetoNewsletter() throws Exception {
+		try {
+
+			mblock.Newsletter_TIS();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
 	public void TIS_Newsletter() throws Exception {
 		try {
 
@@ -1888,12 +1901,7 @@ public class DashboardActions {
 			if (element) {
 				String EH_TIS_newsletter = "Tax Identity Shield";
 				String H_TIS_newsletter = mblock.Element(ObjDashboard.tis_newsletter_Header).getText();
-				String Text_TIS_newsletter = mblock.Element(ObjDashboard.tis_newsletter_Header)
-						.getCssValue("font-weight");
-				String Color_TIS_newsletter = mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("color");
-				if ((H_TIS_newsletter.equalsIgnoreCase(EH_TIS_newsletter))
-						&& (Text_TIS_newsletter.equalsIgnoreCase("bold"))
-						&& (Color_TIS_newsletter.equalsIgnoreCase("#30d8e7"))) {
+				if (H_TIS_newsletter.contains(EH_TIS_newsletter)) {
 					mblock.ValidateTest(true, true, "HeaderText is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "HeaderText is not displayed");
@@ -1901,13 +1909,8 @@ public class DashboardActions {
 				}
 				String Header_TIS_Newsletter = "ACCESS YOUR ACCOUNT";
 				String Head_TIS_Newsletter = mblock.Element(ObjDashboard.tis_newsletter_content).getText();
-				String HeadF_TIS_Newsletter = mblock.Element(ObjDashboard.tis_newsletter_content)
-						.getCssValue("font-weight");
-				String HeaderColor_TIS_newsletter = mblock.Element(ObjDashboard.tis_newsletter_content)
-						.getCssValue("color");
-				if ((Head_TIS_Newsletter.equalsIgnoreCase(Header_TIS_Newsletter))
-						&& (HeadF_TIS_Newsletter.equalsIgnoreCase("bold"))
-						&& (HeaderColor_TIS_newsletter.equalsIgnoreCase("#fff"))) {
+
+				if (Head_TIS_Newsletter.equalsIgnoreCase(Header_TIS_Newsletter)) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");
@@ -2182,30 +2185,24 @@ public class DashboardActions {
 	public void DigitalCompletewithNoEfile() throws Exception {
 		try {
 
-			boolean element = mblock.ElementExists(ObjDashboard.Hero_Btn);
+			boolean element = mblock.ElementExists(ObjDashboard.Hero_WelcomeString);
 			if (element) {
 				String WelcomeTxt = "Welcome back,";
 				String WelcomeATxt = mblock.Element(ObjDashboard.Hero_WelcomeString).getText();
 				// String Text_TIS_newsletter =
 				// mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("font-weight");
 				String Color_welcome = mblock.Element(ObjDashboard.Hero_WelcomeString).getCssValue("color");
-				if ((WelcomeTxt.equalsIgnoreCase(WelcomeATxt))) {
+				if ((WelcomeATxt.contains(WelcomeTxt))) {
 					mblock.ValidateTest(true, true, "Welcome Text is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Welcome Text is not displayed");
 
 				}
-				boolean FN = mblock.ElementExists(ObjDashboard.Hero_FNString);
-				if (element) {
-					mblock.ValidateTest(true, true, "FN Text is displayed");
-				} else {
-					mblock.ValidateTest(false, true, "FN Text is not displayed");
-				}
+
 				String BoldTxt = "FILING DONE, TAXES WON.";
 				String BoldATxt = mblock.Element(ObjDashboard.Hero_BoldText).getText();
-				String BoldATxtFweight = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("font-weight");
-				String BoldATxtcolor = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("color");
-				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("700"))) {
+
+				if (BoldTxt.equalsIgnoreCase(BoldATxt)) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");
@@ -2239,37 +2236,30 @@ public class DashboardActions {
 	public void Digitalcontinue() throws Exception {
 		try {
 
-			boolean element = mblock.ElementExists(ObjDashboard.Hero_Btn);
+			boolean element = mblock.ElementExists(ObjDashboard.Hero_WelcomeString);
 			if (element) {
-				String WelcomeTxt = " Welcome!";
+				String WelcomeTxt = "Welcome";
 				String WelcomeATxt = mblock.Element(ObjDashboard.Hero_WelcomeString).getText();
 				// String Text_TIS_newsletter =
 				// mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("font-weight");
-				String Color_welcome = mblock.Element(ObjDashboard.Hero_WelcomeString).getCssValue("color");
-				if ((WelcomeTxt.equalsIgnoreCase(WelcomeATxt)) && (Color_welcome.equalsIgnoreCase("#30d8e7"))) {
+
+				if (WelcomeATxt.contains(WelcomeTxt)) {
 					mblock.ValidateTest(true, true, "Welcome Text is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Welcome Text is not displayed");
 
 				}
-				boolean FN = mblock.ElementExists(ObjDashboard.Hero_FNString);
-				if (element) {
-					mblock.ValidateTest(true, true, "FN Text is displayed");
-				} else {
-					mblock.ValidateTest(false, true, "FN Text is not displayed");
-				}
-				String BoldTxt = "You'll get your maximum refund -  That's taxes won. ";
+
+				String BoldTxt = "FINISH AND FILE YOUR TAXES TODAY.";
 				String BoldATxt = mblock.Element(ObjDashboard.Hero_BoldText).getText();
-				String BoldATxtFweight = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("font-weight");
-				String BoldATxtcolor = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("color");
-				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("bold"))
-						&& (BoldATxtcolor.equalsIgnoreCase("#fff"))) {
+
+				if (BoldATxt.equalsIgnoreCase(BoldTxt)) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");
 
 				}
-				String Explain_Text = "Great job! You've finished your 2017 taxes.";
+				String Explain_Text = "You'll get your maximum refund - guaranteed. That's taxes won.";
 				String AExplain_Text = mblock.Element(ObjDashboard.Hero_ExplanatoryText).getText();
 				if ((AExplain_Text.equalsIgnoreCase(Explain_Text))) {
 					mblock.ValidateTest(true, true, "Explanatory is displayed");
@@ -2298,31 +2288,23 @@ public class DashboardActions {
 	public void Digitalstart() throws Exception {
 		try {
 
-			boolean element = mblock.ElementExists(ObjDashboard.Hero_Btn);
+			boolean element = mblock.ElementExists(ObjDashboard.Hero_WelcomeString, 6000);
 			if (element) {
-				String WelcomeTxt = "Welcome,";
+				String WelcomeTxt = "Welcome";
 				String WelcomeATxt = mblock.Element(ObjDashboard.Hero_WelcomeString).getText();
 				// String Text_TIS_newsletter =
 				// mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("font-weight");
-				String Color_welcome = mblock.Element(ObjDashboard.Hero_WelcomeString).getCssValue("color");
-				if ((WelcomeTxt.equalsIgnoreCase(WelcomeATxt)) && (Color_welcome.equalsIgnoreCase("#30d8e7"))) {
+				if (WelcomeATxt.contains(WelcomeTxt)) {
 					mblock.ValidateTest(true, true, "Welcome Text is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Welcome Text is not displayed");
 
 				}
-				boolean FN = mblock.ElementExists(ObjDashboard.Hero_FNString);
-				if (element) {
-					mblock.ValidateTest(true, true, "FN Text is displayed");
-				} else {
-					mblock.ValidateTest(false, true, "FN Text is not displayed");
-				}
+
 				String BoldTxt = "GET YOUR TAXES WON.";
 				String BoldATxt = mblock.Element(ObjDashboard.Hero_BoldText).getText();
-				String BoldATxtFweight = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("font-weight");
-				String BoldATxtcolor = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("color");
-				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("bold"))
-						&& (BoldATxtcolor.equalsIgnoreCase("#fff"))) {
+
+				if (BoldTxt.equalsIgnoreCase(BoldATxt)) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");
@@ -2355,31 +2337,24 @@ public class DashboardActions {
 	public void bobinProcess() throws Exception {
 		try {
 
-			boolean element = mblock.ElementExists(ObjDashboard.Hero_Btn);
+			boolean element = mblock.ElementExists(ObjDashboard.Hero_WelcomeString);
 			if (element) {
 				String WelcomeTxt = "Welcome back,";
 				String WelcomeATxt = mblock.Element(ObjDashboard.Hero_WelcomeString).getText();
 				// String Text_TIS_newsletter =
 				// mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("font-weight");
-				String Color_welcome = mblock.Element(ObjDashboard.Hero_WelcomeString).getCssValue("color");
-				if ((WelcomeTxt.equalsIgnoreCase(WelcomeATxt)) && (Color_welcome.equalsIgnoreCase("#30d8e7"))) {
+
+				if (WelcomeATxt.contains(WelcomeTxt)) {
 					mblock.ValidateTest(true, true, "Welcome Text is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Welcome Text is not displayed");
 
 				}
-				boolean FN = mblock.ElementExists(ObjDashboard.Hero_FNString);
-				if (element) {
-					mblock.ValidateTest(true, true, "FN Text is displayed");
-				} else {
-					mblock.ValidateTest(false, true, "FN Text is not displayed");
-				}
+
 				String BoldTxt = "YOUR TAX PRO IS WORKING ON YOUR TAXES.";
 				String BoldATxt = mblock.Element(ObjDashboard.Hero_BoldText).getText();
-				String BoldATxtFweight = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("font-weight");
-				String BoldATxtcolor = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("color");
-				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("bold"))
-						&& (BoldATxtcolor.equalsIgnoreCase("#fff"))) {
+
+				if (BoldTxt.equalsIgnoreCase(BoldATxt)) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");
@@ -2412,31 +2387,24 @@ public class DashboardActions {
 	public void bobapprove() throws Exception {
 		try {
 
-			boolean element = mblock.ElementExists(ObjDashboard.Hero_Btn);
+			boolean element = mblock.ElementExists(ObjDashboard.Hero_WelcomeString);
 			if (element) {
 				String WelcomeTxt = "Welcome back,";
 				String WelcomeATxt = mblock.Element(ObjDashboard.Hero_WelcomeString).getText();
 				// String Text_TIS_newsletter =
 				// mblock.Element(ObjDashboard.tis_newsletter_Header).getCssValue("font-weight");
-				String Color_welcome = mblock.Element(ObjDashboard.Hero_WelcomeString).getCssValue("color");
-				if ((WelcomeTxt.equalsIgnoreCase(WelcomeATxt)) && (Color_welcome.equalsIgnoreCase("#30d8e7"))) {
+
+				if (WelcomeATxt.contains(WelcomeTxt)) {
 					mblock.ValidateTest(true, true, "Welcome Text is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Welcome Text is not displayed");
 
 				}
-				boolean FN = mblock.ElementExists(ObjDashboard.Hero_FNString);
-				if (element) {
-					mblock.ValidateTest(true, true, "FN Text is displayed");
-				} else {
-					mblock.ValidateTest(false, true, "FN Text is not displayed");
-				}
+
 				String BoldTxt = "YOUR RETURN IS READY.";
 				String BoldATxt = mblock.Element(ObjDashboard.Hero_BoldText).getText();
-				String BoldATxtFweight = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("font-weight");
-				String BoldATxtcolor = mblock.Element(ObjDashboard.Hero_BoldText).getCssValue("color");
-				if ((BoldTxt.equalsIgnoreCase(BoldATxt)) && (BoldATxtFweight.equalsIgnoreCase("bold"))
-						&& (BoldATxtcolor.equalsIgnoreCase("#fff"))) {
+
+				if (BoldTxt.equalsIgnoreCase(BoldATxt)) {
 					mblock.ValidateTest(true, true, "Content is displayed");
 				} else {
 					mblock.ValidateTest(false, true, "Content Text is not displayed");

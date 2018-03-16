@@ -1,9 +1,13 @@
 package business_actions;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
@@ -136,8 +140,18 @@ public class MyblockActions extends SInteractive {
 
 	public void NavigateToSSDURL() throws Exception {
 		try {
-
-			Navigate(Constant_Class.URL1);
+			Robot r = new Robot();                          
+			r.keyPress(KeyEvent.VK_CONTROL); 
+			r.keyPress(KeyEvent.VK_T); 
+			r.keyRelease(KeyEvent.VK_CONTROL); 
+			r.keyRelease(KeyEvent.VK_T);   
+			Thread.sleep(2000);
+			ArrayList<String> tabs = new ArrayList<String> (objWebDriver.getWindowHandles());
+			objWebDriver.switchTo().window(tabs.get(1));
+			objWebDriver.get(Constant_Class.URL1);
+			//Navigate(Constant_Class.URL1);
+			
+			
 			/*
 			 * boolean element = ElementExists(Objcommon.Zsclr_clicklink);
 			 * if(element){ Element(Objcommon.Zsclr_clicklink).click();

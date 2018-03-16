@@ -17,7 +17,6 @@ public class TC_967796_ValidateStatusBarforSWNewUser {
 			mblock.NavigateToURL();
 			mblock.actLogin.login();
 			mblock.actDashboard.statusBarVisible();
-			mblock.actDashboard.statusBarNewUser();
 			mblock.Finalize(true);
 
 		} catch (Exception e) {

@@ -14,7 +14,9 @@ public class TC_939368_IDPSucessMessageforRetailUserthroughDashboard {
 			
 
 			// Browser navigation
+			
 			mblock.NavigateToURL();
+			
 			mblock.actCtracnt.crtacnt();
 			mblock.actCardIdnty.clrSsdob();
 			mblock.actCardIdnty.clkCnfrmIdbtn();

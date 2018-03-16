@@ -19,7 +19,7 @@ public class TC_996706_ValidateTCXURLfornewUser {
 
 			// step:2 Run login action
 			mblock.actCtracnt.crtacnt();
-			mblock.actDashboard.DashBoard_GoToMyTaxes();
+			mblock.actDashboard.DashBoard_PrepareTaxesMyself();
 			mblock.actDashboard.TCX_CYValidation();
 			
 		} catch (Exception e) {

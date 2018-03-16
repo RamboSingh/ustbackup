@@ -20,11 +20,10 @@ public class TC_1059073_ValidateTISheronavigatedfromNewsletteremail {
 			// login with retail user
 			mblock.actLogin.login();
 
-			//News Letter Navigation
-			mblock.Newsletter_TIS();
-			
-			
-			//Verify the News Letter TIS content
+			// News Letter Navigation
+			mblock.actDashboard.NavigatetoNewsletter();
+
+			// Verify the News Letter TIS content
 			mblock.actDashboard.TIS_Newsletter();
 
 			// Close the browser
@@ -33,7 +32,7 @@ public class TC_1059073_ValidateTISheronavigatedfromNewsletteremail {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 	}
 
 }

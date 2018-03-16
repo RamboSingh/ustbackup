@@ -4,10 +4,11 @@ import org.openqa.selenium.By;
 
 public class ObjDashboard {
 
-	public static By txt_msg_h1 = By.xpath("//div[@id='skiptoMainContent']/div[1]/div/div/div[1]/h1/strong");
-	public static By txt_msg_h2 = By.xpath("//div[@id='skiptoMainContent']/div[1]/div/div/div[1]/h2/strong");
-	public static By txt_msg_P = By.xpath("//div[@id='skiptoMainContent']/div[1]/div/div/div[1]/p");
-	public static By lnk_RvwTax = By.xpath("//div[@id='skiptoMainContent']/div[1]/div/div/div[2]/a[1]");
+	public static By txt_msg_h1 = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div/div[1]/h1");
+	public static By txt_msg_h2 = By.xpath("//div[@id='skiptoMainContent']/div[4]/div/div/div[1]/h2/strong");
+	public static By txt_msg_P = By.xpath("//div[@id='skiptoMainContent']/div[4]/div/div/div[1]/p");
+	public static By lnk_RvwTax = By.xpath("//div[@id='skiptoMainContent']/div[4]/div/div/div[2]/a[1]");
+	
 	public static By lnk_myblock = By.linkText("MyBlock");
 	
 	//upload doc button
@@ -353,8 +354,8 @@ public class ObjDashboard {
 	public static By footer_FilingOnline = By.id("filingonlinemenufooter");
 	
 	//HeroButtons
-	public static By goToMyTaxes  = By.linkText("Go to my 2016 Taxes");
-	public static By continueMyTaxes  = By.linkText("Continue My 2016 Taxes");
+	public static By prpreTaxMyslf  = By.linkText("Prepare Taxes Myself");
+	public static By continueMyTaxes  = By.linkText("Continue My 2017 Taxes");
 	
 	//footer - copy right
 	public static By txt_copyright = By.xpath("//div[@id='sb-site']/div[4]/div/div/div/ul/li[1]");
@@ -405,9 +406,9 @@ public class ObjDashboard {
 		//TIS 
 
 		public static By tis_newsletter = By.id("tisDisplay");
-		public static By tis_newsletter_Header = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/h1/strong");
-		public static By tis_newsletter_content = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/h2/strong");
-		public static By tis_newsletter_expl = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/p");
+		public static By tis_newsletter_Header = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div[1]/div[1]/h1/strong");
+		public static By tis_newsletter_content = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div[1]/div[1]/h2/strong");
+		public static By tis_newsletter_expl = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div[1]/div[1]/p");
 		public static By tis_RiskAssessment_Header = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/h1/strong");
 		public static By tis_RiskAssessmentr_content = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/h2/strong");
 		public static By tis_RiskAssessment_expl = By.xpath("html/body/div[6]/div[2]/div[1]/div/div[1]/div[1]/p");
@@ -426,10 +427,10 @@ public class ObjDashboard {
 		
 		
 		//Dashboard Changes
-		public static By Hero_WelcomeString = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/h1/strong");
+		public static By Hero_WelcomeString = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div/div[1]/h1");
 		public static By Hero_FNString = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/h1/span");
-		public static By Hero_BoldText = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/h2/strong");
-		public static By Hero_ExplanatoryText = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[1]/p");
+		public static By Hero_BoldText = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div/div[1]/h2/strong");
+		public static By Hero_ExplanatoryText = By.xpath("//*[@id='skiptoMainContent']/div[4]/div/div/div[1]/p");
 		public static By Hero_Btn = By.xpath("html/body/div[6]/div[2]/div[1]/div/div/div[2]/a");
 		
 		

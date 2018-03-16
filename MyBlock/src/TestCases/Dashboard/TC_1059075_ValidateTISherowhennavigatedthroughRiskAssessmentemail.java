@@ -21,8 +21,7 @@ public class TC_1059075_ValidateTISherowhennavigatedthroughRiskAssessmentemail {
 			mblock.actLogin.login();
 
 			//News Letter Navigation
-			mblock.RiskAssessment_TIS();
-			
+			mblock.actDashboard.NavigatetoRiskAssmnt();
 			
 			//Verify the News Letter TIS content
 			mblock.actDashboard.TIS_RiskAssessment();

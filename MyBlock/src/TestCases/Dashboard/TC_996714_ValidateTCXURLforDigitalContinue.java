@@ -19,7 +19,7 @@ public class TC_996714_ValidateTCXURLforDigitalContinue {
 
 			// step:2 Run login action
 			mblock.actLogin.login();
-			mblock.actDashboard.DashBoard_GoToMyTaxes();
+			mblock.actDashboard.DashBoard_ContinueToMyTaxes();
 			mblock.actDashboard.TCX_CYValidation();
 			
 		} catch (Exception e) {
