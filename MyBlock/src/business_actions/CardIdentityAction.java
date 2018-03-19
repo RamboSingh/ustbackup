@@ -206,7 +206,7 @@ public class CardIdentityAction {
 
 	public void SuccessIDPHeaderMessage() throws Exception {
 		try {
-			boolean element1 = mblock.ElementExists(ObjDashboard.idp_Success);
+			boolean element1 = mblock.ElementExists(ObjDashboard.idp_Success,8000);
 			if (element1) {
 				String successHeader = mblock.Element(ObjDashboard.idp_Success).getText();
 				if (successHeader.equalsIgnoreCase("Success!")) {
@@ -224,6 +224,26 @@ public class CardIdentityAction {
 		}
 	}
 
+	public void SuccessIDPHeaderMDMessage() throws Exception {
+		try {
+			boolean element1 = mblock.ElementExists(ObjDashboard.idp_mdSuccess,8000);
+			if (element1) {
+				String successHeader = mblock.Element(ObjDashboard.idp_mdSuccess).getText();
+				if (successHeader.equalsIgnoreCase("Success!")) {
+					mblock.Log("Sucess Header is present");
+					mblock.ValidateTest(true, true, "Sucess header in IDP screen is present");
+				}
+			} else {
+				mblock.ValidateTest(false, true, "Sucess header in IDP screen is not present");
+				Assert.assertFalse(true);
+
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 	public void SuccessIDPBodyMessage() throws Exception {
 		try {
 			boolean element1 = mblock.ElementExists(ObjDashboard.idp_Success_Content);
@@ -256,7 +276,8 @@ public class CardIdentityAction {
 			String ssn2 = ExcelAction.crtnls[6].substring(3, 5);
 			String ssn3 = ExcelAction.crtnls[6].substring(5, 9);
 
-			boolean txt_fld = mblock.ElementExists(ObjDashboard.MDiframe_idp1);
+			boolean txt_fld = mblock.ElementExists(ObjDashboard.MDiframe_idp1,5000);
+			boolean txt_fld1 = mblock.ElementExists(ObjDashboard.THiframe_idp1,5000);
 
 			if (txt_fld) {
 				mblock.ActivateFrame(ObjDashboard.MDiframe_idp1);
@@ -269,7 +290,21 @@ public class CardIdentityAction {
 				mblock.Element(ObjDashboard.txt_dob).sendKeys(ExcelAction.crtnls[7]);
 				mblock.Element(ObjDashboard.btn_next).click();
 
-			} else {
+			} 
+			
+			else if (txt_fld1){
+				
+				mblock.ActivateFrame(ObjDashboard.THiframe_idp1);
+				mblock.ElementExists(ObjDashboard.txt_frstname);
+				mblock.Element(ObjDashboard.txt_frstname).sendKeys(ExcelAction.crtnls[4]);
+				mblock.Element(ObjDashboard.txt_lstname).sendKeys(ExcelAction.crtnls[5]);
+				mblock.Element(ObjDashboard.txt_ssn1).sendKeys(ssn1);
+				mblock.Element(ObjDashboard.txt_ssn2).sendKeys(ssn2);
+				mblock.Element(ObjDashboard.txt_ssn3).sendKeys(ssn3);
+				mblock.Element(ObjDashboard.txt_dob).sendKeys(ExcelAction.crtnls[7]);
+				mblock.Element(ObjDashboard.btn_next).click();
+			}
+			else {
 				mblock.ValidateTest(false, true, "Pop up is not displayed");
 				Assert.assertFalse(true);
 			}
@@ -282,7 +317,7 @@ public class CardIdentityAction {
 
 	public void MDchoosePrsnInfo1() throws Exception {
 		try {
-			mblock.ElementExists(ObjDashboard.MDiframe_idp2);
+			mblock.ElementExists(ObjDashboard.MDiframe_idp2,5000);
 			String qstn = mblock.Element(ObjDashboard.qstn_col1).getText();
 			int cnt = qstn.length();
 			String qstn1 = qstn.substring(3, cnt);
@@ -308,11 +343,11 @@ public class CardIdentityAction {
 			choosePrsnInfo3();
 			choosePrsnInfo4();
 			mblock.Element(ObjDashboard.btn_submit).click();
-			SuccessIDPHeaderMessage();
+			SuccessIDPHeaderMDMessage();
 			SuccessIDPBodyMessage();
-			mblock.ElementExists(ObjDashboard.btn_ok);
+			mblock.ElementExists(ObjDashboard.btn_MDok);
 			mblock.ValidateTest(true, "Identity Validation is success");
-			mblock.Element(ObjDashboard.btn_ok).click();
+			mblock.Element(ObjDashboard.btn_MDok).click();
 
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -379,11 +414,11 @@ public class CardIdentityAction {
 			choosePrsnInfo3();
 			choosePrsnInfo4();
 			mblock.Element(ObjDashboard.btn_submit).click();
-			SuccessIDPHeaderMessage();
+			SuccessIDPHeaderMDMessage();
 			SuccessIDPBodyMessage();
-			mblock.ElementExists(ObjDashboard.btn_ok);
+			mblock.ElementExists(ObjDashboard.btn_MDok);
 			mblock.ValidateTest(true, "Identity Validation is success");
-			mblock.Element(ObjDashboard.btn_ok).click();
+			mblock.Element(ObjDashboard.btn_MDok).click();
 
 		} catch (Exception e) {
 			// TODO: handle exception

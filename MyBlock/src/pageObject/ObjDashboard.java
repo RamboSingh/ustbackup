@@ -260,8 +260,10 @@ public class ObjDashboard {
 	public static By answr_col4 = By.xpath("//ul[@class='gua_questionnaire'][4]/li");
 	public static By btn_submit = By.id("submitbtn");
 	public static By idp_Success = By.id("rdIDPStatusDiv1");
+	public static By idp_mdSuccess = By.id("rdDiv1");
 	public static By idp_Success_Content = By.className("emerview");
 	public static By btn_ok = By.id("rdIDPStatusBtn1");
+	public static By btn_MDok = By.id("rdbtn1");
 	
 	//Emerland card pod
 	

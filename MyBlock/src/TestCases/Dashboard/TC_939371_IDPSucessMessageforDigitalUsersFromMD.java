@@ -14,8 +14,9 @@ public class TC_939371_IDPSucessMessageforDigitalUsersFromMD {
 			
 
 			// Browser navigation
-			mblock.NavigateToURL();
-			mblock.actLogin.login();
+			mblock.NavigateToDigitalUsrURL();
+			mblock.actCtracnt.crtDigitalUsrAcnt();
+			mblock.actGnrlNvgtn.clkMyblockbtnTCX();
 			mblock.actUplddoc.clkMydoclnk();
 			mblock.actDashboard.MD_AddDoc();
 			mblock.actCardIdnty.clrSsdob();

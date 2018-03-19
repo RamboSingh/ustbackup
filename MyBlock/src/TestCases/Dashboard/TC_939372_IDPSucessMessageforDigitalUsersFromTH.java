@@ -14,8 +14,9 @@ public class TC_939372_IDPSucessMessageforDigitalUsersFromTH {
 			
 
 			// Browser navigation
-			mblock.NavigateToURL();
-			mblock.actLogin.login();
+			mblock.NavigateToDigitalUsrURL();
+			mblock.actCtracnt.crtDigitalUsrAcnt();
+			mblock.actGnrlNvgtn.clkMyblockbtnTCX();
 			mblock.actDashboard.TH_Lauch();
 			mblock.actCardIdnty.clrSsdob();
 			mblock.actCardIdnty.clkCnfrmIdbtn();
