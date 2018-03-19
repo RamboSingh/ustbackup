@@ -27,6 +27,10 @@ public class ObjTaxHistory {
 	public static By txt_fed_rtrn_val = By.xpath("//*[@id='refundTHFDAmt']/span");
 	public static By txt_fed_superscript = By.xpath("//*[@id='refundTHFDAmt']/span/sup");
 	
+	public static By fed_rtrn1 = By.xpath("//*[@id='refundTHAmt']/h2");
+	public static By txt_fed_rtrn_val1 = By.xpath("//*[@id='refundTHAmt']/span");
+	public static By txt_fed_superscript1 = By.xpath("//*[@id='refundTHAmt']/span/sup");
+	
 	public static By fed_fillngSts = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[1]/div[2]/strong");
 	public static By txt_fed_fillngSts_val = By.xpath("//*[@id='taxHistoryTopSection']/div/div[1]/div[1]/div[2]/span");
 	

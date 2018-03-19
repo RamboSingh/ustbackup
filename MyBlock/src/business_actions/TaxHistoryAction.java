@@ -92,13 +92,15 @@ public class TaxHistoryAction {
 	// Verify the tax return fields
 
 	public void vrfyTaxRtnfield() throws Exception {
-		mblock.ElementExists(ObjDashboard.answr_col1, 5000);
-		boolean fed_rtrn = mblock.ElementExists(ObjTaxHistory.fed_rtrn, 5000);
-		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 5000);
-		boolean filing_status = mblock.ElementExists(ObjTaxHistory.fed_fillngSts, 5000);
-		boolean filing_date = mblock.ElementExists(ObjTaxHistory.fed_fillngDte, 5000);
+		mblock.ElementExists(ObjDashboard.answr_col1, 3000);
+		boolean fed_rtrn = mblock.ElementExists(ObjTaxHistory.fed_rtrn, 2000);
+		boolean fed_rtrn_val = mblock.ElementExists(ObjTaxHistory.txt_fed_rtrn_val, 1000);
+		boolean fed_rtrn1 = mblock.ElementExists(ObjTaxHistory.fed_rtrn1, 1000);
+		boolean fed_rtrn_val1 = mblock.ElementExists(ObjTaxHistory.txt_fed_rtrn_val1, 1000);
+		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 1000);
+		
 
-		if (fed_rtrn && state_rtrn && filing_status && filing_date) {
+		if (fed_rtrn && state_rtrn&&fed_rtrn_val) {
 			String val = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val).getText();
 			String val1 = mblock.Element(ObjTaxHistory.txt_fed_fillngSts_val).getText();
 			String val2 = mblock.Element(ObjTaxHistory.txt_fed_fillngDte_val).getText();
@@ -111,8 +113,10 @@ public class TaxHistoryAction {
 				Assert.assertFalse(true);
 			}
 		}
+		
+		
 
-		else if (fed_rtrn || state_rtrn && filing_date && filing_status) {
+		else if (fed_rtrn || state_rtrn&&fed_rtrn_val) {
 
 			String val = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val).getText();
 			String val1 = mblock.Element(ObjTaxHistory.txt_fed_fillngSts_val).getText();
@@ -126,6 +130,39 @@ public class TaxHistoryAction {
 			}
 
 		}
+		
+		
+
+		else if (fed_rtrn1 && state_rtrn&&fed_rtrn_val1 ) {
+			String val = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val1).getText();
+			String val1 = mblock.Element(ObjTaxHistory.txt_fed_fillngSts_val).getText();
+			String val2 = mblock.Element(ObjTaxHistory.txt_fed_fillngDte_val).getText();
+			String val3 = mblock.Element(ObjTaxHistory.txt_state_rtrn_val).getText();
+
+			if (!val.isEmpty() && !val1.isEmpty() && !val2.isEmpty() && !val3.isEmpty()) {
+				mblock.ValidateTest(true, true, "User can able to view Tax return fields");
+			} else {
+				mblock.ValidateTest(false, true, "User can not able to view some Tax return fields");
+				Assert.assertFalse(true);
+			}
+		}
+		
+		
+		else if (fed_rtrn1 || state_rtrn&&fed_rtrn_val1) {
+
+			String val = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val1).getText();
+			String val1 = mblock.Element(ObjTaxHistory.txt_fed_fillngSts_val).getText();
+			String val2 = mblock.Element(ObjTaxHistory.txt_fed_fillngDte_val).getText();
+
+			if (!val.isEmpty() && !val1.isEmpty() && !val2.isEmpty()) {
+				mblock.ValidateTest(true, true, "User can able to view Tax return fields");
+			} else {
+				mblock.ValidateTest(false, true, "User can not able to view some Tax return fields");
+				Assert.assertFalse(true);
+			}
+
+		}
+		
 
 		else {
 			mblock.ValidateTest(true, "Tax return field is not available for this tax year");
@@ -137,10 +174,10 @@ public class TaxHistoryAction {
 	// Verify the super script($) of the tax return is displayed
 	public void vrfySuperScript() throws Exception {
 
-		mblock.ElementExists(ObjDashboard.answr_col1, 5000);
-		boolean fed_rtrn = mblock.ElementExists(ObjTaxHistory.fed_rtrn, 5000);
-		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 5000);
-		boolean txt_state1 = mblock.ElementExists(ObjTaxHistory.txt_state1, 5000);
+		mblock.ElementExists(ObjDashboard.answr_col1, 3000);
+		boolean fed_rtrn = mblock.ElementExists(ObjTaxHistory.fed_rtrn, 2000);
+		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 1000);
+		boolean txt_state1 = mblock.ElementExists(ObjTaxHistory.txt_state1, 1000);
 		if (fed_rtrn && state_rtrn && txt_state1) {
 			String fed_superscript = mblock.Element(ObjTaxHistory.txt_fed_rtrn_val).getText();
 			String state_superscript = mblock.Element(ObjTaxHistory.txt_state_rtrn_superscript1).getText();
@@ -350,7 +387,7 @@ public class TaxHistoryAction {
 	// Verify State name is fully displayed.
 	public void vrfyTaxRtrnStateName() throws Exception {
 		mblock.ElementExists(ObjDashboard.answr_col1, 5000);
-		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 5000);
+		boolean state_rtrn = mblock.ElementExists(ObjTaxHistory.state_rtrn, 1000);
 
 		if (state_rtrn) {
 
@@ -372,9 +409,9 @@ public class TaxHistoryAction {
 
 			else if (val.contains("State") && !val.isEmpty()) {
 
-				boolean indicator = mblock.ElementExists(ObjTaxHistory.btn_indicator, 5000);
-				boolean navgn1 = mblock.ElementExists(ObjTaxHistory.btn_navigation1, 5000);
-				boolean navgn2 = mblock.ElementExists(ObjTaxHistory.btn_navigation1, 5000);
+				boolean indicator = mblock.ElementExists(ObjTaxHistory.btn_indicator, 3000);
+				boolean navgn1 = mblock.ElementExists(ObjTaxHistory.btn_navigation1, 1000);
+				boolean navgn2 = mblock.ElementExists(ObjTaxHistory.btn_navigation1, 1000);
 				String state1 = mblock.Element(ObjTaxHistory.txt_state1).getText();
 				String state2 = mblock.Element(ObjTaxHistory.txt_state2).getText();
 				int ste_lgnth1 = state1.length();
@@ -488,7 +525,7 @@ public class TaxHistoryAction {
 	public void clkTaxhstryYrFrmDrpdwn(String year) throws Exception {
 
 		boolean txt = mblock.ElementExists(ObjTaxHistory.drp_taxyear);
-		if (txt = true) {
+		if (txt) {
 			mblock.Element(ObjTaxHistory.drp_taxyear).ufxSelectFromDropdown("MY " + year + " TAXES");
 			mblock.ElementExists(ObjTaxHistory.txt_year);
 			String val = mblock.Element(ObjTaxHistory.txt_year).getAttribute("value");
@@ -689,7 +726,7 @@ public class TaxHistoryAction {
 	// Verify the purchase my Return button
 	public void vrfyPrchsRtnBtn() throws Exception {
 		boolean val = mblock.ElementExists(ObjTaxHistory.lnk_prchsrtn);
-		if (val == true) {
+		if (val) {
 			mblock.ValidateTest(true, true, "Purchase my return button is displayed");
 		} else {
 			mblock.ValidateTest(false, true, "Purchase my return button is not displayed");
