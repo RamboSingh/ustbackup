@@ -706,6 +706,7 @@ public class BatchRunner {
 		defaultCategoryDataset.setValue("Fail = " +nFailCount, nFailCount);
 		defaultCategoryDataset.setValue("Skipped = "+nSkipCount, nSkipCount);
 		defaultCategoryDataset.setValue("Pass = "+nPassCount, nPassCount);
+		defaultCategoryDataset.setValue("Pass Percentage = "+((nPassCount/nPassCount+nFailCount)*100), nPassCount);
 		
 
 		JFreeChart jFreeChart = ChartFactory.createPieChart("MyBlock Execution Summary", defaultCategoryDataset, false, false, false);

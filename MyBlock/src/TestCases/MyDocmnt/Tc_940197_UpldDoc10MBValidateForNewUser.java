@@ -18,7 +18,7 @@ public class Tc_940197_UpldDoc10MBValidateForNewUser {
 			mblock.NavigateToURL();
 
 			// login with retail user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtacnt();
 
 			// Click my document link from Global nav
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();

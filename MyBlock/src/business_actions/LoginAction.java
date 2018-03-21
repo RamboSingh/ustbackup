@@ -74,7 +74,7 @@ public class LoginAction {
 			mblock.Element(ObjLogin.SecurityAnswer_TextField).getText();
 			mblock.ElementExists(ObjLogin.SecurityPage_Next);
 			mblock.Element(ObjLogin.SecurityPage_Next).click();
-			boolean license_value = mblock.ElementExists(ObjLogin.lcnse_agrmnt,5000);
+			boolean license_value = mblock.ElementExists(ObjLogin.lcnse_agrmnt,3000);
 			if(license_value){
 				
 				mblock.Element(ObjLogin.lcnse_agrmnt).click();
@@ -88,7 +88,7 @@ public class LoginAction {
 			
 			}
 		
-			boolean dhs_brd = mblock.ElementExists(ObjDashboard.lnk_profile,5000);
+			boolean dhs_brd = mblock.ElementExists(ObjDashboard.lnk_profile);
 			if(dhs_brd){
 				mblock.ValidateTest(true, true, "successfully login");
 			}
