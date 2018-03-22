@@ -42,6 +42,7 @@ public class ObjTaxestimator {
 	public static By txt_step4= By.xpath("//div[@id='income']/div/div[1]/p[12]");
 	public static By txt_step5= By.xpath("//div[@id='income']/div/div[1]/ul[6]/li[2]");
 
+	public static By inpt_interest= By.id("bEmployment");
 	public static By lnk_interest= By.xpath("//*[@id='form-views']/div[1]/div[2]/div[2]/div/div[3]/div[1]/div/fieldset/div[1]/label[1]/span[1]");
 	public static By lnk_incme= By.xpath("//*[@id='incomeForm']/div[1]/div/fieldset/label");
 	public static By inpt_incomeamnt= By.id("interestIncome");

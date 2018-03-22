@@ -214,8 +214,11 @@ public class TaxEstimatorAction {
 		}
 		boolean status = mblock.ElementExists(ObjTaxestimator.lnk_interest);
 		if (status) {
-			mblock.ElementExists(ObjDashboard.answr_col1, 5000);
+			mblock.ElementExists(ObjDashboard.answr_col1, 3000);
+			String val = mblock.Element(ObjTaxestimator.inpt_interest).getAttribute("aria-checked");
+			if(val.equalsIgnoreCase("false")){
 			mblock.Element(ObjTaxestimator.lnk_interest).ufxClick();
+			}
 			mblock.Element(ObjTaxestimator.lnk_next3).ufxClick();
 			/*
 			 * boolean val =
@@ -224,8 +227,13 @@ public class TaxEstimatorAction {
 			 */
 			mblock.ElementExists(ObjTaxestimator.lnk_next4);
 			mblock.Element(ObjTaxestimator.lnk_next4).ufxClick();
-			mblock.ElementExists(ObjTaxestimator.txt_expenseheader);
+			boolean exp = mblock.ElementExists(ObjTaxestimator.txt_expenseheader);
+			if(exp){
 			mblock.ValidateTest(true, true, "Expenses tab is landed");
+			}
+			else{
+				mblock.ValidateTest(false, true, "Expenses tab is not landed");
+			}
 
 		}
 
