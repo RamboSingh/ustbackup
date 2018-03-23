@@ -260,6 +260,8 @@ public class MydocumentAction {
 			int val01 = val1.size();
 			mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
+			mblock.Element(ObjUploaddoc.lnk_upldfle).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\File10MB.vbs");
 			mblock.ElementExists(ObjDashboard.answr_col1, 8000);

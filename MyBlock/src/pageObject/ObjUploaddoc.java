@@ -11,6 +11,7 @@ public class ObjUploaddoc {
 	public static By txt_dob = By.id("clientmatchDOB");
 	
 	public static By btn_adddoc = By.linkText("Add a Document");
+	public static By lnk_upldfle = By.linkText("Upload a file");
 	public static By btn_cnfrmidnty = By.name("verifyid");
 	public static By btn_submit= By.id("clk_submitidp");
 	public static By btn_upld= By.id("docListTable");

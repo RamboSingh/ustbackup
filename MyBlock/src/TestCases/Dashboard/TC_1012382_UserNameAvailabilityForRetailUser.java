@@ -15,8 +15,10 @@ public class TC_1012382_UserNameAvailabilityForRetailUser {
 
 			// Browser navigation
 			mblock.NavigateToURL();
+			
+			//login with user
 			mblock.actLogin.login();
-			// Create new account
+			
 			mblock.actDashboard.userNameDisplayed();
 			mblock.Finalize(true);
 
