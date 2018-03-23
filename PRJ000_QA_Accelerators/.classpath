@@ -3,6 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/MyblockAuto/myblockTeam/PRJ000_QA_Accelerators/lib/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="D:/MyblockAuto/myblockTeam/PRJ000_QA_Accelerators/lib/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Appium"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/iText"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JGoodies"/>
@@ -11,7 +13,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SeeTest"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Selenium"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SQL"/>
-	<classpathentry kind="lib" path="D:/MyblockAuto/myblockTeam/PRJ000_QA_Accelerators/lib/jcommon-1.0.23.jar"/>
-	<classpathentry kind="lib" path="D:/MyblockAuto/myblockTeam/PRJ000_QA_Accelerators/lib/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
