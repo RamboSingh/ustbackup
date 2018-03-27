@@ -30,8 +30,8 @@ public class LoginAction {
 			mblock.Element(ObjLogin.txt_password).sendKeys(Spassword);
 			mblock.Element(ObjLogin.btn_singin).click();
 			boolean err_msg = mblock.ElementExists(ObjLogin.SecurityAnswerLink,3000);
-			boolean err_msg1 = mblock.ElementExists(ObjDashboard.lnk_profile,5000);
-			if(err_msg==false&&err_msg1==false){
+			//boolean err_msg1 = mblock.ElementExists(ObjDashboard.lnk_profile,2000);
+			if(err_msg==false){
 			
 			//if(val){
 				boolean msg = false; 
@@ -44,9 +44,9 @@ public class LoginAction {
 					mblock.Element(ObjLogin.txt_password).sendKeys(Spassword);
 					mblock.Element(ObjLogin.btn_singin).click();
 					boolean val  = mblock.ElementExists(ObjLogin.SecurityAnswerLink,3000);
-					boolean val1 = mblock.ElementExists(ObjDashboard.lnk_profile,3000);
+				//	boolean val1 = mblock.ElementExists(ObjDashboard.lnk_profile,3000);
 					
-					if(val||val1){
+					if(val){
 						msg=true;
 					}
 					
@@ -60,7 +60,7 @@ public class LoginAction {
 			if(val){
 			mblock.Element(ObjLogin.SecurityAnswerLink).click();
 
-			mblock.ElementExists(ObjLogin.SecurityAnswer_Label, 5000);
+			mblock.ElementExists(ObjLogin.SecurityAnswer_Label);
 			String SecAns = mblock.Element(ObjLogin.SecurityAnswer_Label).getText();
 			Pattern p = Pattern.compile("(\\w+)\\?");
 			Matcher m = p.matcher(SecAns);

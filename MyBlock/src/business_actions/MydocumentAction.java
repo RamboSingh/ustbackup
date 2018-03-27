@@ -176,6 +176,8 @@ public class MydocumentAction {
 					int val01 = val1.size();
 					mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 					mblock.Element(ObjUploaddoc.btn_adddoc).click();
+					mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
+					mblock.Element(ObjUploaddoc.lnk_upldfle).click();
 					Thread.sleep(2000); // this line is only for waiting purpose
 					Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
 					mblock.ElementExists(ObjDashboard.answr_col1, 8000);
@@ -215,6 +217,8 @@ public class MydocumentAction {
 
 				if (val.contains(year)) {
 					boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
+					mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
+					mblock.Element(ObjUploaddoc.lnk_upldfle).click();
 					List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc)
 							.findElements(ObjUploaddoc.count_doc1);
 					int val01 = val1.size();
@@ -301,6 +305,8 @@ public class MydocumentAction {
 			int val01 = val1.size();
 			mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
+			mblock.Element(ObjUploaddoc.lnk_upldfle).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\Below10MB.vbs");
 			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
@@ -340,6 +346,8 @@ public class MydocumentAction {
 			int val01 = val1.size();
 			mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
+			mblock.Element(ObjUploaddoc.lnk_upldfle).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec("wscript" + " " + System.getProperty("user.dir") + "\\resources\\Above10MB.vbs");
 			mblock.ElementExists(ObjDashboard.answr_col1, 5000);
@@ -426,9 +434,11 @@ public class MydocumentAction {
 		int val01 = val1.size();
 		if (val01 <2||val.contains("none")) {
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
+			mblock.Element(ObjUploaddoc.lnk_upldfle).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
-			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
+			mblock.ElementExists(ObjDashboard.answr_col1, 5000);
 		}
 		mblock.Element(ObjUploaddoc.btn_adddoc).ufxScrollElementToView();
 		boolean more = mblock.ElementExists(ObjMyDocmnt.lnk_more);
@@ -666,6 +676,8 @@ public class MydocumentAction {
 		int val01 = val1.size();
 		if (val01 < 2) {
 			mblock.Element(ObjUploaddoc.btn_adddoc).click();
+			mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
+			mblock.Element(ObjUploaddoc.lnk_upldfle).click();
 			Thread.sleep(2000); // this line is only for waiting purpose
 			Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
 			mblock.ElementExists(ObjDashboard.answr_col1, 8000);
@@ -960,8 +972,8 @@ public class MydocumentAction {
 	// verify Family
 	public void vrfyFamilyDedHdr() throws Exception {
 
-		boolean sub1 = mblock.ElementExists(ObjDashboard.fmly_sub1);
-		boolean sub2 = mblock.ElementExists(ObjDashboard.fmly_sub2);
+		boolean sub1 = mblock.ElementExists(ObjDashboard.fmly_sub1,3000);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.fmly_sub2,2000);
 
 		if (sub1 && sub2) {
 			mblock.ValidateTest(true, true, "Family headers are displayed");
@@ -996,8 +1008,8 @@ public class MydocumentAction {
 	// Verify Home Ownership
 	public void vrfyHmeOwnDedHdr() throws Exception {
 
-		boolean sub1 = mblock.ElementExists(ObjDashboard.res_sub1);
-		boolean sub2 = mblock.ElementExists(ObjDashboard.res_sub2);
+		boolean sub1 = mblock.ElementExists(ObjDashboard.res_sub1,3000);
+		boolean sub2 = mblock.ElementExists(ObjDashboard.res_sub2,2000);
 
 		if (sub1 && sub2) {
 			mblock.ValidateTest(true, true, "Home Ownership headers are displayed");
