@@ -217,13 +217,14 @@ public class MydocumentAction {
 
 				if (val.contains(year)) {
 					boolean btn = mblock.ElementExists(ObjUploaddoc.btn_adddoc);
-					mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
-					mblock.Element(ObjUploaddoc.lnk_upldfle).click();
+					
 					List<WebElement> val1 = mblock.Element(ObjUploaddoc.count_doc)
 							.findElements(ObjUploaddoc.count_doc1);
 					int val01 = val1.size();
 					mblock.Element(ObjMyDocmnt.drp_taxyear).ufxScrollElementToView();
 					mblock.Element(ObjUploaddoc.btn_adddoc).click();
+					mblock.ElementExists(ObjUploaddoc.lnk_upldfle);
+					mblock.Element(ObjUploaddoc.lnk_upldfle).click();
 					Thread.sleep(2000); // this line is only for waiting purpose
 					Runtime.getRuntime().exec(Constant_Class.doc_uplScript);
 					mblock.ElementExists(ObjDashboard.answr_col1, 8000);
