@@ -18,7 +18,7 @@ public class TC_940232_MoveDocmntFrmTY2014ToTY2015 {
 			mblock.NavigateToURL();
 
 			// login with retail user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtacnt();
 
 			// Click my document link from Global nav
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
@@ -40,7 +40,7 @@ public class TC_940232_MoveDocmntFrmTY2014ToTY2015 {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

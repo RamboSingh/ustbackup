@@ -18,18 +18,17 @@ public class Tc_964861_VrfyPositionOfUpldDocDragDrop2014 {
 			mblock.NavigateToURL();
 
 			// login with retail user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtDigitalUsrAcnt();
 
-			//Click My document from global navigation
+			// Click My document from global navigation
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
-			
-			//Verify the default Drop down tax year
+
+			// Verify the default Drop down tax year
 			mblock.actMydoc.vrfyDfltMydocYr2016();
-			
-			//verify the uploaded document is on top of the list
+
+			// verify the uploaded document is on top of the list
 			mblock.actMydoc.vrfyUpldDocPstn("2014");
-			
-			
+
 			// Close the browser
 			mblock.Finalize();
 

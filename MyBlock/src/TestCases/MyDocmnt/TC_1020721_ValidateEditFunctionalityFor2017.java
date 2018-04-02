@@ -18,7 +18,7 @@ public class TC_1020721_ValidateEditFunctionalityFor2017 {
 			mblock.NavigateToURL();
 
 			// login with retail user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtacnt();
 
 			// Click my document link from Global nav
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();

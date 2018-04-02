@@ -18,18 +18,19 @@ public class TC_940240_MoveDocmntFrmTY2014ToTY2013DigitalUsr {
 			mblock.NavigateToURL();
 
 			// login with digital user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtDigitalUsrAcnt();
 
 			// Click my document link from Global nav
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
-			
-			//Verify default year as 2016
+
+			// Verify default year as 2016
 			mblock.actMydoc.vrfyDfltMydocYr2016();
-			
-			//Upload the documnet for the mentioned year
+
+			// Upload the documnet for the mentioned year
 			mblock.actMydoc.clkMydocYrUpldDoc("2014");
-			
-			//Transfer the file which upload in previous step to mentioned below year
+
+			// Transfer the file which upload in previous step to mentioned
+			// below year
 			mblock.actMydoc.clkEditBtnTrnsfrFile("2013");
 
 			// Close the browser

@@ -18,7 +18,7 @@ public class Tc_920139_ValidateSingleDocumentDeleteFor2012 {
 			mblock.NavigateToURL();
 
 			// login with retail user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtacnt();
 
 			// Click My document from global navigation
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();

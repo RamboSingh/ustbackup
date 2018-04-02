@@ -18,7 +18,7 @@ public class TC_940244_MoveDocmntFrmTY2010ToTY2011DigitalUsr {
 			mblock.NavigateToURL();
 
 			// login with digital user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtDigitalUsrAcnt();
 
 			// Click my document link from Global nav
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();

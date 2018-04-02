@@ -7,7 +7,7 @@ public class Tc_920112_ValidateEditFunctionalityFor2015 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		try {
 
 			// Configuration settings
@@ -18,20 +18,20 @@ public class Tc_920112_ValidateEditFunctionalityFor2015 {
 			mblock.NavigateToURL();
 
 			// login with retail user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtacnt();
 
 			// Click My document from global navigation
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
-			
-			//Choose tax year from dropdown
+
+			// Choose tax year from dropdown
 			mblock.actMydoc.clkMydocYrFrmDrpdwn("2015");
-			
-			//Click More button in uploaded document
+
+			// Click More button in uploaded document
 			mblock.actMydoc.clkMoreBtn();
-			
-			//Click Edit option
+
+			// Click Edit option
 			mblock.actMydoc.clkEditOptn();
-			
+
 			// Close the browser
 			mblock.Finalize();
 

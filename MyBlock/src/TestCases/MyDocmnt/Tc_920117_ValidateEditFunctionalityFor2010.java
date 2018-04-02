@@ -18,27 +18,27 @@ public class Tc_920117_ValidateEditFunctionalityFor2010 {
 			mblock.NavigateToURL();
 
 			// login with retail user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtacnt();
 
 			// Click My document from global navigation
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
-			
-			//Choose tax year from dropdown
+
+			// Choose tax year from dropdown
 			mblock.actMydoc.clkMydocYrFrmDrpdwn("2010");
-			
-			//Click More button in uploaded document
+
+			// Click More button in uploaded document
 			mblock.actMydoc.clkMoreBtn();
-			
-			//Click Edit option
+
+			// Click Edit option
 			mblock.actMydoc.clkEditOptn();
-			
+
 			// Close the browser
 			mblock.Finalize();
 
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 	}
 
 }

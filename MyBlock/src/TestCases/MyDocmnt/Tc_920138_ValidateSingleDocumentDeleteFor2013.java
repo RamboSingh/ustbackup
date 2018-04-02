@@ -18,15 +18,15 @@ public class Tc_920138_ValidateSingleDocumentDeleteFor2013 {
 			mblock.NavigateToURL();
 
 			// login with retail user
-			mblock.actLogin.login();
+			mblock.actCtracnt.crtacnt();
 
 			// Click My document from global navigation
 			mblock.actGnrlNvgtn.clkMydocFrmGlobalNav();
 
 			// Verify the default Drop down tax year
 			mblock.actMydoc.vrfyDfltMydocYr2016();
-			
-			//Choose tax year from dropdown
+
+			// Choose tax year from dropdown
 			mblock.actMydoc.clkMydocYrFrmDrpdwn("2013");
 
 			// Click More button in uploaded document
